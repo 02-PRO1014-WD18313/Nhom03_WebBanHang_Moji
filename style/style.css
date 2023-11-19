@@ -473,6 +473,68 @@ ul li.active .slide .right-brown{
     background-color: #ffffff;
 }
 
+.products-wrapper .product{
+    position: relative;
+    cursor: pointer;
+}
+
+.products-wrapper .product:hover .hover-product{
+    opacity: 1;
+}
+
+.products-wrapper .product .hover-product{
+    width: 100%;
+    height: 100%;
+    /* background-color: #ffffff; */
+    position: absolute;
+    top: 0;
+    border-radius: 20px;
+    opacity: 0;
+}
+
+.hover-product {
+    position: relative;
+}
+
+.icons-product {
+    
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hover-product .icons-product .icon {
+    width: 15px;
+    background-color: white;
+    height: 15px;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 50%;
+    color: black;
+    margin: 5px;
+}
+
+.icons-product .icon {
+    position: relative;
+}
+
+.icon i {
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    opacity: 1;
+}
+
+.icons-product .first-icon {
+    color: white;
+}
+
 .product.isotope-item{
     position: relative;
 }
@@ -647,7 +709,7 @@ ul li.active .slide .right-brown{
     align-items: center;
     position: absolute;
     top: 50%;
-    left: 80%;
+    left: 75%;
     transform: translate(-50%, -50%);
 }
 
@@ -708,3 +770,69 @@ ul li.active .slide .right-brown{
     font-size:2em;
     margin:0% 1%;
 }
+
+.preview.content-wrapper {
+    width: 940px;
+    height: 470px;
+    border: 1px solid black;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    display: flex;
+}
+
+.content-wrapper {
+    position: relative;
+}
+
+.preview .icon-out {
+    position: absolute;
+    color: #0000004D;
+    top: 10px;
+    right: 12px;
+    font-size: 25px;
+    transform: rotate(45deg);
+}
+
+.preview .preview-image {
+    width: 470px;
+    height: 100%;
+    background-size: cover;
+    /* border: 1px solid black; */
+    border-radius: 20px 0 0 20px ;
+}
+
+.preview .information-product {
+    width: 470px;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 0 20px 20px 0;
+}
+
+.information-product > .text-content-product {
+    margin: 30px 30px 0 30px;
+    
+}   
+
+.information-product > .text-content-product .heading {
+    font-size: 26px;
+}
+
+.information-product > .text-content-product span {
+    font-size:  26px;
+    color: #2a27E9;
+}
+
+.information-product > .text-content-product p {
+    color: #595A5f;
+    font-size: 18px;
+}
+
+del {
+    text-decoration: line-through;
+    font-size: 20px;
+}
+
+
