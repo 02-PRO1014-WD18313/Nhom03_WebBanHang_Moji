@@ -169,20 +169,20 @@
             <p class="title">Tên Sản Phẩm</p>
             <div class="parent-quick-fact">
                 <div class="quick-fact">
-                    <div class="number-wrap">00</div>
+                    <div id="days" class="number-wrap"></div>
                     <h3 class="tittle">Days</h3>
                 </div>
                 <div class="quick-fact">
-                    <div class="number-wrap">00</div>
+                    <div id="hours" class="number-wrap"></div>
                     <h3 class="tittle">Hours</h3>
                     
                 </div>
                 <div class="quick-fact">
-                    <div class="number-wrap">00</div>
+                    <div id="minutes" class="number-wrap"></div>
                     <h3 class="tittle">Minutes</h3>
                 </div>
                 <div class="quick-fact">
-                    <div class="number-wrap">00</div>
+                    <div id="seconds" class="number-wrap"></div>
                     <h3 class="tittle">Seconds</h3>
                 </div>
             </div>
@@ -207,9 +207,9 @@
                 <button class="onsale sale-label">On Sale</button>
                 <div class="hover-product">
                     <div class="icons-product">
-                        <a class="icon first-icon" href="#"><i class="fas fa-heart"></i></a>
+                        <a class="icon first-icon"  href="#"><i class="fas fa-heart"></i></a>
                         <a class="icon" href="#"><i class="fas fa-snowflake"></i></a>
-                        <a class="icon" href="#"><i class="fas fa-link"></i></a>
+                        <a class="icon preview-icon" data-preview="preview" ><i class="fas fa-link"></i></a>
                     </div>
                 </div>
             </div>
@@ -218,7 +218,13 @@
                 <h4><a href="#">ABC</a></h4>
                 <span>110$ - 220$</span>
                 <button class="onsale sale-label">On Sale</button>
-
+                <div class="hover-product">
+                    <div class="icons-product">
+                        <a class="icon first-icon"  href="#"><i class="fas fa-heart"></i></a>
+                        <a class="icon" href="#"><i class="fas fa-snowflake"></i></a>
+                        <a class="icon preview-icon"data-preview="preview_1"><i class="fas fa-link"></i></a>
+                    </div>
+                </div>
             </div>
             <div class="isotope-item product">
                 <img src="image/sbxmxmk000155-bong-tai-bac-dinh-da-pnjsilver-4002.png" alt="">
@@ -281,8 +287,8 @@
             </div>
     </div>
 
-    <div class="preview content-wrapper">
-        <a href="" class="icon-out">
+    <div class="preview content-wrapper" id="preview">
+        <a class="icon-out">
             <i class="fas fa-plus"></i>
         </a>
         <div class="preview-image" style="background-image: url(image/photo-1-1571065781331448666071.jpg);">
@@ -293,6 +299,41 @@
                 <h3 class="heading">Tên Sản Phẩm</h3>
                 <span class="price"> <del>Giá</del>  -  Giá</span>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus rem repellat ipsam ex soluta voluptas error ducimus illum consequuntur sit perferendis, inventore aliquam! Deserunt quisquam recusandae libero excepturi cumque dignissimos dolor cupiditate. Et harum ab doloribus dolores dolorum reiciendis provident minus sed eum nulla dolorem, necessitatibus cupiditate mollitia aperiam.</p>
+                <p style="font-size: 20px; margin-top:10px ;color: black;">Material</p>
+            </div>
+            <div class="variations-form cart">
+                <div class="input-number">
+                    <input type="number" min="1" max="10" name="" value="1">
+                    <button class="plus"><i class="fas fa-plus"></i></button>
+                    <button class="minus"><i class="fas fa-minus"></i></button>
+                    <input type="submit" value="Add to Cart">
+                </div>
+                <p>Tags: </p>
+            </div>
+        </div>
+    </div>
+    <div class="preview content-wrapper" id="preview_1">
+        <a class="icon-out">
+            <i class="fas fa-plus"></i>
+        </a>
+        <div class="preview-image" style="background-image: url(image/photo-1-1571065781331448666071.jpg);">
+
+        </div>
+        <div class="information-product">
+            <div class="text-content-product">
+                <h3 class="heading">Tên Sản Phẩm</h3>
+                <span class="price"> <del>Giá</del>  -  Giá</span>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus rem repellat ipsam ex soluta voluptas error ducimus illum consequuntur sit perferendis, inventore aliquam! Deserunt quisquam recusandae libero excepturi cumque dignissimos dolor cupiditate. Et harum ab doloribus dolores dolorum reiciendis provident minus sed eum nulla dolorem, necessitatibus cupiditate mollitia aperiam.</p>
+                <p style="font-size: 20px; margin-top:10px ;color: black;">Material</p>
+            </div>
+            <div class="variations-form cart">
+                <div class="input-number">
+                    <input type="number" min="1" max="10" name="" value="1">
+                    <button class="plus"><i class="fas fa-plus"></i></button>
+                    <button class="minus"><i class="fas fa-minus"></i></button>
+                    <input type="submit" value="Add to Cart">
+                </div>
+                <p>Tags: </p>
             </div>
         </div>
     </div>

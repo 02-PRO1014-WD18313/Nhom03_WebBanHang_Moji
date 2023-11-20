@@ -471,25 +471,29 @@ ul li.active .slide .right-brown{
     margin-left: 2%;
     border-radius: 20px;
     background-color: #ffffff;
+    cursor: pointer;
 }
+
 
 .products-wrapper .product{
     position: relative;
     cursor: pointer;
 }
 
-.products-wrapper .product:hover .hover-product{
+.products-wrapper .product:hover .hover-product
+{
+    visibility: visible ;
     opacity: 1;
 }
 
 .products-wrapper .product .hover-product{
     width: 100%;
     height: 100%;
-    /* background-color: #ffffff; */
     position: absolute;
     top: 0;
     border-radius: 20px;
     opacity: 0;
+    visibility: hidden;
 }
 
 .hover-product {
@@ -771,16 +775,23 @@ ul li.active .slide .right-brown{
     margin:0% 1%;
 }
 
-.preview.content-wrapper {
+.preview{
     width: 940px;
     height: 470px;
     border: 1px solid black;
+    
+    border-radius: 20px;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.content-wrapper.preview {
     position: fixed;
+    z-index: 99;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 20px;
-    display: flex;
 }
 
 .content-wrapper {
@@ -794,6 +805,7 @@ ul li.active .slide .right-brown{
     right: 12px;
     font-size: 25px;
     transform: rotate(45deg);
+    cursor: pointer;
 }
 
 .preview .preview-image {
@@ -830,9 +842,69 @@ ul li.active .slide .right-brown{
     font-size: 18px;
 }
 
+.information-product input[type = number]{
+    margin-left: 30px;
+    margin-top: 20px;
+    padding: 10px 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    /* width: 200px */
+    width: 25%;
+    text-align: center;
+    -moz-appearance: textfield; 
+    font-size: 25px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+
+
+.information-product .input-number {
+    position: relative;
+}
+
+.input-number .plus,
+.input-number .minus{
+    position: absolute;
+    cursor: pointer;
+}
+.input-number .plus {
+    top: 52%;
+    left: 25%;
+    color: #666;
+    background-color: transparent;
+    border: none;
+}
+.input-number .minus {
+    top: 52%;
+    left: 10%;
+    color: #666;
+    background-color: transparent;
+    border: none;
+}
+
+.information-product input[type = submit]{
+    font-size: 25px;
+    padding: 10px 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 35%;
+    text-align: center;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #2a27E9;
+}
+
+
 del {
     text-decoration: line-through;
     font-size: 20px;
 }
 
+.rushOut {
+    opacity: 1;
+    visibility: visible;
+}
 
