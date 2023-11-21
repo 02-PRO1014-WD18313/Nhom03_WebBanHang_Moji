@@ -90,9 +90,9 @@
         </nav>
         <div class="icons">
             
-                <a href="">Register</a>
-                <a href="">Login</a></li>
-                <a href="">
+                <a data-cart="register" class="icon-header">Register</a>
+                <a data-cart="login" class="icon-header">Login</a></li>
+                <a data-cart="cart" class="icon-header">
                     <i class="fas fa-shopping-cart"></i>
                 </a>
             
@@ -326,7 +326,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus rem repellat ipsam ex soluta voluptas error ducimus illum consequuntur sit perferendis, inventore aliquam! Deserunt quisquam recusandae libero excepturi cumque dignissimos dolor cupiditate. Et harum ab doloribus dolores dolorum reiciendis provident minus sed eum nulla dolorem, necessitatibus cupiditate mollitia aperiam.</p>
                 <p style="font-size: 20px; margin-top:10px ;color: black;">Material</p>
             </div>
-            <div class="variations-form cart">
+            <div class="variations-form">
                 <div class="input-number">
                     <input type="number" min="1" max="10" name="" value="1">
                     <button class="plus"><i class="fas fa-plus"></i></button>
@@ -336,6 +336,54 @@
                 <p>Tags: </p>
             </div>
         </div>
+    </div>
+
+    <div class="cart cart-product" id="cart">
+        <a class="outCart" style="cursor: pointer;"><i class="fas fa-times"></i></a>
+        <span>
+            <i class="fas fa-shopping-cart"></i>
+            Cart
+        </span>
+    </div>
+
+    <div class="registration" id="register">
+        <h3>Registration</h3>
+        <div  class="form-label">
+            <label for="">User name</label>
+            <input type="text">
+        </div>
+        <div  class="form-label">
+            <label for="">Gmail</label>
+            <input type="text">
+        </div>
+        <div class="form-label">
+            <label for="">Password</label>
+            <input type="text">
+        </div>
+        <div class="form-label">
+            <label for="">Confirm Password</label>
+            <input type="text">
+        </div>
+        <input type="submit">
+
+    </div>
+    <div class="registration" id="login">
+        <h3>Login</h3>
+        <div  class="form-label">
+            <label for="">User name</label>
+            <input type="text">
+        </div>
+        
+        <div class="form-label">
+            <label for="">Password</label>
+            <input type="text">
+        </div>
+        <div class="form-label">
+            <label for="">Confirm Password</label>
+            <input type="text">
+        </div>
+        <input type="submit">
+
     </div>
 
     <footer>

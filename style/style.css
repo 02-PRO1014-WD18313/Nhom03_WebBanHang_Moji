@@ -289,6 +289,7 @@ ul li.active .slide .right-brown{
     font-size: 20px;
     margin-left: 15px;
     color: #666;
+    cursor: pointer;
 }
 .header .icons a:hover{
     color: #dfdfdf;
@@ -494,7 +495,7 @@ ul li.active .slide .right-brown{
     border-radius: 20px;
     opacity: 0;
     visibility: hidden;
-}
+}   
 
 .hover-product {
     position: relative;
@@ -779,7 +780,6 @@ ul li.active .slide .right-brown{
     width: 940px;
     height: 470px;
     border: 1px solid black;
-    
     border-radius: 20px;
     display: flex;
     opacity: 0;
@@ -903,8 +903,97 @@ del {
     font-size: 20px;
 }
 
+
+
+.cart.cart-product{
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+
+.cart-product {
+    width: 30%;
+    position: relative;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+.cart a {
+    font-size: 30px;
+    top: 10px;
+    left: 20px;
+    position: absolute;
+}
+
+.cart > span {
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+
+
+
+.registration {
+    border: 1px solid black;
+    position: fixed;
+    height: 50%;
+    width: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100    ;
+    opacity: 0;
+    visibility: hidden;
+    
+}
+
+.registration h3 {
+    text-align: center;
+    font-size: 30px;
+
+}
+
+.registration label {
+    font-size: 20px;
+}
+
+.registration .form-label {
+    margin-left: 30px;
+    margin: 10px;
+}
+
+.registration input {
+    padding: 10px 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .rushOut {
     opacity: 1;
     visibility: visible;
 }
-
