@@ -77,7 +77,6 @@ document.addEventListener("DOMContentLoaded", function() {
     countdown();
     function countdown(){
         let countDown = new Date("Nov 25, 2023 00:00:00").getTime();
-        console.log(countDown);
         x = setInterval(function(){
             let now = new Date().getTime();
             let distance = countDown - now;
@@ -90,4 +89,25 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }, 0);
     }
+    cart();
+    function cart(){
+        var icons = document.querySelectorAll('.icons .icon-header');
+        var outCart = document.querySelectorAll('.cart .outCart');
+        
+        for(var i = 0; i < icons.length; i++){
+           icons[i].addEventListener('click', function(){
+                var showingUp = this.getAttribute('data-cart');
+                var showingContent = document.getElementById(showingUp);
+                console.log(showingContent);
+                showingContent.classList.add('rushOut');
+                for(var j = 0; j < outCart.length; j++){
+                    outCart[j].addEventListener('click', function(){
+                        showingContent.classList.remove('rushOut');
+                    })
+                }
+           }) 
+        }
+    }
+
+
 }, false);
