@@ -54,4 +54,40 @@ document.addEventListener("DOMContentLoaded", function() {
             transferSlides[0].classList.add('transfer');
         }
     }
+    preview();
+    function preview(){
+        var click = document.querySelectorAll('.preview-icon');
+        var content = document.querySelectorAll('.content-wrapper');
+        var out = document.querySelectorAll('.icon-out');
+        // console.log(out);
+        for(var k=0; k < click.length; k++){
+            click[k].addEventListener('click', function(){
+                var showingUp = this.getAttribute('data-preview');
+                var showingContent = document.getElementById(showingUp);
+                showingContent.classList.add('rushOut');
+                // console.log(showingContent);
+                for(var i=0; i < out.length; i++){
+                    out[i].addEventListener('click', function(){
+                        showingContent.classList.remove('rushOut');
+                    })
+                }
+            })
+        }
+    }
+    countdown();
+    function countdown(){
+        let countDown = new Date("Nov 25, 2023 00:00:00").getTime();
+        console.log(countDown);
+        x = setInterval(function(){
+            let now = new Date().getTime();
+            let distance = countDown - now;
+            document.getElementById('days').innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById('hours').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById('minutes').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000);
+            if(distance < 0){
+                clearInterval(x);
+            }
+        }, 0);
+    }
 }, false);
