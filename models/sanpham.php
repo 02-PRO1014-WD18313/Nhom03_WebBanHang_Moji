@@ -17,7 +17,7 @@
     }
 
     function loadOne_sp($id) {
-        $sql = "SELECT * FROM `sanpham` where `idSP` = ".$id;
+        $sql = "SELECT * FROM `sanpham` where `id_sp` = '$id'";
         $get_sp = pdo_query_one($sql);
         return $get_sp;
     }
