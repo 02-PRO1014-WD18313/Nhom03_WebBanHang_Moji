@@ -17,7 +17,7 @@
                   <div class="card-body">
                     <h4 style="color: #cf76fa;">THÊM MỚI SẢN PHẨM</h4>
                     <br>
-                    <form class="forms-sample" method="post" enctype="multipart/form-data">
+                    <form class="forms-sample" method="post" action="index.php?act=add_sanpham" enctype="multipart/form-data" >
                       <div class="form-group">
                         <label for="exampleInputName1">Tên sản phẩm:</label>
                         <input type="text" class="form-control"  placeholder="Nhập tên" name="tensp">
@@ -40,7 +40,7 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleInputName1">Mô tả:</label>
-                        <input type="text" class="form-control"  placeholder="Nhập giá mới" name="mota">
+                        <input type="text" class="form-control"  placeholder="Nhập mô tả" name="mota">
                       </div>
                       <div class="form-group">
                         <label for="exampleSelectGender">Danh mục</label>
@@ -54,7 +54,7 @@
                       </div>
                       <div class="form-group">
                         <label>Ảnh:</label>
-                        <input type="file" name="imagesp" class="file-upload-default">
+                        
                         <div class="input-group col-xs-12">
                           <input type="file" class="form-control file-upload-info" placeholder="Upload Image" name="img">
                         </div>
