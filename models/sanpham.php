@@ -22,14 +22,14 @@
         return $get_sp;
     }
 
-    function update_sp($tensp, $id, $price, $soluong, $mo_ta, $img, $idLoai, $number_see, $giamgia) {
+    function update_sp($tensp, $id, $soluong, $giacu, $giamoi, $mota, $img, $iddm) {
         if($img != "") {
-            $sql = "UPDATE `sanpham` SET `tensp`='$tensp', `giatien` = '$price', `giamgia` = '$giamgia', `soluong` = '$soluong', `mota` = '$mo_ta',
-            `img` = '$img', `luotxem` = '$number_see', `idLoai` = '$idLoai' WHERE `idSP` = ".$id;
+            $sql = "UPDATE `sanpham` SET `tensp`='$tensp', `id_sp` = '$id', `soluong` = '$soluong', `giacu` = '$giacu', `giamoi` = '$giamoi',
+            `mota` = '$mota', `img` = '$img', `id_dm` = '$iddm' WHERE `id_sp` = '$id'";
         }
         else {
-            $sql = "UPDATE `sanpham` SET `tensp`='$tensp', `giatien` = '$price', `giamgia` = '$giamgia', `soluong` = '$soluong', `mota` = '$mo_ta',
-            `luotxem` = '$number_see', `idLoai` = '$idLoai' WHERE `idSP` = ".$id;
+            $sql = "UPDATE `sanpham` SET `tensp`='$tensp', `id_sp` = '$id', `soluong` = '$soluong', `giacu` = '$giacu', `giamoi` = '$giamoi',
+            `mota` = '$mota', `id_dm` = '$iddm' WHERE `id_sp` = '$id'";
         }
         pdo_execute($sql);
     }

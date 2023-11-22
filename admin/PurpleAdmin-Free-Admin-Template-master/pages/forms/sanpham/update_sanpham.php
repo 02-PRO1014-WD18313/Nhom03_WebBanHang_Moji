@@ -16,7 +16,7 @@
           <div class="card-body">
             <h4 style="color: #cf76fa;">CẬP NHẬT SẢN PHẨM</h4>
             <br>
-            <form class="forms-sample" method="post" action="index.php?act=updatedm">
+            <form class="forms-sample" method="post" action="index.php?act=updatesp&img=<?php echo $get_sp['img']; ?>" enctype="multipart/form-data">
               <div class="form-group">
                 <label for="exampleInputName1">Tên sản phẩm:</label>
                 <input type="text" class="form-control" name="tensp" value="<?php if(isset($tensp) && $tensp != "") echo $tensp; ?>">
@@ -57,7 +57,7 @@
                 </div>
                 <?php 
                     if($get_sp['img'] != "" && $get_sp['img'] != null) {
-                        echo "<img width='100' src='../../upload/".$get_sp['img']."' >";    
+                        echo "<img width='100' src='../../upload/sanpham/".$get_sp['img']."' >";    
                     } 
                 ?>
                 <div class="form-group">

@@ -49,7 +49,7 @@
                           <td>
                               <?php 
                                 if($value['img'] != "" && $value['img'] != null) {
-                                  echo "<img src='../../upload/".$value['img']."' >";    
+                                  echo "<img src='../../upload/danhmuc/".$value['img']."' >";    
                                 } 
                               ?>
                             </td>
