@@ -20,21 +20,7 @@
                   <div class="card-body">
                     <h4 class="card-title">Sản phẩm Nổi Bật</h4>
                     <div class="table-responsive">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th> Tên sản phẩm </th>
-                            <th> Mã sản phẩm </th>
-                            <th> Số lượng </th>
-                            <th> Giá cũ </th>
-                            <th> Giá mới </th>
-                            <th>Hành động</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          
-                        </tbody>
-                      </table>
+                      
                     </div>
                   </div>
                 </div>

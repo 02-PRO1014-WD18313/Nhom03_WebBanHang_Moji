@@ -59,6 +59,14 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
       include 'pages/forms/sanpham/list_sanpham.php';
       break;
 
+    case "sua_sp":
+      if(isset($_GET['id']) && ($_GET['id'])>0) {
+          $get_sp = loadOne_sp($_GET['id']);
+          $data_dm = loadAll_dm();
+      }
+      include 'pages/forms/sanpham/update_sanpham.php';
+      break; 
+
     case "list_danhmuc":
       $data_dm = loadAll_dm();
       include 'pages/forms/danhmuc/list_danhmuc.php';
@@ -68,7 +76,18 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
         if((isset($_POST['themmoidm'])) && ($_POST['themmoidm']) ){
           $ten_dm = $_POST['tendm'];
           $iddm = $_POST['iddm'];
-          insert_danhmuc($ten_dm, $iddm);
+          $img = $_FILES['img']['name'];
+          
+          $target_dir = "../../upload/";
+          $target_file = $target_dir . basename($_FILES["img"]["name"]);
+
+          if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
+              #echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+          } else {
+              #echo "Sorry, there was an error uploading your file.";
+          }
+
+          insert_danhmuc($ten_dm, $iddm, $img);
           $THONG_BAO = "BẠN ĐÃ THÊM THÀNH CÔNG!";
         };
         include 'pages/forms/danhmuc/add_danhmuc.php';
@@ -86,9 +105,26 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
         if(isset($_GET['id']) && ($_GET['id'])>0) {
             $get_dm = loadOne_dm($_GET['id']);
         }
-        include 'layout/danhmuc/updatedm.php';
+        include 'pages/forms/danhmuc/update_danhmuc.php';
         break; 
-    
+
+    case "updatedm":
+      if((isset($_POST['updatedm'])) && ($_POST['updatedm']) ){
+          $tendm = $_POST['tendm'];
+          $id = $_POST['iddm'];
+          $img = $_FILES['img']['name'];
+
+          $photo = null;
+          if($_FILES['img']['name'] != '') {
+            $photo = time() . "_" . $_FILES['imag']['name'];
+            move_uploaded_file($_FILES['img']['tmp_name'], "../../upload/$photo");
+          }
+          
+          update_dm($tendm, $id, $photo);
+      };
+      $data_dm = loadAll_dm();
+      include 'pages/forms/danhmuc/list_danhmuc.php';
+      break;
 
     case "timkiem":
         include '../views/timkiem.php';
