@@ -12,7 +12,7 @@
           <div class="card-body">
             <h4 style="color: #cf76fa;">CẬP NHẬT DANH MỤC</h4>
             <br>
-            <form class="forms-sample" method="post" action="index.php?act=updatedm">
+            <form class="forms-sample" method="post" action="index.php?act=updatedm&img=<?php echo $get_dm['img'] ?>" enctype="multipart/form-data">
               <div class="form-group">
                 <label for="exampleInputName1">Tên danh mục:</label>
                 <input type="text" class="form-control" name="tendm" value="<?php if(isset($tendm) && $tendm != "") echo $tendm; ?>">
@@ -23,7 +23,7 @@
               </div>
               <?php 
                 if($get_dm['img'] != "" && $get_dm['img'] != null) {
-                    echo "<img width='100' src='../../upload/".$get_dm['img']."' >";    
+                    echo "<img width='100' src='../../upload/danhmuc/".$get_dm['img']."' >";    
                 } 
                 ?> 
                 <div class="form-group">
