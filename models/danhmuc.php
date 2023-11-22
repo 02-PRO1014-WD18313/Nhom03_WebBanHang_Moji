@@ -1,6 +1,6 @@
 <?php 
-    function insert_danhmuc($ten_dm, $iddm) {
-        $sql = "INSERT INTO danhmuc(tendm, iddm) VALUES ('$ten_dm', '$iddm')";
+    function insert_danhmuc($ten_dm, $iddm, $img) {
+        $sql = "INSERT INTO danhmuc(tendm, iddm, img) VALUES ('$ten_dm', '$iddm', '$img')";
         pdo_execute($sql);
     }
 
@@ -16,13 +16,17 @@
     }
 
     function loadOne_dm($id) {
-        $sql = "SELECT * FROM `loaisp` where `idLoai` = ".$id;
+        $sql = "SELECT * FROM `danhmuc` where `iddm` = '$id'";
         $get_dm = pdo_query_one($sql);
         return $get_dm;
     }
 
-    function update_dm($tenloai, $id) {
-        $sql = "UPDATE `loaisp` SET `tenloai`='$tenloai' WHERE `idLoai` = ".$id;
+    function update_dm($tendm, $id, $img) {
+        if($img != "") {
+            $sql = "UPDATE `danhmuc` SET `tendm`='$tendm', `iddm` = '$id', `img` = '$img' WHERE `iddm` = '$id'";
+        } else {
+            $sql = "UPDATE `danhmuc` SET `tendm`='$tendm', `iddm` = '$id' WHERE `iddm` = '$id'";
+        }
         pdo_execute($sql);
     }
 ?>

@@ -32,6 +32,7 @@
                             <th></th>
                             <th> Tên danh mục </th>
                             <th> Mã danh mục </th>
+                            <th>Hình ảnh</th>
                             <th>Hành động</th>
                           </tr>
                         </thead>
@@ -45,6 +46,13 @@
                           <td><input class="form-check-input" type="checkbox" id="check1" name="option1"></td>
                           <td><?php echo $value['tendm']; ?></td>
                           <td><?php echo $value['iddm']; ?></td>
+                          <td>
+                              <?php 
+                                if($value['img'] != "" && $value['img'] != null) {
+                                  echo "<img src='../../upload/danhmuc/".$value['img']."' >";    
+                                } 
+                              ?>
+                            </td>
                           <td>
                               <a href="<?php echo $sua_dm ?>" type="button" class="btn btn-warning">Sửa</a>
                               <a href="<?php echo $xoa_dm ?>" type="button" class="btn btn-danger">Xóa</a>

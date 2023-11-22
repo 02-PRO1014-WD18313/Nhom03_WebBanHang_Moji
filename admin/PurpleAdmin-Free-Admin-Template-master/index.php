@@ -35,7 +35,7 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
         $img = $_FILES['img']['name'];
         $iddm = $_POST['danhmuc'];
 
-        $target_dir = "../../upload/";
+        $target_dir = "../../upload/sanpham/";
         $target_file = $target_dir . basename($_FILES["img"]["name"]);
 
         if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
@@ -59,6 +59,40 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
       include 'pages/forms/sanpham/list_sanpham.php';
       break;
 
+    case "sua_sp":
+      if(isset($_GET['id']) && ($_GET['id'])>0) {
+          $get_sp = loadOne_sp($_GET['id']);
+          $data_dm = loadAll_dm();
+      }
+      include 'pages/forms/sanpham/update_sanpham.php';
+      break; 
+
+    case "updatesp":
+      if((isset($_POST['updatesp'])) && ($_POST['updatesp']) ){
+          $tensp = $_POST['tensp'];
+          $id = $_POST['id_sp'];
+          $soluong = $_POST['soluong'];
+          $giacu = $_POST['giacu'];
+          $giamoi = $_POST['giamoi'];
+          $mota = $_POST['mota'];
+          $img = $_FILES['img']['name'];
+          $iddm = $_POST['danhmuc'];
+
+          $photo = '';
+          $last_img = $_GET['img'];
+          if($_FILES['img']['name'] != "" ) {
+              unlink("./../upload/sanpham/$last_img");
+              $photo = $_FILES['img']['name'];
+              move_uploaded_file($_FILES['img']['tmp_name'], "../../upload/sanpham/$photo");
+          }
+
+          update_sp($tensp, $id, $soluong, $giacu, $giamoi, $mota, $img, $iddm);
+          $THONG_BAO = "BẠN ĐÃ CẬP NHẬT THÀNH CÔNG!";
+      };
+      $data_sp = loadAll_sp();
+      include 'pages/forms/sanpham/list_sanpham.php';
+      break;
+
     case "list_danhmuc":
       $data_dm = loadAll_dm();
       include 'pages/forms/danhmuc/list_danhmuc.php';
@@ -68,7 +102,18 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
         if((isset($_POST['themmoidm'])) && ($_POST['themmoidm']) ){
           $ten_dm = $_POST['tendm'];
           $iddm = $_POST['iddm'];
-          insert_danhmuc($ten_dm, $iddm);
+          $img = $_FILES['img']['name'];
+          
+          $target_dir = "../../upload/danhmuc/";
+          $target_file = $target_dir . basename($_FILES["img"]["name"]);
+
+          if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
+              #echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+          } else {
+              #echo "Sorry, there was an error uploading your file.";
+          }
+
+          insert_danhmuc($ten_dm, $iddm, $img);
           $THONG_BAO = "BẠN ĐÃ THÊM THÀNH CÔNG!";
         };
         include 'pages/forms/danhmuc/add_danhmuc.php';
@@ -86,9 +131,29 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
         if(isset($_GET['id']) && ($_GET['id'])>0) {
             $get_dm = loadOne_dm($_GET['id']);
         }
-        include 'layout/danhmuc/updatedm.php';
+        include 'pages/forms/danhmuc/update_danhmuc.php';
         break; 
-    
+
+    case "updatedm":
+      if((isset($_POST['updatedm'])) && ($_POST['updatedm']) ){
+          $tendm = $_POST['tendm'];
+          $id = $_POST['iddm'];
+          $img = $_FILES['img']['name'];
+
+          $photo = '';
+          $last_img = $_GET['img'];
+          if($_FILES['img']['name'] != "" ) {
+              unlink("../../upload/danhmuc/$last_img");
+              $photo = $_FILES['img']['name'];
+              move_uploaded_file($_FILES['img']['tmp_name'], "../../upload/danhmuc/$photo");
+          }
+
+          update_dm($tendm, $id, $img);
+          $THONG_BAO = "BẠN ĐÃ CẬP NHẬT THÀNH CÔNG!";
+      };
+      $data_dm = loadAll_dm();
+      include 'pages/forms/danhmuc/list_danhmuc.php';
+      break;
 
     case "timkiem":
         include '../views/timkiem.php';
