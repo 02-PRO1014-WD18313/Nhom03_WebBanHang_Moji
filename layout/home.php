@@ -279,7 +279,7 @@
 </form>
 
 <form action="index.php?act=login" method="post">
-<div class="registration" id="login">
+<div class="registration login" id="login">
 <h3>Login</h3>
 <div  class="form-label">
     <label for="">User name:</label>
@@ -291,6 +291,8 @@
     <input type="text" name="password">
 </div>
 <input type="submit" name="login">
+<a class="outCart"><i class="fas fa-times"></i></a>
+
 <h4>
     <?php
     if(isset($THONG_BAO) && ($THONG_BAO!="")){

@@ -941,10 +941,14 @@ del {
     transform: translate(-50%);
 }
 
+.outCart {
+    cursor: pointer;
+}
 
 
-
-.registration {
+.registration#register,
+.login#login
+{
     border: 1px solid black;
     position: fixed;
     height: 50%;
@@ -953,15 +957,25 @@ del {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 100    ;
+}
+
+.registration {
+    position: relative;
     opacity: 0;
     visibility: hidden;
-    
 }
 
 .registration h3 {
     text-align: center;
     font-size: 30px;
 
+}
+
+.registration .outCart {
+    position: absolute;
+    font-size: 30px;
+    top: 10px;
+    right: 10px;
 }
 
 .registration label {
@@ -976,6 +990,7 @@ del {
 .registration input {
     padding: 10px 10px;
 }
+
 
 
 

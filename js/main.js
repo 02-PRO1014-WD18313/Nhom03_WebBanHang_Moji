@@ -92,13 +92,15 @@ document.addEventListener("DOMContentLoaded", function() {
     cart();
     function cart(){
         var icons = document.querySelectorAll('.icons .icon-header');
-        var outCart = document.querySelectorAll('.cart .outCart');
-        
+        var outCart = document.querySelectorAll('.fa-times');
+        console.log(outCart);
         for(var i = 0; i < icons.length; i++){
            icons[i].addEventListener('click', function(){
                 var showingUp = this.getAttribute('data-cart');
                 var showingContent = document.getElementById(showingUp);
-                console.log(showingContent);
+                for(var j = 0; j < showingContent.length; j++){
+                    this.classList.remove('rushOut')
+                }
                 showingContent.classList.add('rushOut');
                 for(var j = 0; j < outCart.length; j++){
                     outCart[j].addEventListener('click', function(){
