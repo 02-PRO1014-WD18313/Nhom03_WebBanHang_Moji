@@ -11,6 +11,7 @@
             case "home":
             include 'layout/home.php';
             break;
+
             case "login":
                 if((isset($_POST['login'])) && ($_POST['login']) ){
                     $username = $_POST['username'];
@@ -28,23 +29,23 @@
                 }
                 break;
             
-        case "login":
-            if((isset($_POST['login'])) && ($_POST['login']) ){
-                $username = $_POST['username'];
-                $password = $_POST['password'];
-        
-                $check_user = check_user($username, $password);
-        
-                if(is_array($check_user)) {
-                    $_SESSION['user'] = $check_user;
-                    header('location: index.php');
-                    exit(); // Kết thúc thực thi sau khi chuyển hướng
-                } else {
-                    include 'layout/home.php';
+            case "login":
+                if((isset($_POST['login'])) && ($_POST['login']) ){
+                    $username = $_POST['username'];
+                    $password = $_POST['password'];
+            
+                    $check_user = check_user($username, $password);
+            
+                    if(is_array($check_user)) {
+                        $_SESSION['user'] = $check_user;
+                        header('location: index.php');
+                        exit(); // Kết thúc thực thi sau khi chuyển hướng
+                    } else {
+                        include 'layout/home.php';
+                    }
                 }
-            }
-            break;
-            ob_end_flush();
+                break;
+                ob_end_flush();
 
             case "register":
                 if((isset($_POST['register'])) && ($_POST['register']) ){
