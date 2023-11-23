@@ -196,6 +196,19 @@
     foreach ($spnew as $sp) {
         extract($sp);
         $hinh=$img_path."sanpham/".$img;
+        $check=$id_sp;
+        $foundItems = array();
+        foreach ($_SESSION['mycart'] as $sp) {
+        if ($sp[0] == $check) {
+        $foundItems[] = $sp[0];
+        }
+        }
+        $dh=0;
+        if(count($foundItems)==0){
+            $dh='name="addtocart"';
+        } else {
+            $dh='onclick="thongbao()"';
+        }
         echo '<div class="isotope-item product">
                     <img src="'.$hinh.'" alt="">
                     <h4><a href="#">'.$tensp.'</a></h4>
@@ -207,7 +220,7 @@
                         <input type="hidden" name="giacu" value="'.$giacu.'">
                         <input type="hidden" name="giamoi" value="'.$giamoi.'">
                         <input type="hidden" name="img" value="'.$img.'">
-                        <input type="submit" value="Thêm vào giỏ hàng">
+                        <input type="submit" '.$dh.' value="Thêm vào giỏ hàng">
                     </form>
                 </div>';
     }

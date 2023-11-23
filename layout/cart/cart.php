@@ -1,4 +1,4 @@
-<div class="mt" style="height: auto;width: 100%;">
+<div class="mt" style="height: auto;width: 100%;background-color: rgba(0, 0, 0, 0.07);">
        <div class="box" style="width: 100%;height:75px;padding: 20px 9%;display: block;border-bottom: 1px solid #66666637;background-color: #ffffff;">
             <div style="float: left;color: #666;font-size: x-large;padding-right: 30px;border-right: 1px solid #666;">
                 <p>Giỏ Hàng</p>
@@ -21,6 +21,7 @@
                                     <th>Số lượng</th>
                                     <th>Thành tiền</th>
                                     <th>Thao tác</th>
+                                    <span></span>
                                 </tr>
                                     
                                 <?php
@@ -37,7 +38,7 @@
                                                     <div class="counter-container" style="display: flex;justify-content: center;">
                                                         <div class="count" id="counter1">
                                                             <button class="counter-button" onclick="adjustCounter('.$cart[0].', -1)">-</button>
-                                                            <input id="'.$cart[0].'" name="1" class="counter-input" type="text" value="'.$cart[5].'" readonly>
+                                                            <input id="'.$cart[0].'" name="'.$cart[0].'" class="counter-input" type="text" value="'.(int)$cart[5].'" readonly>
                                                             <button class="counter-button" onclick="adjustCounter('.$cart[0].', 1)">+</button>
                                                         </div>
                                                     </div>
@@ -72,7 +73,7 @@
                     </div>
             </div>
        </div>
-       <div class="box_1" style="width: 100%;padding:0px 9%;height: 33vh; margin-bottom: 30px;">
+       <div class="box_1" style="width: 100%;padding:0px 9%;height: 33vh; margin-bottom: 0px;">
             <div class="bo1 hbo">
                 <p class="ct">Tổng sản phẩm: <span class="ik">2</span></p>
             </div>

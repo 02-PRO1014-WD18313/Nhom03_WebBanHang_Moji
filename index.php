@@ -25,13 +25,18 @@
                 include 'layout/home.php';
             break;
 
+            case "unset":
+                session_destroy();
+                include 'layout/home.php';
+            break;
+
 
             case "viewcart":
                 include 'layout/cart/cart.php';
             break;
 
             case 'addtocart':
-                if(isset($_POST['addtocart']) && ($_POST['addtocart'])){ 
+                if(isset($_POST['addtocart']) && ($_POST['addtocart'])){
                     $id=$_POST['id'];
                     $ten=$_POST['name'];
                     $img=$_POST['img'];
