@@ -112,7 +112,7 @@
         // echo $giacu
 ?>
 <div class="products-wrapper">
-    <?php foreach($data_sp_top8 as $value): ?>
+    
     <div class="isotope-item product">
 
         <img src="../upload/danhmuc/bongtaivang.png" alt="">
