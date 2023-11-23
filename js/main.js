@@ -74,40 +74,61 @@ document.addEventListener("DOMContentLoaded", function() {
             })
         }
     }
-    countdown();
-    function countdown(){
-        let countDown = new Date("Nov 25, 2023 00:00:00").getTime();
-        x = setInterval(function(){
-            let now = new Date().getTime();
-            let distance = countDown - now;
-            document.getElementById('days').innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-            document.getElementById('hours').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById('minutes').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000);
-            if(distance < 0){
-                clearInterval(x);
-            }
-        }, 0);
-    }
-    cart();
-    function cart(){
-        var icons = document.querySelectorAll('.icons .icon-header');
-        var outCart = document.querySelectorAll('.cart .outCart');
+    // countdown();
+    // function countdown(){
+    //     let countDown = new Date("Nov 25, 2023 00:00:00").getTime();
+    //     x = setInterval(function(){
+    //         let now = new Date().getTime();
+    //         let distance = countDown - now;
+    //         document.getElementById('days').innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+    //         document.getElementById('hours').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    //         document.getElementById('minutes').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    //         document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000);
+    //         if(distance < 0){
+    //             clearInterval(x);
+    //         }
+    //     }, 0);
+    // }
+    // cart();
+    // function cart(){
+    //     var icons = document.querySelectorAll('.icons .icon-header');
+    //     var outCart = document.querySelectorAll('.cart .outCart');
         
-        for(var i = 0; i < icons.length; i++){
-           icons[i].addEventListener('click', function(){
-                var showingUp = this.getAttribute('data-cart');
-                var showingContent = document.getElementById(showingUp);
-                console.log(showingContent);
-                showingContent.classList.add('rushOut');
-                for(var j = 0; j < outCart.length; j++){
-                    outCart[j].addEventListener('click', function(){
-                        showingContent.classList.remove('rushOut');
-                    })
-                }
-           }) 
-        }
-    }
+    //     for(var i = 0; i < icons.length; i++){
+    //        icons[i].addEventListener('click', function(){
+    //             var showingUp = this.getAttribute('data-cart');
+    //             var showingContent = document.getElementById(showingUp);
+    //             console.log(showingContent);
+    //             showingContent.classList.add('rushOut');
+    //             for(var j = 0; j < outCart.length; j++){
+    //                 outCart[j].addEventListener('click', function(){
+    //                     showingContent.classList.remove('rushOut');
+    //                 })
+    //             }
+    //        }) 
+    //     }
+    // }
 
 
 }, false);
+
+function adjustCounter(productId, value) {
+    var counterInput = document.getElementById(productId);
+    var counterValue = parseInt(counterInput.value);
+
+    if (value === 1 || (value === -1 && counterValue > 0)) {
+        counterValue += value;
+        counterInput.value = counterValue;
+
+        // Lấy giá của sản phẩm từ ô chứa giá
+        var productPriceCell = document.getElementById(productId).closest('td').querySelector('.product-price');
+        var pricePerUnit = parseFloat(productPriceCell.textContent);
+
+        // Tính toán lại thành tiền và cập nhật giá trị trong ô "Thành tiền"
+        var totalPrice = pricePerUnit * counterValue;
+        var totalPriceCell = document.getElementById(productId).closest('td').querySelector('.total-price');
+        totalPriceCell.textContent = totalPrice;
+
+        // Thêm mã để cập nhật thành tiền tương ứng nếu cần
+    }
+}

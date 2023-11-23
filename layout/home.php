@@ -1,29 +1,107 @@
 
+
+<div class="slide-wrapper">
+
+    <div class="slides">
+        <ul>
+            <li class="active">
+                <div class="slide">
+                    <div class="img" style="background-image: url(image/slide1.avif);"></div>
+                    <img src="image/big_brown.png" alt="" class="below-brown">
+                    <img src="image/big_brown.png" alt="" class="above-brown">
+                    <img src="image/small_brown.png" alt="" class="right-brown">
+                    <div class="text-content">
+                        <h2>01</h2>
+                        <small>TH true milk</small>
+                        <div class="dot"></div>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, quod perferendis. Earum, optio veritatis? Corrupti incidunt sed asperiores eligendi necessitatibus, soluta dolor atque vitae blanditiis nobis fugit est eius aliquid.</p>
+                        <a href="" class="button">See Project</a>
+                    </div>
+                    
+                </div>
+            </li>
+            <li>
+                <div class="slide">
+                    <div class="img" style="background-image: url('image/slide2.avif');"></div>
+                    <img src="image/big_blue.png" alt="" class="below-brown">
+                    <img src="image/big_blue.png" alt="" class="above-brown">
+                    <img src="image/small_blue.png" alt="" class="right-brown">
+                    <div class="text-content">
+                        <h2>02</h2>
+                        <small>TH true milk</small>
+                        <div class="dot"></div>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, quod perferendis. Earum, optio veritatis? Corrupti incidunt sed asperiores eligendi necessitatibus, soluta dolor atque vitae blanditiis nobis fugit est eius aliquid.</p>
+                        <a href="" class="button">See Project</a>
+                    </div>
+                    
+                </div>
+            </li>
+            <li>
+                <div class="slide">
+                    <div class="img" style="background-image: url(image/slide3.avif);"></div>
+                    <img src="image/big_red.png" alt="" class="below-brown">
+                    <img src="image/big_red.png" alt="" class="above-brown">
+                    <img src="image/small_red.png" alt="" class="right-brown">
+                    <div class="text-content">
+                        <h2>03</h2>
+                        <small>TH true milk</small>
+                        <div class="dot"></div>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, quod perferendis. Earum, optio veritatis? Corrupti incidunt sed asperiores eligendi necessitatibus, soluta dolor atque vitae blanditiis nobis fugit est eius aliquid.</p>
+                        <a href="" class="button">See Project</a>
+                    </div>
+                    
+                </div>
+            </li>
+        </ul>
+        
+    </div>
+    <div class="transfer-slides">
+        <ul>
+            <li class="transfer">1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+</div>
 <div class="h2">
 
 <h2 class="h2_title">Lorem ipsum dolor <br> sit amet </h2>
 </div>
 <div class="section">
-<div class="section_wrapper section_wrapper_1 " style="background-image: url(image/19\(1\).jpg);">
-    <div class="section_title section_title_1">
-        <h6>Our recommendation</h6>
-        <h2>Do Ngoc</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, fugiat!</p>
-        <a href="" class="button button_size_2">
-            <span class="button_label">Buy Now</span>
-        </a>
+<?php
+    if(is_array($one)){
+        extract($one);
+    }
+    $hinhone=$img_path."sanpham/".$img;
+?>
+        
+        
+    <div class="section_wrapper section_wrapper_1 " style="background-image: url(<?php echo $hinhone ?>);">
+        <div class="section_title section_title_1">
+            <h6>Our recommendation</h6>
+            <h2><?php echo $tensp ?></h2>
+            <p><?php echo $mota ?></p>
+            <a href="" class="button button_size_2">
+                <span class="button_label">Buy Now</span>
+            </a>
+        </div>
     </div>
-</div>
-<div class="section_wrapper section_wrapper_2 " style="background-image: url(image/24b8bf665b798f7fd8418bf16b0cfa66.jpg);">
-    <div class="section_title section_title_2">
-        <h6>Our recommendation</h6>
-        <h2>Do Ngoc</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, fugiat!</p>
-        <a href="" class="button button_size_2">
-            <span class="button_label">Product</span>
-        </a>
+    <?php
+    if(is_array($two)){
+        extract($two);
+    }
+    $hinhtwo=$img_path."sanpham/".$img;
+?>
+    <div class="section_wrapper section_wrapper_2 " style="background-image: url(<?php echo $hinhtwo ?>);">
+        <div class="section_title section_title_2">
+            <h6>Our recommendation</h6>
+            <h2><?php echo $tensp ?></h2>
+            <p class="np"><?php echo $mota ?></p>
+            <a href="" class="button button_size_2">
+                <span class="button_label">Product</span>
+            </a>
+        </div>
     </div>
-</div>
 </div>
 
 <div class="mcb mcb-wrap one">
@@ -34,7 +112,19 @@
     </div>
 </div>
 <div class="categorys-wrapper ">
-    <div class="isotope-item category">
+    <?php
+        foreach ($dmhome as $dm) {
+            extract($dm);
+            $hinhdm=$img_path."danhmuc/".$img;
+            echo '<div class="isotope-item category">
+                    <img src="'.$hinhdm.'" alt="">
+                    <h4>
+                        <a href="#">'.$tendm.'</a>
+                    </h4>
+                </div>';
+        }
+    ?>
+    <!-- <div class="isotope-item category">
         <img src="image/gnddddw003706-nhan-kim-cuong-vang-trang-14k-pnj-true-love-19-1.png" alt="">
         <h4>
             <a href="#">Wedding ring</a>
@@ -51,7 +141,7 @@
         <h4>
             <a href="#">Earrings</a>
         </h4>
-    </div>
+    </div> -->
     
 </div>
 </div>
@@ -101,7 +191,28 @@
     </div>
 </div>
 <div class="products-wrapper">
-    <div class="isotope-item product">
+    
+    <?php
+    foreach ($spnew as $sp) {
+        extract($sp);
+        $hinh=$img_path."sanpham/".$img;
+        echo '<div class="isotope-item product">
+                    <img src="'.$hinh.'" alt="">
+                    <h4><a href="#">'.$tensp.'</a></h4>
+                    <span><del>'.$giacu.'</del> - '.$giamoi.'</span>
+                    <button class="onsale sale-label">On Sale</button>
+                    <form action="index.php?act=addtocart" method="post">
+                        <input type="hidden" name="id" value="'.$id_sp.'">
+                        <input type="hidden" name="name" value="'.$tensp.'">
+                        <input type="hidden" name="giacu" value="'.$giacu.'">
+                        <input type="hidden" name="giamoi" value="'.$giamoi.'">
+                        <input type="hidden" name="img" value="'.$img.'">
+                        <input type="submit" value="Thêm vào giỏ hàng">
+                    </form>
+                </div>';
+    }
+    ?>
+    <!-- <div class="isotope-item product">
         <img src="image/sbxmxmk000155-bong-tai-bac-dinh-da-pnjsilver-4002.png" alt="">
         <h4><a href="#">ABC</a></h4>
         <span>110$ - 220$</span>
@@ -113,60 +224,14 @@
                 <a class="icon preview-icon" data-preview="preview" ><i class="fas fa-link"></i></a>
             </div>
         </div>
-    </div>
-    <div class="isotope-item product">
+    </div> -->
+    
+    <!-- <div class="isotope-item product">
         <img src="image/sbxmxmk000155-bong-tai-bac-dinh-da-pnjsilver-4002.png" alt="">
         <h4><a href="#">ABC</a></h4>
         <span>110$ - 220$</span>
         <button class="onsale sale-label">On Sale</button>
-        <div class="hover-product">
-            <div class="icons-product">
-                <a class="icon first-icon"  href="#"><i class="fas fa-heart"></i></a>
-                <a class="icon" href="#"><i class="fas fa-snowflake"></i></a>
-                <a class="icon preview-icon"data-preview="preview_1"><i class="fas fa-link"></i></a>
-            </div>
-        </div>
-    </div>
-    <div class="isotope-item product">
-        <img src="image/sbxmxmk000155-bong-tai-bac-dinh-da-pnjsilver-4002.png" alt="">
-        <h4><a href="#">ABC</a></h4>
-        <span>110$ - 220$</span>
-        <button class="onsale sale-label">On Sale</button>
-
-    </div>
-    <div class="isotope-item product">
-        <img src="image/sbxmxmk000155-bong-tai-bac-dinh-da-pnjsilver-4002.png" alt="">
-        <h4><a href="#">ABC</a></h4>
-        <span>110$ - 220$</span>
-        <button class="onsale sale-label">On Sale</button>
-    </div>
-    <div class="isotope-item product">
-        <img src="image/sbxmxmk000155-bong-tai-bac-dinh-da-pnjsilver-4002.png" alt="">
-        <h4><a href="#">ABC</a></h4>
-        <span>110$ - 220$</span>
-        <button class="onsale sale-label">On Sale</button>
-
-    </div>
-    <div class="isotope-item product">
-        <img src="image/sbxmxmk000155-bong-tai-bac-dinh-da-pnjsilver-4002.png" alt="">
-        <h4><a href="#">ABC</a></h4>
-        <span>110$ - 220$</span>
-        <button class="onsale sale-label">On Sale</button>
-
-    </div>
-    <div class="isotope-item product">
-        <img src="image/sbxmxmk000155-bong-tai-bac-dinh-da-pnjsilver-4002.png" alt="">
-        <h4><a href="#">ABC</a></h4>
-        <span>110$ - 220$</span>
-        <button class="onsale sale-label">On Sale</button>
-
-    </div>
-    <div class="isotope-item product">
-        <img src="image/sbxmxmk000155-bong-tai-bac-dinh-da-pnjsilver-4002.png" alt="">
-        <h4><a href="#">ABC</a></h4>
-        <span>110$ - 220$</span>
-        <button class="onsale sale-label">On Sale</button>
-    </div>
+    </div> -->
 </div>
 </div>
 
@@ -174,17 +239,29 @@
 
 
     <div class="parent-product">
-        <div class="parent-product-overlay">
+    <?php
+    foreach ($dc2 as $sp) {
+        extract($sp);
+        $hinh=$img_path."sanpham/".$img;
+        echo '<div class="parent-product-overlay product-2">
+                <img src="'.$hinh.'" alt="">
+                <button class="onsale sale-label">On Sale</button>
+                <h4>'.$tensp.'</h4>
+                <span><del>'.$giacu.'</del> - '.$giamoi.'</span>
+            </div>';
+    }
+    ?>
+        <!-- <div class="parent-product-overlay">
             <img src="image/24b8bf665b798f7fd8418bf16b0cfa66.jpg" alt="">
             <h4>ABC</h4>
             <p>Giá</p>
         </div>
         <div class="parent-product-overlay product-2">
             <img src="image/24b8bf665b798f7fd8418bf16b0cfa66.jpg" alt="">
-        <button class="onsale sale-label">On Sale</button>
+            <button class="onsale sale-label">On Sale</button>
             <h4>ABC</h4>
             <p>Giá</p>
-        </div>
+        </div> -->
     </div>
 </div>
 

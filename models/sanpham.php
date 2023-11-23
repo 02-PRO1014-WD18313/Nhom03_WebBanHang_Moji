@@ -16,10 +16,35 @@
         return $data_sp;       
     }
 
+    function loadall_sanpham_home(){
+        $sql = "select * from sanpham where 1 order by id_sp desc limit 0,8";
+        $listsanpham=pdo_query($sql);
+        return $listsanpham;
+    }
+
+    function loadall_sanpham_home_2(){
+        $sql = "select * from sanpham where id_dm = 'DC01' order by id_sp desc limit 0,2";
+        $listsanpham=pdo_query($sql);
+        return $listsanpham;
+    }
+
     function loadOne_sp($id) {
         $sql = "SELECT * FROM `sanpham` where `id_sp` = '$id'";
         $get_sp = pdo_query_one($sql);
         return $get_sp;
+    }
+
+
+    function loadOne_sp_nhan_home(){
+        $sql = "select * from sanpham where id_dm = 'NH01' order by soluong desc limit 1";
+        $get_sp = pdo_query_one($sql);
+        return $get_sp;
+    }
+
+    function loadOne_sp_daychuyen_home(){
+        $sql = "select * from sanpham where id_dm = 'DC01' order by soluong desc limit 1";
+        $get_dm = pdo_query_one($sql);
+        return $get_dm;
     }
 
     function update_sp($tensp, $id, $soluong, $giacu, $giamoi, $mota, $img, $iddm) {
