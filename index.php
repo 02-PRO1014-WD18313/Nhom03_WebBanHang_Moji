@@ -3,14 +3,18 @@
     session_start();
     include 'models/pdo.php';
     include 'models/taikhoan.php';
+    include 'models/danhmuc.php';
+    include 'models/sanpham.php';
     include 'layout/header.php';
     // main
     if(isset($_GET['act']) && $_GET['act'] != "") {
         $act = $_GET['act'];
         switch($act) {
             case "home":
-            include 'layout/home.php';
-            break;
+                $data_sp_top8 = loadAll_sp_top8();
+                $data_dm = loadAll_dm();
+                include 'layout/home.php';
+                break;
 
             case "login":
                 if((isset($_POST['login'])) && ($_POST['login']) ){
@@ -60,6 +64,8 @@
             break;
         }
     } else {
+        $data_sp_top8 = loadAll_sp_top8();
+        $data_dm = loadAll_dm();
         include 'layout/home.php';
     }
 

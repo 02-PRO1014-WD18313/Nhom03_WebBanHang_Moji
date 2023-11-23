@@ -1096,3 +1096,19 @@ del {
     font-size: 56px;
     text-align: center;
 }
+
+.price {
+    display: flex;
+    margin-left: 10px;
+}
+
+.newprice {
+    color: rgb(199, 3, 3);
+    margin-right: 10px;
+}
+
+.oldprice {
+    color: gray;
+    text-decoration: line-through;
+    text-align: center;
+}
