@@ -47,30 +47,13 @@
         foreach ($data_dm as $value):
     ?>
     <div class="isotope-item category">
-        <img src="../upload/danhmuc/bongtaivang.png" alt="">
+        <img src="<?php echo "../upload/danhmuc/$img"?>" alt="">
         <h4>
             <a href="#"><?php echo $value['tendm']?></a>
         </h4>
     </div>
     <?php endforeach; ?>
-    <!-- <div class="isotope-item category">
-        <img src="image/gnddddw003706-nhan-kim-cuong-vang-trang-14k-pnj-true-love-19-1.png" alt="">
-        <h4>
-            <a href="#">Wedding ring</a>
-        </h4>
-    </div>
-    <div class="isotope-item category">
-        <img src="image/smxmxmk000062-mat-day-chuyen-bac-dinh-da-pnjsilver-2.png" alt="">
-        <h4>
-            <a href="#">Necklace</a>
-        </h4>
-    </div>
-    <div class="isotope-item category">
-        <img src="image/sbxmxmk000155-bong-tai-bac-dinh-da-pnjsilver-4002.png" alt="">
-        <h4>
-            <a href="#">Earrings</a>
-        </h4>
-    </div> -->
+    
     
 </div>
 </div>
