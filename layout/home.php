@@ -1,3 +1,4 @@
+
     <?php
         if(is_array($data_dm)){
             extract($data_dm);
@@ -8,6 +9,7 @@
             // print_r($data_sp_top8);
         }
     ?>
+
 <div class="h2">
 
 <h2 class="h2_title">Lorem ipsum dolor <br> sit amet </h2>
@@ -43,6 +45,7 @@
     </div>
 </div>
 <div class="categorys-wrapper ">
+
     <?php
         foreach ($data_dm as $value):
     ?>
@@ -54,6 +57,7 @@
     </div>
     <?php endforeach; ?>
     
+
     
 </div>
 </div>
@@ -108,7 +112,9 @@
         // echo $giacu
 ?>
 <div class="products-wrapper">
+    <?php foreach($data_sp_top8 as $value): ?>
     <div class="isotope-item product">
+
         <img src="../upload/danhmuc/bongtaivang.png" alt="">
         <h4><a href="#"> <?php echo $tensp?></a></h4>
         <span><?php echo $giacu?>$ - <?php echo $giamoi?>$</span>
@@ -129,15 +135,17 @@
         <img src="image/sbxmxmk000155-bong-tai-bac-dinh-da-pnjsilver-4002.png" alt="">
         <h4><a href="#">ABC</a></h4>
         <span>110$ - 220$</span>
+
         <button class="onsale sale-label">On Sale</button>
         <div class="hover-product">
             <div class="icons-product">
                 <a class="icon first-icon"  href="#"><i class="fas fa-heart"></i></a>
                 <a class="icon" href="#"><i class="fas fa-snowflake"></i></a>
-                <a class="icon preview-icon"data-preview="preview_1"><i class="fas fa-link"></i></a>
+                <a class="icon preview-icon" data-preview="preview" ><i class="fas fa-link"></i></a>
             </div>
         </div>
     </div>
+
     <div class="isotope-item product">
         <img src="image/sbxmxmk000155-bong-tai-bac-dinh-da-pnjsilver-4002.png" alt="">
         <h4><a href="#">ABC</a></h4>
@@ -178,6 +186,7 @@
         <span>110$ - 220$</span>
         <button class="onsale sale-label">On Sale</button>
     </div> -->
+
 </div>
 
 <div class="backgound mcb" style="background-image: url(image/nhan1-e99b36_preview_rev_1.png);">
