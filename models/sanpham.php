@@ -39,4 +39,9 @@
         $get_sp = pdo_query($sql);
         return $get_sp;
     }
+    function loadAll_sp_top8() {
+        $sql = "SELECT * FROM `sanpham` order by `id_sp` desc limit 0,8";
+        $data_sp = pdo_query($sql);
+        return $data_sp;       
+    }
 ?>

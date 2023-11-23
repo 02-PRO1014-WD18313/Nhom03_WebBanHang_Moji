@@ -3,8 +3,12 @@
     session_start();
     include 'models/pdo.php';
     include 'models/taikhoan.php';
+    include 'models/sanpham.php';
+    include 'models/danhmuc.php';
     include 'layout/header.php';
     // main
+    $data_sp_top8 = loadAll_sp_top8();
+    $data_dm = loadAll_dm();
     if(isset($_GET['act']) && $_GET['act'] != "") {
         $act = $_GET['act'];
         switch($act) {
@@ -58,6 +62,7 @@
                 };
             include 'layout/home.php';
             break;
+            
         }
     } else {
         include 'layout/home.php';

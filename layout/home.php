@@ -1,4 +1,13 @@
-
+    <?php
+        if(is_array($data_dm)){
+            extract($data_dm);
+            // print_r($data_dm);
+        }
+        if(is_array($data_sp_top8)) {
+            extract($data_sp_top8);
+            // print_r($data_sp_top8);
+        }
+    ?>
 <div class="h2">
 
 <h2 class="h2_title">Lorem ipsum dolor <br> sit amet </h2>
@@ -34,13 +43,17 @@
     </div>
 </div>
 <div class="categorys-wrapper ">
+    <?php
+        foreach ($data_dm as $value):
+    ?>
     <div class="isotope-item category">
-        <img src="image/gnddddw003706-nhan-kim-cuong-vang-trang-14k-pnj-true-love-19-1.png" alt="">
+        <img src="../upload/danhmuc/bongtaivang.png" alt="">
         <h4>
-            <a href="#">Wedding ring</a>
+            <a href="#"><?php echo $value['tendm']?></a>
         </h4>
     </div>
-    <div class="isotope-item category">
+    <?php endforeach; ?>
+    <!-- <div class="isotope-item category">
         <img src="image/gnddddw003706-nhan-kim-cuong-vang-trang-14k-pnj-true-love-19-1.png" alt="">
         <h4>
             <a href="#">Wedding ring</a>
@@ -57,7 +70,7 @@
         <h4>
             <a href="#">Earrings</a>
         </h4>
-    </div>
+    </div> -->
     
 </div>
 </div>
@@ -106,11 +119,16 @@
         Best choice
     </div>
 </div>
+<?php
+    foreach ($data_sp_top8 as $value) :
+        extract($value);
+        // echo $giacu
+?>
 <div class="products-wrapper">
     <div class="isotope-item product">
-        <img src="image/sbxmxmk000155-bong-tai-bac-dinh-da-pnjsilver-4002.png" alt="">
-        <h4><a href="#">ABC</a></h4>
-        <span>110$ - 220$</span>
+        <img src="../upload/danhmuc/bongtaivang.png" alt="">
+        <h4><a href="#"> <?php echo $tensp?></a></h4>
+        <span><?php echo $giacu?>$ - <?php echo $giamoi?>$</span>
         <button class="onsale sale-label">On Sale</button>
         <div class="hover-product">
             <div class="icons-product">
@@ -120,7 +138,11 @@
             </div>
         </div>
     </div>
-    <div class="isotope-item product">
+</div>
+<?php endforeach; ?>
+
+
+    <!-- <div class="isotope-item product">
         <img src="image/sbxmxmk000155-bong-tai-bac-dinh-da-pnjsilver-4002.png" alt="">
         <h4><a href="#">ABC</a></h4>
         <span>110$ - 220$</span>
@@ -172,8 +194,7 @@
         <h4><a href="#">ABC</a></h4>
         <span>110$ - 220$</span>
         <button class="onsale sale-label">On Sale</button>
-    </div>
-</div>
+    </div> -->
 </div>
 
 <div class="backgound mcb" style="background-image: url(image/nhan1-e99b36_preview_rev_1.png);">
