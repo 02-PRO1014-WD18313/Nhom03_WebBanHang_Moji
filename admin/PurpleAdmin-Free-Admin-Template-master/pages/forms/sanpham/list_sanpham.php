@@ -57,7 +57,7 @@
                             <td>
                               <?php 
                                 if($value['img'] != "" && $value['img'] != null) {
-                                  echo "<img width='200' src='../../upload/".$value['img']."' >";    
+                                  echo "<img width='200' src='../../upload/sanpham/".$value['img']."' >";    
                                 } 
                               ?>
                             </td>

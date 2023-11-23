@@ -21,9 +21,9 @@
         return $get_dm;
     }
 
-    function update_dm($tendm, $id, $photo) {
+    function update_dm($tendm, $id, $img) {
         if($img != "") {
-            $sql = "UPDATE `danhmuc` SET `tendm`='$tendm', `iddm` = '$id', `img` = '$photo' WHERE `iddm` = '$id'";
+            $sql = "UPDATE `danhmuc` SET `tendm`='$tendm', `iddm` = '$id', `img` = '$img' WHERE `iddm` = '$id'";
         } else {
             $sql = "UPDATE `danhmuc` SET `tendm`='$tendm', `iddm` = '$id' WHERE `iddm` = '$id'";
         }
