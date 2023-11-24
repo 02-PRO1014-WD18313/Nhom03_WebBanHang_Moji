@@ -7,7 +7,7 @@
 include '../../models/pdo.php';
 include '../../models/danhmuc.php';
 include '../../models/sanpham.php';
-
+include '../../models/taikhoan.php';
 include 'layout/header.php'; 
   
 include 'layout/sidebar.php'; 
@@ -154,6 +154,26 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
       $data_dm = loadAll_dm();
       include 'pages/forms/danhmuc/list_danhmuc.php';
       break;
+
+      case "list_user":
+        $data_user = loadAll_user();
+        include 'pages/forms/user/list_user.php';
+        break;
+
+      case "xoa_user":
+        if(isset($_GET['id']) && ($_GET['id'])>0) {
+          delete_user($_GET['id']);
+        }
+        $data_user = loadAll_user();
+        include 'pages/forms/user/list_user.php';
+        break;
+
+        case "sua_user":
+          if(isset($_GET['id']) && ($_GET['id'])>0) {
+              $get_user = loadOne_user($_GET['id']);
+          }
+          include 'pages/forms/user/update_user.php';
+          break;
 
     case "timkiem":
         include '../views/timkiem.php';

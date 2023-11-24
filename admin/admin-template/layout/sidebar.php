@@ -29,26 +29,26 @@
                 <i class="mdi mdi-format-list-bulleted menu-icon"></i>
               </div></li>
             <ul id="submenu1" class="submenu">
-                <li><i class="fa-regular fa-circle" style="color: #8a24bbcf;"></i><a href="../PurpleAdmin-Free-Admin-Template-master/index.php?act=add_danhmuc" class="nav-submenu"> Thêm mới danh mục</a></li>
-                <li><i class="fa-regular fa-circle" style="color: #8a24bbcf;"></i><a href="../PurpleAdmin-Free-Admin-Template-master/index.php?act=list_danhmuc" class="nav-submenu"> Danh sách danh mục</a> </li>
+                <li><i class="fa-regular fa-circle" style="color: #8a24bbcf;"></i><a href="../admin-template/index.php?act=add_danhmuc" class="nav-submenu"> Thêm mới danh mục</a></li>
+                <li><i class="fa-regular fa-circle" style="color: #8a24bbcf;"></i><a href="../admin-template/index.php?act=list_danhmuc" class="nav-submenu"> Danh sách danh mục</a> </li>
             </ul>
 
-        <li class="nav-item" onclick="toggleSubMenu('submenu2')"><div class="nav-link">
-                <span class="menu-title" >Sản phẩm</span>
-                <i class="fa-regular fa-gem" style="color: #bba8bff5;"></i>
-              </div></li>
-        <ul id="submenu2" class="submenu">
-            <li><i class="fa-regular fa-circle" style="color: #8a24bbcf;"></i><a href="../PurpleAdmin-Free-Admin-Template-master/index.php?act=add_sanpham" class="nav-submenu"> Thêm mới sản phẩm</a></a></li>
-            <li><i class="fa-regular fa-circle" style="color: #8a24bbcf;"></i><a href="../PurpleAdmin-Free-Admin-Template-master/index.php?act=list_sanpham" class="nav-submenu"> Danh sách sản phẩm</a> </li>
-        </ul>
+            <li class="nav-item" onclick="toggleSubMenu('submenu2')"><div class="nav-link">
+                    <span class="menu-title" >Sản phẩm</span>
+                    <i class="fa-regular fa-gem" style="color: #bba8bff5;"></i>
+                  </div></li>
+            <ul id="submenu2" class="submenu">
+                <li><i class="fa-regular fa-circle" style="color: #8a24bbcf;"></i><a href="../admin-template/index.php?act=add_sanpham" class="nav-submenu"> Thêm mới sản phẩm</a></a></li>
+                <li><i class="fa-regular fa-circle" style="color: #8a24bbcf;"></i><a href="../admin-template/index.php?act=list_sanpham" class="nav-submenu"> Danh sách sản phẩm</a> </li>
+            </ul>
 
-        <li class="nav-item"><div class="nav-link">
-                <span class="menu-title" >Bình luận</span>
+              <li class="nav-item"><div class="nav-link">
+                <a class="menu-title"  style="text-decoration: none; color: inherit; font-size: 0.875rem; ">Bình luận</a>
                 <i class="fa-solid fa-comment-dots" style="color: #bba8bff5;"></i>
               </div></li>
 
               <li class="nav-item"><div class="nav-link">
-                <span class="menu-title" >Khách hàng</span>
+                <a class="menu-title" href="../admin-template/index.php?act=list_user" style="text-decoration: none;">Khách hàng</a>
                 <i class="fa-solid fa-user-group" style="color: #bba8bff5;"></i>
               </div></li>
 
@@ -65,3 +65,5 @@
     </ul>
           </ul>
         </nav>
+
+        
