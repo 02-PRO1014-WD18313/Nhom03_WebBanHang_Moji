@@ -1,12 +1,15 @@
-<?php 
-    if(is_array($data_dm)) {
-        extract($data_dm);
-    }
 
-    if(is_array($data_sp_top8)) {
-        extract($data_sp_top8);
-    }
-?>
+    <?php
+        if(is_array($data_dm)){
+            extract($data_dm);
+            // print_r($data_dm);
+        }
+        if(is_array($data_sp_top8)) {
+            extract($data_sp_top8);
+            // print_r($data_sp_top8);
+        }
+    ?>
+
 <div class="h2">
 
 <h2 class="h2_title">Lorem ipsum dolor <br> sit amet </h2>
@@ -42,14 +45,19 @@
     </div>
 </div>
 <div class="categorys-wrapper ">
-    <?php foreach($data_dm as $value): ?>
+
+    <?php
+        foreach ($data_dm as $value):
+    ?>
     <div class="isotope-item category">
-        <?php echo "<img src='../../upload/danhmuc/".$value['img']."' >" ?>
+        <img src="<?php echo "../upload/danhmuc/$img"?>" alt="">
         <h4>
-            <a href="#"><?php echo $value['tendm']; ?></a>
+            <a href="#"><?php echo $value['tendm']?></a>
         </h4>
     </div>
     <?php endforeach; ?>
+    
+
     
 </div>
 </div>
@@ -98,15 +106,18 @@
         Best choice
     </div>
 </div>
+<?php
+    foreach ($data_sp_top8 as $value) :
+        extract($value);
+        // echo $giacu
+?>
 <div class="products-wrapper">
-    <?php foreach($data_sp_top8 as $value): ?>
+    
     <div class="isotope-item product">
-        <?php echo "<img src='../../upload/sanpham/".$value['img']."' >" ?>
-        <h4><a href="#"><?php echo $value['tensp']; ?></a></h4>
-        <div class="price">
-            <p class="newprice"><?php echo number_format($value['giamoi'], 0 , ','); ?> VNĐ</p>
-            <p class="oldprice"><?php echo number_format($value['giacu'], 0 , ','); ?> VNĐ</p>
-        </div>
+
+        <img src="../upload/danhmuc/bongtaivang.png" alt="">
+        <h4><a href="#"> <?php echo $tensp?></a></h4>
+        <span><?php echo $giacu?>$ - <?php echo $giamoi?>$</span>
         <button class="onsale sale-label">On Sale</button>
         <div class="hover-product">
             <div class="icons-product">
@@ -116,8 +127,66 @@
             </div>
         </div>
     </div>
-    <?php endforeach; ?>
-    
+</div>
+<?php endforeach; ?>
+
+
+    <!-- <div class="isotope-item product">
+        <img src="image/sbxmxmk000155-bong-tai-bac-dinh-da-pnjsilver-4002.png" alt="">
+        <h4><a href="#">ABC</a></h4>
+        <span>110$ - 220$</span>
+
+        <button class="onsale sale-label">On Sale</button>
+        <div class="hover-product">
+            <div class="icons-product">
+                <a class="icon first-icon"  href="#"><i class="fas fa-heart"></i></a>
+                <a class="icon" href="#"><i class="fas fa-snowflake"></i></a>
+                <a class="icon preview-icon" data-preview="preview" ><i class="fas fa-link"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="isotope-item product">
+        <img src="image/sbxmxmk000155-bong-tai-bac-dinh-da-pnjsilver-4002.png" alt="">
+        <h4><a href="#">ABC</a></h4>
+        <span>110$ - 220$</span>
+        <button class="onsale sale-label">On Sale</button>
+
+    </div>
+    <div class="isotope-item product">
+        <img src="image/sbxmxmk000155-bong-tai-bac-dinh-da-pnjsilver-4002.png" alt="">
+        <h4><a href="#">ABC</a></h4>
+        <span>110$ - 220$</span>
+        <button class="onsale sale-label">On Sale</button>
+    </div>
+    <div class="isotope-item product">
+        <img src="image/sbxmxmk000155-bong-tai-bac-dinh-da-pnjsilver-4002.png" alt="">
+        <h4><a href="#">ABC</a></h4>
+        <span>110$ - 220$</span>
+        <button class="onsale sale-label">On Sale</button>
+
+    </div>
+    <div class="isotope-item product">
+        <img src="image/sbxmxmk000155-bong-tai-bac-dinh-da-pnjsilver-4002.png" alt="">
+        <h4><a href="#">ABC</a></h4>
+        <span>110$ - 220$</span>
+        <button class="onsale sale-label">On Sale</button>
+
+    </div>
+    <div class="isotope-item product">
+        <img src="image/sbxmxmk000155-bong-tai-bac-dinh-da-pnjsilver-4002.png" alt="">
+        <h4><a href="#">ABC</a></h4>
+        <span>110$ - 220$</span>
+        <button class="onsale sale-label">On Sale</button>
+
+    </div>
+    <div class="isotope-item product">
+        <img src="image/sbxmxmk000155-bong-tai-bac-dinh-da-pnjsilver-4002.png" alt="">
+        <h4><a href="#">ABC</a></h4>
+        <span>110$ - 220$</span>
+        <button class="onsale sale-label">On Sale</button>
+    </div> -->
+
 </div>
 
 <div class="backgound mcb" style="background-image: url(image/nhan1-e99b36_preview_rev_1.png);">
@@ -218,11 +287,12 @@
 </div>
 <input type="submit" name="register">
 <br>
+<a class="outCart"><i class="fas fa-times"></i></a>
 </div>
 </form>
 
 <form action="index.php?act=login" method="post">
-<div class="registration" id="login">
+<div class="registration login" id="login">
 <h3>Login</h3>
 <div  class="form-label">
     <label for="">User name:</label>
@@ -234,6 +304,8 @@
     <input type="text" name="password">
 </div>
 <input type="submit" name="login">
+<a class="outCart"><i class="fas fa-times"></i></a>
+
 <h4>
     <?php
     if(isset($THONG_BAO) && ($THONG_BAO!="")){
