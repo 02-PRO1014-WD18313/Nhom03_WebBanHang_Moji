@@ -11,8 +11,33 @@
                 </form>
             </div>
        </div>
+
+
+
+        <?php
+            $an="";
+            $hien="";
+            if(count($_SESSION['mycart']) == 0){
+                $hien = "hidden";
+            } else {
+                $an="hidden";
+            }
+        ?>
+
+
+
        <div class="box_1" style="width: 100%;padding:20px 9%;height: auto;">
-                <div class="cart">
+            <div class="giotrong" <?php echo $an ?> style="width: 100%;height: auto;background-color: #ffffff;padding: 20px 20%;">
+                <div class="gio1" style="display: flex;justify-content: center;">
+                    <img style="width: 80%;height: auto;" src="image/giotrong.png" alt="">
+                </div>
+                <div class="gio2" style="text-align: center;">
+                    <p style="font-weight: bolder;font-size: x-large;margin-top: 10px;margin-bottom: 5px;">"Hổng" có gì trong giỏ hàng hết</p>
+                    <p style="color: rgba(0, 0, 0, 0.5);">Về trang cửa hàng để chọn mua sản phẩm bạn nhé!!</p>
+                    <a href="index.php?act=home"><button style="margin: 20px;width: 20vh;height: 7vh;border-radius: 5px;background-color: #ffffff;font-size: medium; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Mua sắm ngay</button></a>
+                </div>
+            </div>
+            <div class="cart" <?php echo $hien ?>>
                             <table>
                                 <tr class="ct bb">
                                     <th></th>
@@ -73,7 +98,7 @@
                     </div>
             </div>
        </div>
-       <div class="box_1" style="width: 100%;padding:0px 9%;height: 33vh; margin-bottom: 0px;">
+       <div class="box_1" <?php echo $hien ?> style="width: 100%;padding:0px 9%;height: 33vh; margin-bottom: 0px;">
             <div class="bo1 hbo">
                 <p class="ct">Tổng sản phẩm: <span class="ik">2</span></p>
             </div>
