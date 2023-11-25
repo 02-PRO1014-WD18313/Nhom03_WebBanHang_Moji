@@ -8,8 +8,6 @@
     include 'models/danhmuc.php';
 
     include 'layout/header.php';
-    include 'models/sanpham.php';
-    include 'models/danhmuc.php';
     include 'global.php';
 
     if(!isset($_SESSION['mycart'])) $_SESSION['mycart']=[];
