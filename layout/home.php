@@ -48,9 +48,10 @@
 
     <?php
         foreach ($data_dm as $value):
+            $link = $value['img'];
     ?>
     <div class="isotope-item category">
-        <img src="<?php echo "../upload/danhmuc/$img"?>" alt="">
+        <img src="<?php echo "upload/danhmuc/$link"?>" alt="">
         <h4>
             <a href="#"><?php echo $value['tendm']?></a>
         </h4>
@@ -106,29 +107,33 @@
         Best choice
     </div>
 </div>
+<div class="products-wrapper">
 <?php
     foreach ($data_sp_top8 as $value) :
         extract($value);
         // echo $giacu
 ?>
-<div class="products-wrapper">
     
     <div class="isotope-item product">
 
-        <img src="../upload/danhmuc/bongtaivang.png" alt="">
+        <img src="<?php echo "upload/sanpham/$img"?>"   alt="">
         <h4><a href="#"> <?php echo $tensp?></a></h4>
-        <span><?php echo $giacu?>$ - <?php echo $giamoi?>$</span>
-        <button class="onsale sale-label">On Sale</button>
+        <?php if($giamoi < $giacu): ?>
+            <span><del><?php echo $giacu?></del>$ - <?php echo $giamoi?>$</span>
+            <button class="onsale sale-label">On Sale</button>
+            <?php else: ?>
+                <span><?php echo $giamoi?>$</span>
+        <?php  endif;?>
         <div class="hover-product">
             <div class="icons-product">
                 <a class="icon first-icon"  href="#"><i class="fas fa-heart"></i></a>
-                <a class="icon" href="#"><i class="fas fa-snowflake"></i></a>
+                <a class="icon" href="index.php?act=sanphamct&id_sp=<?php echo $id_sp ?>"><i class="fas fa-snowflake"></i></a>
                 <a class="icon preview-icon" data-preview="preview" ><i class="fas fa-link"></i></a>
             </div>
         </div>
     </div>
+    <?php endforeach; ?>
 </div>
-<?php endforeach; ?>
 
 
     <!-- <div class="isotope-item product">
@@ -206,20 +211,24 @@
         </div>
     </div>
 </div>
-
+<?php
+    foreach ($data_sp_top8 as $value) :
+        extract($value);
+?>
 <div class="preview content-wrapper" id="preview">
 <a class="icon-out">
     <i class="fas fa-plus"></i>
 </a>
-<div class="preview-image" style="background-image: url(image/photo-1-1571065781331448666071.jpg);">
+<div class="preview-image" style="background-image: url(upload/sanpham/<?php echo $img?>);">
 
 </div>
+
 <div class="information-product">
     <div class="text-content-product">
-        <h3 class="heading">Tên Sản Phẩm</h3>
-        <span class="price"> <del>Giá</del>  -  Giá</span>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus rem repellat ipsam ex soluta voluptas error ducimus illum consequuntur sit perferendis, inventore aliquam! Deserunt quisquam recusandae libero excepturi cumque dignissimos dolor cupiditate. Et harum ab doloribus dolores dolorum reiciendis provident minus sed eum nulla dolorem, necessitatibus cupiditate mollitia aperiam.</p>
-        <p style="font-size: 20px; margin-top:10px ;color: black;">Material</p>
+        <h3 class="heading"><?php echo $tensp ?></h3>
+        <span class="price"> <del> <?php echo $giacu?> </del>  -  <?php echo $giamoi?></span>
+        <p><?php echo $mota?></p>
+        <p style="font-size: 20px; margin-top:10px ;color: black;">Size</p>
     </div>
     <div class="variations-form cart">
         <div class="input-number">
@@ -232,7 +241,8 @@
     </div>
 </div>
 </div>
-<div class="preview content-wrapper" id="preview_1">
+<?php endforeach; ?>
+<!-- <div class="preview content-wrapper" id="preview_1">
 <a class="icon-out">
     <i class="fas fa-plus"></i>
 </a>
@@ -256,7 +266,7 @@
         <p>Tags: </p>
     </div>
 </div>
-</div>
+</div> -->
 
 <div class="cart cart-product" id="cart">
 <a class="outCart" style="cursor: pointer;"><i class="fas fa-times"></i></a>

@@ -40,6 +40,12 @@
         pdo_execute($sql);
     }
 
+    function productSamilar($id_sp, $id_dm){
+        $sql = "select * from sanpham where id_sp <> '$id_sp' and id_dm = '$id_dm'";
+        $get_sp = pdo_query($sql);
+        return $get_sp;
+    }
+
     function search($key) {
         $sql = "SELECT * FROM `sanpham` WHERE `tensp` like '%".$key."%'";
         $get_sp = pdo_query($sql);
