@@ -16,23 +16,23 @@
             <form class="forms-sample" method="post" action="index.php?act=update_user" enctype="multipart/form-data">
               <div class="form-group">
                 <label for="exampleInputName1">Tên khách hàng:</label>
-                <input type="text" class="form-control" name="tensp" value="<?php echo $name; ?>">
+                <input type="text" class="form-control" name="ten" value="<?php echo $name; ?>">
               </div>
               <div class="form-group">
                 <label for="exampleInputName1">Mã khách hàng:</label>
-                <input type="text" class="form-control" name="id_sp" value="<?php echo $id;?>">
+                <input type="text" class="form-control" name="id" value="<?php echo $id;?>">
               </div>
               <div class="form-group">
                 <label for="exampleInputName1">Email:</label>
-                <input type="text" class="form-control" name="soluong" value="<?php echo $email;?>">
+                <input type="text" class="form-control" name="email" value="<?php echo $email;?>">
               </div>
               <div class="form-group">
                 <label for="exampleInputName1">Username:</label>
-                <input type="text" class="form-control" name="giacu" value="<?php echo $username;?>">
+                <input type="text" class="form-control" name="ussername" value="<?php echo $username;?>">
               </div>
                 <div class="form-group">
                 <label for="exampleInputName1">Password:</label>
-                <input type="text" class="form-control" name="giamoi" value="<?php echo $password;?>">
+                <input type="text" class="form-control" name="password" value="<?php echo $password;?>">
                 </div>
                 <div class="form-group">
                 <label for="exampleInputName1">Vai trò:</label>
@@ -49,7 +49,7 @@
                 </div>
               
               <div class="form-group">
-              <input type="submit" class="btn btn-gradient-primary me-2" name="updatesp" value="Cập nhật">
+              <input type="submit" class="btn btn-gradient-primary me-2" name="update_user" value="Cập nhật">
               <button type="submit" class="btn btn-gradient-primary me-2" name="btnSubmit">Danh sách</button>
             </form>
           </div>

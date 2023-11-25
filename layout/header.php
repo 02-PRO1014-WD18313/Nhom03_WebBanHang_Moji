@@ -13,6 +13,7 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="slide-wrapper">
@@ -83,15 +84,15 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
             </a>
         </div>
         <nav class="navbar">
-            <a href="index.php?act=home">Home</a>
-            <a href="#">Products</a>
-            <a href="#">Review</a>
-            <a href="#">Contact</a>
-            <a href="#">About</a>
+            <a href="index.php?act=home">Trang Chủ</a>
+            <a href="#">Sản Phẩm</a>
+            <a href="#">Blog</a>
+            <a href="#">Liên Hệ</a>
+            <a href="#">Về Chúng Tôi</a>
         </nav>
         <div class="icons">
-                <a data-cart="register" class="icon-header">Register</a>
-                <a data-cart="login" class="icon-header">Login</a></li>
+                <a data-cart="register" class="icon-header">Đăng Kí</a>
+                <a data-cart="login" class="icon-header">Đăng Nhập</a></li>
                 <a data-cart="cart" class="icon-header">
                     <i class="fas fa-shopping-cart"></i>
                 </a>

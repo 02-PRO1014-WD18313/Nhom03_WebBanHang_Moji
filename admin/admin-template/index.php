@@ -155,25 +155,42 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
       include 'pages/forms/danhmuc/list_danhmuc.php';
       break;
 
-      case "list_user":
-        $data_user = loadAll_user();
-        include 'pages/forms/user/list_user.php';
-        break;
+    case "list_user":
+      $data_user = loadAll_user();
+      include 'pages/forms/user/list_user.php';
+      break;
 
-      case "xoa_user":
-        if(isset($_GET['id']) && ($_GET['id'])>0) {
-          delete_user($_GET['id']);
-        }
-        $data_user = loadAll_user();
-        include 'pages/forms/user/list_user.php';
-        break;
+    case "xoa_user":
+      if(isset($_GET['id']) && ($_GET['id'])>0) {
+        delete_user($_GET['id']);
+      }
+      $data_user = loadAll_user();
+      include 'pages/forms/user/list_user.php';
+      break;
 
-        case "sua_user":
-          if(isset($_GET['id']) && ($_GET['id'])>0) {
-              $get_user = loadOne_user($_GET['id']);
-          }
-          include 'pages/forms/user/update_user.php';
-          break;
+    case "sua_user":
+      if(isset($_GET['id']) && ($_GET['id'])>0) {
+          $get_user = loadOne_user($_GET['id']);
+      }
+      include 'pages/forms/user/update_user.php';
+      break;
+
+    case "update_user":
+      if((isset($_POST['update_user'])) && ($_POST['update_user']) ){
+          $id = $_POST['id'];
+          $name = $_POST['name'];
+          $username = $_POST['username'];
+          $password = $_POST['password'];
+          $email = $_POST['email'];
+          $diachi = $_POST['diachi'];
+          $role = $_POST['role'];
+          
+
+          update_user($id, $name, $username, $password, $email, $role);
+          $THONG_BAO = "BẠN ĐÃ CẬP NHẬT THÀNH CÔNG!";
+      };
+      include 'pages/forms/user/list_user.php';
+      break;
 
     case "timkiem":
         include '../views/timkiem.php';
