@@ -15,70 +15,9 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<div class="slide-wrapper">
-    <div class="slides">
-        <ul>
-            <li class="active">
-                <div class="slide">
-                    <div class="img" style="background-image: url(image/slide1.avif);"></div>
-                    <img src="image/big_brown.png" alt="" class="below-brown">
-                    <img src="image/big_brown.png" alt="" class="above-brown">
-                    <img src="image/small_brown.png" alt="" class="right-brown">
-                    <div class="text-content">
-                        <h2>01</h2>
-                        <small>TH true milk</small>
-                        <div class="dot"></div>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, quod perferendis. Earum, optio veritatis? Corrupti incidunt sed asperiores eligendi necessitatibus, soluta dolor atque vitae blanditiis nobis fugit est eius aliquid.</p>
-                        <a href="" class="button">See Project</a>
-                    </div>
-                    
-                </div>
-            </li>
-            <li>
-                <div class="slide">
-                    <div class="img" style="background-image: url('image/slide2.avif');"></div>
-                    <img src="image/big_blue.png" alt="" class="below-brown">
-                    <img src="image/big_blue.png" alt="" class="above-brown">
-                    <img src="image/small_blue.png" alt="" class="right-brown">
-                    <div class="text-content">
-                        <h2>02</h2>
-                        <small>TH true milk</small>
-                        <div class="dot"></div>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, quod perferendis. Earum, optio veritatis? Corrupti incidunt sed asperiores eligendi necessitatibus, soluta dolor atque vitae blanditiis nobis fugit est eius aliquid.</p>
-                        <a href="" class="button">See Project</a>
-                    </div>
-                    
-                </div>
-            </li>
-            <li>
-                <div class="slide">
-                    <div class="img" style="background-image: url(image/slide3.avif);"></div>
-                    <img src="image/big_red.png" alt="" class="below-brown">
-                    <img src="image/big_red.png" alt="" class="above-brown">
-                    <img src="image/small_red.png" alt="" class="right-brown">
-                    <div class="text-content">
-                        <h2>03</h2>
-                        <small>TH true milk</small>
-                        <div class="dot"></div>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, quod perferendis. Earum, optio veritatis? Corrupti incidunt sed asperiores eligendi necessitatibus, soluta dolor atque vitae blanditiis nobis fugit est eius aliquid.</p>
-                        <a href="" class="button">See Project</a>
-                    </div>
-                    
-                </div>
-            </li>
-        </ul>
-    </div>
-    <div class="transfer-slides">
-        <ul>
-            <li class="transfer">1</li>
-            <li>2</li>
-            <li>3</li>
-        </ul>
-    </div>
-</div>
-    <div class="header">
+    <div class="header nb">
         <div class="logo">
-            <a href="">
+            <a href="index.php?act=home">
                 <img src="image/z4876602114590_6223b9460e22e4f10da597208a1fa113.png" alt="">
             </a>
         </div>
@@ -87,12 +26,12 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
             <a href="#">Products</a>
             <a href="#">Review</a>
             <a href="#">Contact</a>
-            <a href="#">About</a>
+            <a href="index.php?act=unset">About</a>
         </nav>
         <div class="icons">
                 <a data-cart="register" class="icon-header">Register</a>
                 <a data-cart="login" class="icon-header">Login</a></li>
-                <a data-cart="cart" class="icon-header">
+                <a data-cart="cart" href="index.php?act=viewcart" class="icon-header">
                     <i class="fas fa-shopping-cart"></i>
                 </a>
         </div>

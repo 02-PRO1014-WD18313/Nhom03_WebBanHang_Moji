@@ -1132,6 +1132,8 @@ del {
 
 /* Huydq Css cart */ 
 
+/* huydq css */
+
 .mt{
     margin-top: 75px;
 }
@@ -1139,6 +1141,12 @@ del {
 .hbo{
     height: 33%;
     background-color: #fff;
+}
+
+
+.bo1 img{
+    height: 5vh;
+    width: 5vh;
 }
 
 .hbo:nth-child(1),
@@ -1192,6 +1200,12 @@ del {
     background-color: #666;
     /* Ẩn chữ gửi */
     text-indent: -9999vh;
+}
+
+
+.diachi>p,a{
+    padding-left: 5px;
+    margin-right: 5px;
 }
 
 

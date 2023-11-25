@@ -100,13 +100,14 @@
        </div>
        <div class="box_1" <?php echo $hien ?> style="width: 100%;padding:0px 9%;height: 33vh; margin-bottom: 0px;">
             <div class="bo1 hbo">
-                <p class="ct">Tổng sản phẩm: <span class="ik">2</span></p>
+                <p class="ct">Tổng sản phẩm :<span class="ik"> <?php echo count($_SESSION['mycart']) ?></span></p>
             </div>
             <div class="bo2 hbo">
-                <p class="ct">Tổng thanh toán: <span class="ik">400000 ₫</span></p> <p class="ik"></p>
+                <p class="ct">Tổng thanh toán: <span class="ik"><?php echo $tong ?>  ₫</span></p> <p class="ik"></p>
             </div> 
             <div class="bo3 hbo">
-                <div style="width: 30vh; height: 8vh; display: block; float: right;margin-right: 10px;background-color: rgba(255, 0, 0, 0.871);text-align: center;line-height: 8vh;color: #ffffff;">Mua hàng</div>
+                <a href="index.php?act=bill"><button type="submit" style="width: 30vh; height: 8vh; display: block; float: right;margin-right: 10px;background-color: rgba(255, 0, 0, 0.871);text-align: center;line-height: 8vh;color: #ffffff;">
+                Mua hàng</button></a>
             </div>
         </div>
        
