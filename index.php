@@ -35,6 +35,10 @@
                 include 'layout/cart/cart.php';
             break;
 
+            case "bill":
+                include 'layout/cart/bill.php';
+            break;
+
             case 'addtocart':
                 if(isset($_POST['addtocart']) && ($_POST['addtocart'])){
                     $id=$_POST['id'];
