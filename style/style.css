@@ -1173,6 +1173,7 @@ del {
 .oldprice {
     color: gray;
     text-decoration: line-through;
+
 }
 
 .newprice,
@@ -1181,3 +1182,236 @@ del {
     width: 100%;
     margin: 0;
 }
+
+    text-align: center;
+}
+
+
+
+/* Huydq Css cart */ 
+
+/* huydq css */
+
+.mt{
+    margin-top: 75px;
+}
+
+.hbo{
+    height: 33%;
+    background-color: #fff;
+}
+
+
+.bo1 img{
+    height: 5vh;
+    width: 5vh;
+}
+
+.hbo:nth-child(1),
+.hbo:nth-child(2){
+    padding: 25px 5%;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+}
+
+.hbo:nth-child(3){
+    padding: 10px 3%;
+}
+
+.pd{
+    padding: 20px;
+    background-color: #fff;
+
+}
+
+.pd15{
+    margin-top: 15px;
+}
+
+.np{
+    font-size: large;
+    display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      -webkit-line-clamp: 2; 
+      max-width: 70vh;
+}
+
+
+.mb{
+    margin-bottom: 15px;
+}
+
+.nb{
+    background-color: rgb(255, 255, 255,0.7) ;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.sch{
+    display: inline-block;
+    height: 5vh;
+    width: 25%;
+    border-radius: 5px;
+    border: none;
+    background-size: 25%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #666;
+    /* Ẩn chữ gửi */
+    text-indent: -9999vh;
+}
+
+
+.diachi>p,a{
+    padding-left: 5px;
+    margin-right: 5px;
+}
+
+
+
+.ct{
+    color: #666;
+    font-size: small;
+    
+}
+
+.ik{
+    font-size: x-large;
+    color: rgba(255, 0, 0, 0.871);
+}
+
+.bb{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.cart table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart table tr th {
+    padding: 15px;
+    background-color: #ffffff;
+}
+.cart table th:nth-child(1){
+    width: 5%;
+    background-color: #ffffff;
+}
+
+.cart table th:nth-child(2){
+    width: 35%;
+    background-color: #ffffff;
+    text-align: left;
+}
+.cart table th:nth-child(3){
+    width: 20%;
+    background-color: #ffffff;
+}
+.cart table th:nth-child(4){
+    width: 15%;
+    background-color: #ffffff;
+}
+.cart table th:nth-child(5){
+    width: 15%;
+    background-color: #ffffff;
+}
+
+.cart table th:nth-child(6){
+    width: 10%;
+    background-color: #ffffff;
+}
+
+/*  */
+.cart table tr td {
+    padding: 10px;
+    background-color: #ffffff;
+}
+.cart table td:nth-child(1){
+    width: 5%;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.cart table td:nth-child(2){
+    width: 10%;
+    text-align: center;
+    background-color: #ffffff;
+    text-align: left;
+}
+
+.cart table td:nth-child(2) img{
+    float: left;
+   width: 30%;
+   height: 30%;
+}
+
+.cart table td:nth-child(3){
+    width: 25%;
+    text-align: center;
+    background-color: #ffffff;
+}
+.cart table td:nth-child(4){
+    width: 20%;
+    text-align: center;
+    background-color: #ffffff;
+}
+.cart table td:nth-child(5){
+    width: 15%;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.cart table td:nth-child(6){
+    width: 15%;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.cart table td:nth-child(7){
+    width: 10%;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.counter-container {
+    border-radius: 0;
+    text-align: center;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .count{
+    display: flex;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+  }
+
+  .counter-input {
+    border-radius: 0;
+    border: none;
+    font-size: 18px;
+    width: 8vh;
+    text-align: center;
+  }
+
+  .counter-button{
+    border: none;
+    border-radius: 0;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+    width: 4vh;
+    height: 4vh;
+    line-height: 1vh;
+    background-color: #ffffff;
+  }
+
+  .counter-button:nth-child(1){
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .counter-button:nth-child(3){
+   border-left: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
