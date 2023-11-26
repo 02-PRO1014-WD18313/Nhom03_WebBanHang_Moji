@@ -14,7 +14,6 @@
         $act = $_GET['act'];
         switch($act) {
             case "home":
-                include 'layout/slideShow.php';
 
                 $data_sp_top8 = loadAll_sp_top8();
                 $data_dm = loadAll_dm();
@@ -82,7 +81,7 @@
             
         }
     } else {
-        
+        include 'layout/slideShow.php';
         include 'layout/home.php';
     }
 
