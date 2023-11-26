@@ -23,6 +23,18 @@
         return $data_sp;       
     }
 
+    function loadAll_sp_top2() {
+        $sql = "SELECT * FROM `sanpham` order by `soluong` desc limit 0,2";
+        $data_sp = pdo_query($sql);
+        return $data_sp;       
+    }
+
+    function loadAll_sp_highlight() {
+        $sql = "SELECT * FROM `sanpham` order by `luot_ban` desc limit 0,8";
+        $data_sp = pdo_query($sql);
+        return $data_sp;       
+    }
+
     function loadOne_sp($id) {
         $sql = "SELECT * FROM `sanpham` where `id_sp` = '$id'";
         $get_sp = pdo_query_one($sql);
