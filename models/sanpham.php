@@ -16,8 +16,21 @@
         return $data_sp;       
     }
 
+
     function loadAll_sp_top8() {
         $sql = "SELECT * FROM `sanpham` order by `id_sp` desc limit 0,8";
+        $data_sp = pdo_query($sql);
+        return $data_sp;       
+    }
+
+    function loadAll_sp_top2() {
+        $sql = "SELECT * FROM `sanpham` order by `soluong` desc limit 0,2";
+        $data_sp = pdo_query($sql);
+        return $data_sp;       
+    }
+
+    function loadAll_sp_highlight() {
+        $sql = "SELECT * FROM `sanpham` order by `luot_ban` desc limit 0,8";
         $data_sp = pdo_query($sql);
         return $data_sp;       
     }
@@ -26,6 +39,19 @@
         $sql = "SELECT * FROM `sanpham` where `id_sp` = '$id'";
         $get_sp = pdo_query_one($sql);
         return $get_sp;
+    }
+
+
+    function loadOne_sp_nhan_home(){
+        $sql = "select * from sanpham where id_dm = 'NH01' order by soluong desc limit 1";
+        $get_sp = pdo_query_one($sql);
+        return $get_sp;
+    }
+
+    function loadOne_sp_daychuyen_home(){
+        $sql = "select * from sanpham where id_dm = 'DC01' order by soluong desc limit 1";
+        $get_dm = pdo_query_one($sql);
+        return $get_dm;
     }
 
     function update_sp($tensp, $id, $soluong, $giacu, $giamoi, $mota, $img, $iddm) {

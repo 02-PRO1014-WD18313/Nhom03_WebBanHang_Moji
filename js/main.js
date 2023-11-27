@@ -113,3 +113,32 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 }, false);
+
+function thongbao() {
+    alert("Sản phẩm đã có trong giỏ hàng!!");
+}
+
+function adjustCounter(productId, value) {
+    console.log("productId:", productId);
+    console.log("value:", value);
+    console.log(document.getElementsByName(productId).value);
+    
+    var counterInput = document.getElementsByName(productId);
+    var counterValue = parseInt(counterInput.value);
+
+    if (value === 1 || (value === -1 && counterValue > 0)) {
+        counterValue += value;
+        counterInput.value = counterValue;
+
+        // // Lấy giá của sản phẩm từ ô chứa giá
+        // var productPriceCell = counterInput.closest('.count').querySelector('.product-price');
+        // var pricePerUnit = parseFloat(productPriceCell.textContent);
+
+        // // Tính toán lại thành tiền và cập nhật giá trị trong ô "Thành tiền"
+        // var totalPrice = pricePerUnit * counterValue;
+        // var totalPriceCell = counterInput.closest('.count').querySelector('.total-price');
+        // totalPriceCell.textContent = totalPrice;
+
+        // Thêm mã để cập nhật thành tiền tương ứng nếu cần
+    }
+}
