@@ -3,7 +3,6 @@
     session_start();
     include 'models/pdo.php';
     include 'models/taikhoan.php';
-
     include 'models/sanpham.php';
     include 'models/danhmuc.php';
 
@@ -20,8 +19,10 @@
         switch($act) {
             case "home":
 
+
                 $data_sp_highlight = loadAll_sp_highlight();
                 $data_sp_top2 = loadAll_sp_top2();
+
 
                 $data_sp_top8 = loadAll_sp_top8();
                 $data_dm = loadAll_dm();
@@ -99,16 +100,32 @@
     
                     insert_user($username, $password, $email);
                     $THONG_BAO = "BẠN ĐÃ ĐĂNG KÍ THÀNH CÔNG!";
-                };
+                }
             include 'layout/home.php';
             break;
+            case "sanphamct":
+                if(isset($_GET['id_sp'])){
+                    $id = $_GET['id_sp'];
+                    $onesp = loadOne_sp($id);
+                    // extract($onesp);
+                    // $relatedProduct = productSamilar($id_sp, $id_dm);
+                    include 'layout/sanphamct.php';
+                }else {
+                    include 'layout/sanphamct.php';
+
+                }
+                break;
             
         }
     } else {
+
+        include 'layout/slideShow.php';
+
         $data_sp_highlight = loadAll_sp_highlight();
         $data_sp_top2 = loadAll_sp_top2();
         $data_sp_top8 = loadAll_sp_top8();
         $data_dm = loadAll_dm();
+
         include 'layout/home.php';
     }
 

@@ -552,6 +552,8 @@ ul li.active .slide .right-brown{
     height: 240px;
     background-size: cover;
 
+    border-radius: 30px;
+
 }
 
 
@@ -1068,11 +1070,9 @@ del {
 
 .mcb-backgound-overlay {
     width: 100%;
-    height: 920px;
-    /* border: 1px black solid; */
+    min-height: 600px;
     margin-top: 70px;
     display: flex;
-    /* align-items: center; */
     justify-content: center;
     flex-wrap: wrap;
     background-color: #F7F7F7;
@@ -1148,10 +1148,10 @@ del {
     margin-top: 20px;
 }
 
-.mcb-backgound-overlay .tag-category {
+.tag-category {
     width: 100%;
     height: 25%;
-    /* border: 1px solid black ; */
+    border: 1px solid black ;
 }
 
 .tag-category h2 {
@@ -1328,6 +1328,41 @@ del {
 .cart table td:nth-child(1){
     width: 5%;
     text-align: center;
+
+}
+
+.related-product {
+    width: 100%;
+    min-height: 300px;
+    /* border: 1px solid black ; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.related-product .product-ct {
+    width: 28%;
+    height: 500px;
+    /* border: solid 1px black; */
+    margin: 20px;
+    border-radius: 20px;
+    background-color: #F7F7F7;
+}
+
+.related-product .product-ct img {
+    width: 100%;
+    height: 380px;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.related-product .product-ct h2,
+.related-product .product-ct p{
+    text-align: center;
+    margin: 10px;
+}
+
+
     background-color: #ffffff;
 }
 
@@ -1414,4 +1449,5 @@ del {
   .counter-button:nth-child(3){
    border-left: 1px solid rgba(0, 0, 0, 0.2);
     }
+
 

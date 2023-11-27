@@ -16,7 +16,9 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
     <link href="https://fonts.googleapis.com/css2?family=Epilogue&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <div class="header nb">
+
         <div class="logo">
             <a href="index.php?act=home">
                 <img src="image/z4876602114590_6223b9460e22e4f10da597208a1fa113.png" alt="">
