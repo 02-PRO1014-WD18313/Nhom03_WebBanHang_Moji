@@ -59,11 +59,14 @@
 
             case "register":
                 if((isset($_POST['register'])) && ($_POST['register']) ){
+                    $name = $_POST['name'];
                     $username = $_POST['username'];
                     $password = $_POST['password'];
                     $email = $_POST['email'];
+                    $sdt = $_POST['sdt'];
+                    $dia_chi = $_POST['dia_chi'];
     
-                    insert_user($username, $password, $email);
+                    insert_user($name, $username, $password, $email, $sdt, $dia_chi);
                     $THONG_BAO = "BẠN ĐÃ ĐĂNG KÍ THÀNH CÔNG!";
                 };
             include 'layout/home.php';

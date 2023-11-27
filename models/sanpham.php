@@ -1,7 +1,7 @@
 <?php 
-    function insert_sanpham($tensp, $masp, $giacu, $giamoi, $soluong, $mota, $img, $iddm) {
-        $sql = "INSERT INTO `sanpham`(`tensp`, `id_sp`, `giacu`, `giamoi`, `soluong`, `mota`, `img`, `id_dm`)
-        VALUES ('$tensp', '$masp', '$giacu', '$giamoi', '$soluong', '$mota', '$img', '$iddm')";
+    function insert_sanpham($tensp, $masp, $giacu, $giamoi, $soluong, $mota, $motangan, $img, $iddm) {
+        $sql = "INSERT INTO `sanpham`(`tensp`, `id_sp`, `giacu`, `giamoi`, `soluong`, `mota`, `motangan`, `img`, `id_dm`)
+        VALUES ('$tensp', '$masp', '$giacu', '$giamoi', '$soluong', '$mota', '$motangan', '$img', '$iddm')";
         pdo_execute($sql);
     }
 
@@ -40,14 +40,14 @@
         return $get_sp;
     }
 
-    function update_sp($tensp, $id, $soluong, $giacu, $giamoi, $mota, $img, $iddm) {
+    function update_sp($tensp, $id, $soluong, $giacu, $giamoi, $mota, $motangan, $img, $iddm) {
         if($img != "") {
             $sql = "UPDATE `sanpham` SET `tensp`='$tensp', `id_sp` = '$id', `soluong` = '$soluong', `giacu` = '$giacu', `giamoi` = '$giamoi',
-            `mota` = '$mota', `img` = '$img', `id_dm` = '$iddm' WHERE `id_sp` = '$id'";
+            `mota` = '$mota', `motangan` = '$motangan', `img` = '$img', `id_dm` = '$iddm' WHERE `id_sp` = '$id'";
         }
         else {
             $sql = "UPDATE `sanpham` SET `tensp`='$tensp', `id_sp` = '$id', `soluong` = '$soluong', `giacu` = '$giacu', `giamoi` = '$giamoi',
-            `mota` = '$mota', `id_dm` = '$iddm' WHERE `id_sp` = '$id'";
+            `mota` = '$mota', `motangan` = '$motangan', `id_dm` = '$iddm' WHERE `id_sp` = '$id'";
         }
         pdo_execute($sql);
     }

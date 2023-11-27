@@ -14,6 +14,8 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Epilogue&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 <div class="slide-wrapper">
@@ -90,11 +92,21 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
             <a href="#">Liên Hệ</a>
             <a href="#">Về Chúng Tôi</a>
         </nav>
+        <?php ?>
         <div class="icons">
-                <a data-cart="register" class="icon-header">Đăng Kí</a>
-                <a data-cart="login" class="icon-header">Đăng Nhập</a></li>
-                <a data-cart="cart" class="icon-header">
-                    <i class="fas fa-shopping-cart"></i>
-                </a>
+            <?php 
+                if(isset($_SESSION['user'])) {
+                    extract($_SESSION['user']);
+            ?>
+            <p>Xin chào, <strong><?=$username?></strong>!</p>
+            <?php 
+                }else {
+            ?>
+            <a data-cart="register" class="icon-header">Đăng Kí</a>
+            <a data-cart="login" class="icon-header">Đăng Nhập</a></li>
+            <a data-cart="cart" class="icon-header">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+            <?php } ?>
         </div>
 </div>

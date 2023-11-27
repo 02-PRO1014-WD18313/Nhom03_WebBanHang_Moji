@@ -364,7 +364,7 @@ ul li.active .slide .right-brown{
     line-height: 20px;
     margin-bottom: 20px;
     margin-top: 10px;
-    color: #87C4FF;
+    color: #0f0f0f;
 
 } 
 
@@ -382,8 +382,9 @@ ul li.active .slide .right-brown{
 }
 .section_title_1 .button.button_size_2:hover,
 .section_title_2 .button.button_size_2:hover{
-    color: black;
-    background-color: #87C4FF;
+    color: rgb(199, 3, 3);
+    background-color: white;
+    border-color: #858282;
 }
 
 .one.mcb-wrap{
@@ -954,14 +955,28 @@ del {
 }
 
 
-.registration#register,
+.registration#register
+{
+    border: 1px solid rgb(109, 106, 106);
+    border-radius: 10px;
+    background-color: white;
+    position: fixed;
+    height: 65%;
+    width: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+
+}
+
 .login#login
 {
     border: 1px solid rgb(109, 106, 106);
     border-radius: 10px;
     background-color: white;
     position: fixed;
-    height: 45%;
+    height: 43%;
     width: 30%;
     top: 50%;
     left: 50%;
@@ -974,6 +989,11 @@ del {
     position: relative;
     opacity: 0;
     visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 .registration h4 {
@@ -985,7 +1005,6 @@ del {
 .regis-top {
     display: flex;
     align-items: center;
-    padding-left: 130px;
 }
 
 .regis-top>img {
@@ -1010,7 +1029,7 @@ del {
 }
 
 .registration .form-input {
-    border-radius: 20px;
+    border-radius: 15px;
     border: 1px solid #000;
     background: #FFF;
     width: 370px;
@@ -1022,7 +1041,7 @@ del {
     width: 375px;
     height: 40px;
     border-radius: 35px;
-    background: linear-gradient(132deg, #983030 0%, #12646A 100%);
+    background: rgb(185, 3, 3);
     color: white;
     font-family: 'Quicksand', sans-serif;
     border-color: white;
@@ -1030,15 +1049,14 @@ del {
     margin-left: 7px;
 }
 
-.form-control {
+/* .form-control {
     padding-left: 38px;
-}
+} */
 
 
 .login-top {
     display: flex;
     align-items: center;
-    padding-left: 140px;
 }
 
 

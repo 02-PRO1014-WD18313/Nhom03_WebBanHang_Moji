@@ -42,6 +42,10 @@
                 <input type="text" class="form-control" name="mota" value="<?php if(isset($mota) && $mota != "") echo $mota;?>">
                 </div>
                 <div class="form-group">
+                <label for="exampleInputName1">Mô tả ngắn:</label>
+                <input type="text" class="form-control" name="motangan" value="<?php if(isset($motangan) && $motangan != "") echo $motangan;?>">
+                </div>
+                <div class="form-group">
                 <label for="exampleSelectGender">Danh mục</label>
                 <select class="form-control" name="danhmuc">
                     <?php foreach($data_dm as $value): ?>
