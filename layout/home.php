@@ -22,13 +22,14 @@
 <div class="section">
 <?php
     foreach ($data_sp_top2 as $value) :
+        extract($value);
 ?>
 <div class="section_wrapper section_wrapper_1 " style="background-image: url(upload/sanpham/<?php echo $value['img']; ?>);">
     <div class="section_title section_title_1">
         <h5>Our recommendation</h5>
         <h4><?php echo $value['tensp']; ?></h4>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, fugiat!</p>
-        <a href="" class="button button_size_2">
+        <a href="index.php?act=sanphamct&id_sp=<?php echo $id_sp?>" class="button button_size_2">
             <span class="button_label">Buy Now</span>
         </a>
     </div>
