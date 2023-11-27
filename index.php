@@ -26,6 +26,7 @@
 
                 $data_sp_top8 = loadAll_sp_top8();
                 $data_dm = loadAll_dm();
+                include 'layout/slideShow.php';
                 include 'layout/home.php';
                 break;
         
@@ -107,8 +108,9 @@
                 if(isset($_GET['id_sp'])){
                     $id = $_GET['id_sp'];
                     $onesp = loadOne_sp($id);
-                    // extract($onesp);
-                    // $relatedProduct = productSamilar($id_sp, $id_dm);
+                    // echo $id_sp;
+                    extract($onesp);
+                    $relatedProduct = productSamilar($id_sp, $id_dm);
                     include 'layout/sanphamct.php';
                 }else {
                     include 'layout/sanphamct.php';

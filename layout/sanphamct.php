@@ -1,32 +1,10 @@
 <?php
         extract($onesp);    
-        // print_r($relatedProduct);
 ?>
-    <!-- <img src="upload/sanpham/daychuyen1.jpg" alt=""> -->
-    <header class="header">
-        <div class="logo">
-            <a href="">
-                <img src="image/z4876602114590_6223b9460e22e4f10da597208a1fa113.png" alt="">
-            </a>
-        </div>
-        <nav class="navbar">
-            <a href="index.php?act=home">Home</a>
-            <a href="#">Products</a>
-            <a href="#">Review</a>
-            <a href="#">Contact</a>
-            <a href="#">About</a>
-        </nav>
-        <div class="icons">
-                <a data-cart="register" class="icon-header">Register</a>
-                <a data-cart="login" class="icon-header">Login</a></li>
-                <a data-cart="cart" class="icon-header">
-                    <i class="fas fa-shopping-cart"></i>
-                </a>
-        </div>
-    </header>
+    
     
     <div class="mcb-backgound-overlay">
-        <div class="product-image-wrapper" style="background-image: url(upload/sanpham/daychuyen1.jpg);">
+        <div class="product-image-wrapper" style="background-image: url(upload/sanpham/<?php echo $img?>);">
             <a><i class="fas fa-search"></i></a>
         </div>
         <div class="entry-sumary-column">
@@ -45,12 +23,13 @@
                     <span>20kg</span>
                     <span>Do Ngoc</span>
                     <span>1m, 2m, 3m </span>
-                </div>
+                </div>  
             </div>
-            <span>Giá --- </span>
-            <span><del>Giá</del></span>
-
-            <p>Size</p>
+            <div class="price">
+                <p class="oldprice" style="font-size:25px"><?php echo number_format($giacu, 0 , ','); ?> VNĐ</p>
+                <p class="newprice" style="font-size:30px"><?php echo number_format($giamoi, 0 , ','); ?> VNĐ</p>
+            </div>
+            <h3 style="font-size:25px">Size</h3>
             <div class="information-product">
 
             <div class="variations-form">
@@ -65,6 +44,20 @@
 
         </div>
     </div>
+    <hr>
+    <div class="detail-product">
+        <div class="directionaly">
+            <a data-display="information">Information</a>
+            <a data-display="review">Review</a>
+        </div>
+        <div class="information display" id="information">
+            <p><?php echo $mota ?></p>
+        </div>
+        <div class="review display" id="review">
+            <h2>Abc</h2>
+        </div>
+    </div>
+    <hr>
     <h2 style="text-align:center; font-size:56px; margin-top:10px">Related Product</h2>
     <div class="related-product" >
     <?php
@@ -84,3 +77,25 @@
         
         <?php endforeach; ?>
     </div>
+
+<script>
+
+    let navigation = document.querySelectorAll(".directionaly a");
+    let display = document.querySelectorAll(".detail-product .display");
+    
+    
+    for(var i = 0; i < navigation.length; i++){
+        
+        navigation[i].addEventListener("click", function(){
+            
+            let showing = this.getAttribute("data-display");
+            let showingcontent = document.getElementById(showing);
+            for(var j = 0; j < showingcontent.length; j++){
+                showingcontent.classList.remove = "hienra";
+            }
+            showingcontent.classList.add('hienra');
+            console.log(showingcontent);
+        })
+    }
+    
+</script>

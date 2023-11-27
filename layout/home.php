@@ -165,12 +165,12 @@
         <div class="hover-product">
             <div class="icons-product">
                 <a class="icon first-icon"  href="#"><i class="fas fa-heart"></i></a>
-                <a class="icon" href="#"><i class="fas fa-snowflake"></i></a>
+                <a class="icon" href="index.php?act=sanphamct&id_sp=<?php echo $id_sp?>"><i class="fas fa-snowflake"></i></a>
                 <a class="icon preview-icon" data-preview="preview" ><i class="fas fa-link"></i></a>
             </div>
         </div>
     </div>
-    <?php endforeach; ?>
+    <!-- <?php endforeach; ?> -->
 </div>
 </div>
 
@@ -178,6 +178,10 @@
 
 
 <div class="preview content-wrapper" id="preview">
+<?php
+    foreach ($data_sp_top8 as $value) :
+        extract($value);
+?>
 <a class="icon-out">
     <i class="fas fa-plus"></i>
 </a>

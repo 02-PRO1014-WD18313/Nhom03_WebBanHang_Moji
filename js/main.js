@@ -31,10 +31,10 @@ document.addEventListener("DOMContentLoaded", function() {
             
         }); 
     }
+    
     function autoSlide(){
         var slidesLct = 0;
         var slideNow = document.querySelector('.slides ul li.active');
-        // console.log(slideNow);
         for(var slidesLct = 0; slideNow = slideNow.previousElementSibling; slidesLct++){
 
         }
