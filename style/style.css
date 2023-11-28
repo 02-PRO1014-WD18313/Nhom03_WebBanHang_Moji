@@ -821,8 +821,8 @@ ul li.active .slide .right-brown{
 }
 
 .preview .preview-image {
-    width: 80%;
-    height: 420px;
+    width: 70%;
+    height: 469px;
     background-size: cover;
     background-position: center;
     /* border: 1px solid black; */
@@ -903,13 +903,50 @@ input::-webkit-inner-spin-button{
     padding: 10px 10px;
     border: 1px solid black;
     border-radius: 10px;
-    width: 35%;
+    width: 50%;
     text-align: center;
     font-weight: 500;
     color: #ffffff;
     background-color: #2a27E9;
 }
 
+.icons-product > .icon:first-child,
+.icons-product > .icon:nth-child(2)
+
+{
+    position: relative;
+}
+
+.icons-product > .icon:first-child:hover::after {
+    content: "Link";
+    position: absolute;
+    text-align: center;
+    padding: 5px;
+    width: 50px;
+    height: 20px;
+    border: 1px solid black;
+    left: -70px;
+    top: 4px;
+    color: #BCBCBC;
+    background-color: black;
+    border-radius: 5px;
+    line-height: 25px;
+}
+.icons-product > .icon:nth-child(2):hover::after {
+    content: "Preview";
+    position: absolute;
+    text-align: center;
+    padding: 5px;
+    width: 60px;
+    height: 20px;
+    border: 1px solid black;
+    left: -78px;
+    top: 4px;
+    color: #BCBCBC;
+    background-color: black;
+    border-radius: 3px;
+    line-height: 25px;
+}
 
 del {
     text-decoration: line-through;
@@ -1050,9 +1087,9 @@ del {
 }
 
 
-.content-wrapper {
+/* .content-wrapper {
     display: none;
-}
+} */
 
 
 
@@ -1413,7 +1450,7 @@ hr {
 .related-product .product-ct {
     width: 28%;
     height: 500px;
-    /* border: solid 1px black; */
+    border: solid 1px black;
     margin: 20px;
     border-radius: 20px;
     background-color: #F7F7F7;
@@ -1433,7 +1470,7 @@ hr {
 
 
 
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
 }
 
 .cart table td:nth-child(2){
@@ -1522,6 +1559,36 @@ hr {
 
 
 .hienra{
-    opacity: 1;
-    visibility: visible;
+    display: block;
 }
+
+
+
+.container_sp {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+}
+
+.container_sp .filter {
+    width: 27%;
+    border: 1px solid black;
+    float: left;
+}
+.container_sp .all-products {
+    width: 70%;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+
+.container_sp .all-products .product_sp {
+    width: 30%;
+    height: 30%;
+    border: 1px solid black;
+}
+

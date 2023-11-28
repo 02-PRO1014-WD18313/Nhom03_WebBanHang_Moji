@@ -117,6 +117,10 @@
 
                 }
                 break;
+            case "sanpham":
+                $data_sp_highlight = loadAll_sp_highlight();
+                include 'layout/sanpham.php';
+                break;
             
         }
     } else {

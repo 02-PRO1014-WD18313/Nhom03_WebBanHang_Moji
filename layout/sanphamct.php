@@ -51,7 +51,7 @@
             <a data-display="review">Review</a>
         </div>
         <div class="information display" id="information">
-            <p><?php echo $mota ?></p>
+            <p style="text-align:center"><?php echo $mota ?></p>
         </div>
         <div class="review display" id="review">
             <h2>Abc</h2>
@@ -66,13 +66,12 @@
     ?>
         <div class="product-ct">
             <img src="<?php echo "upload/sanpham/$img"?>" alt="">
-            <h2><?php echo $tensp ?></h2>
-            <?php if($giamoi < $giacu): ?>
-            <p><del><?php echo $giacu?></del>$ - <?php echo $giamoi?>$</p>
-            <button class="onsale sale-label">On Sale</button>
-            <?php else: ?>
-                <p><?php echo $giamoi?>$</p>
-        <?php  endif;?>
+            <h2><a href="index.php?act=sanphamct&id_sp=<?php echo $id_sp ?>"><?php echo $tensp ?></a></h2>
+            <div class="price">
+                <p class="oldprice"><?php echo number_format($giacu, 0 , ','); ?> VNĐ</p>
+                <p class="newprice"><?php echo number_format($giamoi, 0 , ','); ?> VNĐ</p>
+            </div>
+                
         </div>
         
         <?php endforeach; ?>

@@ -26,8 +26,8 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
         </div>
         <nav class="navbar">
 
-            <a href="index.php?act=home">Trang Chủ</a>
-            <a href="#">Sản Phẩm</a>
+            <a href="index.php">Trang Chủ</a>
+            <a href="index.php?act=sanpham">Sản Phẩm</a>
             <a href="#">Blog</a>
             <a href="#">Liên Hệ</a>
             <a href="#">Về Chúng Tôi</a>
