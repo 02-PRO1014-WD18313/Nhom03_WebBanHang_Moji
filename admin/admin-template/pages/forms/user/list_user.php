@@ -30,11 +30,12 @@
                         <thead >
                           <tr>
                             <th></th>
-                            <th> Tên KH </th>
                             <th> Mã KH </th>
+                            <th>Họ tên</th>
                             <th> Email </th>
                             <th> Username </th>
                             <th> Password </th>
+                            <th>Số Điện Thoại</th>
                             <th> Role </th>
                             <th>Hành động</th>
                           </tr>
@@ -47,11 +48,12 @@
                     
                           <tr>
                             <td><input class="form-check-input" type="checkbox" id="check1" name="option1"></td>
-                            <td></td>
                             <td><?php echo $value['id']; ?></td>
+                            <td><?php echo $value['name']; ?></td>
                             <td><?php echo $value['email']; ?></td>
                             <td><?php echo $value['username']; ?></td>
                             <td><?php echo $value['password']; ?></td>
+                            <td><?php echo $value['sdt']; ?></td>
 
                             <?php if($value['role'] == 0): ?>
                                 <td><?php echo "Khách hàng"; ?></td>

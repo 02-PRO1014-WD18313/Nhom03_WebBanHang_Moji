@@ -27,7 +27,7 @@
     <div class="section_title section_title_1">
         <h5>Our recommendation</h5>
         <h4><?php echo $value['tensp']; ?></h4>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, fugiat!</p>
+        <p><?php echo $value['motangan']; ?></p>
         <a href="" class="button button_size_2">
             <span class="button_label">Buy Now</span>
         </a>
@@ -248,10 +248,19 @@
 </div>
 <div class="form-control">
 <div  class="form-label">
+    <input type="text" class="form-input" name="name" placeholder="Họ tên">
+</div>
+<div  class="form-label">
     <input type="text" class="form-input" name="username" placeholder="Username">
 </div>
 <div  class="form-label">
     <input type="text" class="form-input" name="email" placeholder="Email">
+</div>
+<div  class="form-label">
+    <input type="text" class="form-input" name="sdt" placeholder="Số điện thoại">
+</div>
+<div  class="form-label">
+    <input type="text" class="form-input" name="dia_chi" placeholder="Địa chỉ">
 </div>
 <div class="form-label">
     <input type="password" class="form-input" name="password" placeholder="Password">
