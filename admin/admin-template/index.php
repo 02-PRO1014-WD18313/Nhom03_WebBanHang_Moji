@@ -32,6 +32,7 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
         $giamoi = $_POST['giamoi'];
         $soluong = $_POST['soluong'];
         $mota = $_POST['mota'];
+        $motangan = $_POST['motangan'];
         $img = $_FILES['img']['name'];
         $iddm = $_POST['danhmuc'];
 
@@ -44,7 +45,7 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
             #echo "Sorry, there was an error uploading your file.";
         }
 
-        insert_sanpham($tensp, $masp, $giacu, $giamoi, $soluong, $mota, $img, $iddm);
+        insert_sanpham($tensp, $masp, $giacu, $giamoi, $soluong, $mota, $motangan, $img, $iddm);
         $THONG_BAO = "BẠN ĐÃ THÊM THÀNH CÔNG!";
     };
       $data_dm = loadAll_dm();
@@ -75,6 +76,7 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
           $giacu = $_POST['giacu'];
           $giamoi = $_POST['giamoi'];
           $mota = $_POST['mota'];
+          $motangan = $_POST['motangan'];
           $img = $_FILES['img']['name'];
           $iddm = $_POST['danhmuc'];
 
@@ -86,7 +88,7 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
               move_uploaded_file($_FILES['img']['tmp_name'], "../../upload/sanpham/$photo");
           }
 
-          update_sp($tensp, $id, $soluong, $giacu, $giamoi, $mota, $img, $iddm);
+          update_sp($tensp, $id, $soluong, $giacu, $giamoi, $mota, $motangan, $img, $iddm);
           $THONG_BAO = "BẠN ĐÃ CẬP NHẬT THÀNH CÔNG!";
       };
       $data_sp = loadAll_sp();
@@ -155,25 +157,42 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
       include 'pages/forms/danhmuc/list_danhmuc.php';
       break;
 
-      case "list_user":
-        $data_user = loadAll_user();
-        include 'pages/forms/user/list_user.php';
-        break;
+    case "list_user":
+      $data_user = loadAll_user();
+      include 'pages/forms/user/list_user.php';
+      break;
 
-      case "xoa_user":
-        if(isset($_GET['id']) && ($_GET['id'])>0) {
-          delete_user($_GET['id']);
-        }
-        $data_user = loadAll_user();
-        include 'pages/forms/user/list_user.php';
-        break;
+    case "xoa_user":
+      if(isset($_GET['id']) && ($_GET['id'])>0) {
+        delete_user($_GET['id']);
+      }
+      $data_user = loadAll_user();
+      include 'pages/forms/user/list_user.php';
+      break;
 
-        case "sua_user":
-          if(isset($_GET['id']) && ($_GET['id'])>0) {
-              $get_user = loadOne_user($_GET['id']);
-          }
-          include 'pages/forms/user/update_user.php';
-          break;
+    case "sua_user":
+      if(isset($_GET['id']) && ($_GET['id'])>0) {
+          $get_user = loadOne_user($_GET['id']);
+      }
+      include 'pages/forms/user/update_user.php';
+      break;
+
+    case "update_user":
+      if((isset($_POST['update_user'])) && ($_POST['update_user']) ){
+          $id = $_POST['id'];
+          $name = $_POST['name'];
+          $username = $_POST['username'];
+          $password = $_POST['password'];
+          $email = $_POST['email'];
+          $diachi = $_POST['diachi'];
+          $role = $_POST['role'];
+          
+
+          update_user($id, $name, $username, $password, $email, $role);
+          $THONG_BAO = "BẠN ĐÃ CẬP NHẬT THÀNH CÔNG!";
+      };
+      include 'pages/forms/user/list_user.php';
+      break;
 
     case "timkiem":
         include '../views/timkiem.php';
