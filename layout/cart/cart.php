@@ -90,12 +90,12 @@
                 <p class="ct">Tổng sản phẩm :<span class="ik"> <?php echo count($_SESSION['mycart']) ?></span></p>
             </div>
             <div class="bo2 hbo">
-                <p class="ct">Tổng thanh toán: <span class="ik"><?php echo $tong ?>  ₫</span></p> <p class="ik"></p>
+                <p class="ct">Tổng thanh toán: <span class="ik" id="tong"><?php echo $tong ?>  ₫</span></p> <p class="ik"></p>
             </div> 
             <div class="bo3 hbo">
                 <p></p>
-                <a href="index.php?act=bill"><button onclick="muahang()" class="sub" type="submit" >
-                Mua hàng</button></a>
+                <form action="index.php?act=bill" method="post">
+                <input type="submit" name="dongydathang" value="Đặt hàng">
             </div>
         </div>
        

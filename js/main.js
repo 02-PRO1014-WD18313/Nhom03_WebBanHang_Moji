@@ -85,54 +85,33 @@ function thongbao() {
 }
 
 var productData = [];
-
+var tong=parseInt(document.getElementById('tong').innerText);
    
-function updateCounter(id, value, tt) {
+function updateCounter(id, value, tt,tong) {
     document.getElementById(id).value = value;
     document.getElementById(id).closest('tr').querySelector('.total-price').innerText=tt;
+    document.getElementById('tong').innerText = tong;
   }
 
   function increment(id) {
     let counterValue = document.getElementById(id).value;
     let price = parseInt(document.getElementById(id).closest('tr').querySelector('.product-price').innerText);
     let pricett = 0;
-    console.log(price);
     counterValue++;
     pricett=counterValue*price;
-    updateCounter(id, counterValue,pricett);
+    tong+=price;
+    updateCounter(id, counterValue,pricett,tong);
   }
 
   function decrement(id) {
     let counterValue = parseInt(document.getElementById(id).value);
     let price = parseInt(document.getElementById(id).closest('tr').querySelector('.product-price').innerText);
-    console.log(price);
     let pricett = 0;
     if (counterValue > 0) {
       counterValue--;
       pricett=counterValue*price;
-      updateCounter(id, counterValue, pricett);
+      tong-=price;
+      updateCounter(id, counterValue, pricett,tong);
     }
   }
-
-  function muaHang() {
-    var products = document.querySelectorAll('.tcart table tr.bb');
-    
-    products.forEach(function (product) {
-      var productID = parseInt(product.querySelector('.total-price p'));
-      console.log(productID);
-      var productQuantity = product.querySelector('.counter-input').value;
-      console.log(productQuantity);
-
-      var productInfo = {
-        ID: productID,
-        quantity: productQuantity
-      };
-
-      productData.push(productInfo);
-    });
-
-    // Now you can use the 'productData' array to send the information to your server or perform any other actions.
-    console.log(productData);
-  }
-  muaHang();
 

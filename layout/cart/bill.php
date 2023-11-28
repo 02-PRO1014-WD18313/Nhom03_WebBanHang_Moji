@@ -23,7 +23,7 @@
             </div>
 
             <div class="bo1 pd15" style=" height: auto;display: block;">
-            <form action="">
+            <form action="index.php?act=billconfirm" method="post">
             <div class="tcart">
                             <table>
                                 <tr class="ct bb">
@@ -70,10 +70,11 @@
                                         <p>Tổng tiền hàng:      <span><?php echo $tong ?>  ₫</span></p>
                                         <p>Phí vận chuyển:      <span><?php echo $pvc  ?>  ₫</span></p>
                                         <p>Tổng thanh toán:     <span class="ik"><?php echo $tongtt?>  ₫</span></p>
+                                        <input type="hidden" name="tongthanhtoan" value="><?php echo $tongtt?>">
                                     </div> 
                                     <div class="bo3 hbo">
                                       <p>Nhấn "Đặt hàng" đồng nghĩa với việc bạn đồng ý tuân theo <span><a href="#">Điều khoản dịch vụ</a></span></p>
-                                      <input class="sub" type="submit" name="dathang" value="Đặt hàng">
+                                      <input class="sub" type="submit" name="dongydathang" value="Đặt hàng">
                                     </div>
                                 </div>
                            

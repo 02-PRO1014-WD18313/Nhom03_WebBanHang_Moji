@@ -3,7 +3,7 @@
     session_start();
     include 'models/pdo.php';
     include 'models/taikhoan.php';
-
+    include 'models/cart.php';
     include 'models/sanpham.php';
     include 'models/danhmuc.php';
 
@@ -32,8 +32,8 @@
 
 
             case "viewcart":
-                $sp1=["1","NHAN1","1.jpg","Nhẫn 1",200000,300000,"1"];
-                $sp2=["6","NHAN6","6.jpg","Nhẫn 6",200000,400000,"1"];
+                $sp1=[1,"NHAN1","1.jpg","Nhẫn 1",200000,300000,"1"];
+                $sp2=[6,"NHAN6","6.jpg","Nhẫn 6",200000,400000,"1"];
                 array_push($_SESSION['mycart'],$sp1,$sp2);
                 include 'layout/cart/cart.php';
             break;
@@ -50,6 +50,25 @@
             case "bill":
                 include 'layout/cart/bill.php';
             break;
+
+            case 'billconfirm':
+                if(isset($_POST['dongydathang']) && ($_POST['dongydathang'])){ 
+                    $pttt=$_POST['pttt'];
+                    $ngaydathang=date('h:i:sa d/m/Y');
+                    $tongdonhang=$_POST['tongthanhtoan'];
+                    //tạo bill
+                    insert_bill($pttt,$ngaydathang,$tongdonhang);
+
+                    //insert into cart: $session['mycart] & idbill
+
+                    foreach ($_SESSION['mycart'] as $cart) {
+                        insert_cart($cart[0],$cart[2],$cart[3],$cart[5],$cart[6]);
+                    }
+                    //Xóa session
+                    $_SESSION['mycart']=[];
+                }
+                include "layout/cart/billconfirm.php";
+                break; 
 
             case 'addtocart':
                 if(isset($_POST['addtocart']) && ($_POST['addtocart'])){
