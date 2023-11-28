@@ -25,7 +25,7 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
             <a href="index.php?act=home">Home</a>
             <a href="#">Products</a>
             <a href="#">Review</a>
-            <a href="#">Contact</a>
+            <a href="index.php?act=viewcart">Contact</a>
             <a href="index.php?act=unset">About</a>
         </nav>
         <div class="icons">

@@ -25,7 +25,6 @@
         ?>
 
 
-
        <div class="box_1" style="width: 100%;padding:20px 9%;height: auto;">
             <div class="giotrong" <?php echo $an ?> style="width: 100%;height: auto;background-color: #ffffff;padding: 20px 20%;">
                 <div class="gio1" style="display: flex;justify-content: center;">
@@ -37,7 +36,8 @@
                     <a href="index.php?act=home"><button style="margin: 20px;width: 20vh;height: 7vh;border-radius: 5px;background-color: #ffffff;font-size: medium; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Mua sắm ngay</button></a>
                 </div>
             </div>
-            <div class="cart" <?php echo $hien ?>>
+            
+            <div class="tcart" <?php echo $hien ?>>
                             <table>
                                 <tr class="ct bb">
                                     <th></th>
@@ -51,54 +51,41 @@
                                     
                                 <?php
                                 $tong =0;
+                                $i=0;
+                                $mk="";
                                     foreach ($_SESSION['mycart'] as $cart) {
-                                      $hinh=$img_path."sanpham/".$cart[1];
-                                      $ttien=$cart[4]*$cart[5];
+                                      $hinh=$img_path."sanpham/".$cart[2];
+                                      $ttien=$cart[5]*$cart[6];
                                       $tong+=$ttien;
-                                      echo '<tr class="bb">
+                                      echo '<tr class="bb" >
                                                 <td></td>
-                                                <td><img src="'.$hinh.'" alt=""><p class="np">'.$cart[2].'</p> <br><p>Size: 35cm</p></td>
-                                                <td ><span><del>'.$cart[3].'</del> - <span class="product-price">'.$cart[4].'</span></span></td>
+                                                <td><img src="'.$hinh.'" alt=""><p class="np">'.$cart[3].'</p> <br><p>Size: 35cm</p></td>
+                                                <td ><span><del>'.$cart[4].'</del> - <span class="product-price">'.$cart[5].'</span></span></td>
                                                 <td>
+                                                <div class="counter-container">
                                                     <div class="counter-container" style="display: flex;justify-content: center;">
                                                         <div class="count" id="counter1">
-                                                            <button class="counter-button" onclick="adjustCounter('.$cart[0].', -1)">-</button>
-                                                            <input id="'.$cart[0].'" name="'.$cart[0].'" class="counter-input" type="text" value="'.(int)$cart[5].'" readonly>
-                                                            <button class="counter-button" onclick="adjustCounter('.$cart[0].', 1)">+</button>
+                                                            <button class="counter-button" onclick="decrement('.$cart[0].')">-</button>
+                                                            <input id="'.$cart[0].'" name="'.$cart[1].'" class="counter-input" type="text" aria-valuenow="'.$cart[6].'" value="'.$cart[6].'">
+                                                            <button class="counter-button" onclick="increment('.$cart[0].')">+</button>
                                                         </div>
                                                     </div>
+                                              </div>
                                                 </td>
-                                                <td class="total-price">'.$ttien.'</td>
-                                                <td style="color: red;">Xóa</td>
+                                                <td class="total-price">'.$ttien.'<p hidden>'.$i.'</p></td>
+                                                <td><a href="index.php?act=delcart&idcart='.$i.'" style="color: red;">Xóa </a> </td>
                                             </tr>';
+                                            $i+=1;
                                     }
                                 ?>
-                                <!-- <tr class="bb">
-                                    <td></td>
-                                    <td><img src="upload/daychuyen1.jpg" alt=""><p class="np">Dây chuyền</p> <br><p>Size: 35cm</p></td>
-                                    <td class="product-price">200000000</td>
-                                    <td>
-                                        <div class="counter-container" style="display: flex;justify-content: center;">
-                                            <div class="count" id="counter1">
-                                                <button class="counter-button" onclick="adjustCounter(1, -1)">-</button>
-                                                <input id="1" name="1" class="counter-input" type="text" value="1" readonly>
-                                                <button class="counter-button" onclick="adjustCounter(1, 1)">+</button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="total-price"></td>
-                                    <td style="color: red;">Xóa</td>
-                                </tr> -->
-                                
                         
                             </table>
 
                     <div class="pd">
-
                     </div>
             </div>
        </div>
-       <div class="box_1" <?php echo $hien ?> style="width: 100%;padding:0px 9%;height: 33vh; margin-bottom: 0px;">
+       <div class="box_1" <?php echo $hien ?> style="width: 100%;padding:0px 9%;height: auto;">
             <div class="bo1 hbo">
                 <p class="ct">Tổng sản phẩm :<span class="ik"> <?php echo count($_SESSION['mycart']) ?></span></p>
             </div>
@@ -106,9 +93,12 @@
                 <p class="ct">Tổng thanh toán: <span class="ik"><?php echo $tong ?>  ₫</span></p> <p class="ik"></p>
             </div> 
             <div class="bo3 hbo">
-                <a href="index.php?act=bill"><button type="submit" style="width: 30vh; height: 8vh; display: block; float: right;margin-right: 10px;background-color: rgba(255, 0, 0, 0.871);text-align: center;line-height: 8vh;color: #ffffff;">
+                <p></p>
+                <a href="index.php?act=bill"><button onclick="muahang()" class="sub" type="submit" >
                 Mua hàng</button></a>
             </div>
         </div>
        
     </div>
+
+    

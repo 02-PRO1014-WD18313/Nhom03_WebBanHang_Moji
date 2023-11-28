@@ -1,4 +1,4 @@
-<div class="mt" style="height: auto;width: 100%;background-color: rgba(0, 0, 0, 0.07);">
+<div class="mt" style="height: auto;width: 100%;background-color: rgba(0, 0, 0, 0.07);margin-bottom: 30px;">
        <div class="box" style="width: 100%;height:75px;padding: 20px 9%;display: block;border-bottom: 1px solid #66666637;background-color: #ffffff;">
             <div style="float: left;color: #666;font-size: x-large;padding-right: 30px;border-right: 1px solid #666;">
                 <p>Thanh toán</p>
@@ -22,8 +22,9 @@
                     </div>
             </div>
 
-            <div class="bo1 pd15" style="background-color: #ffffff; height: auto;display: block;">
-            <div class="cart">
+            <div class="bo1 pd15" style=" height: auto;display: block;">
+            <form action="">
+            <div class="tcart">
                             <table>
                                 <tr class="ct bb">
                                     <th></th>
@@ -36,27 +37,47 @@
                                     
                                 <?php
                                 $tong =0;
+                                $pvc=70000;
                                     foreach ($_SESSION['mycart'] as $cart) {
-                                      $hinh=$img_path."sanpham/".$cart[1];
-                                      $ttien=$cart[4]*$cart[5];
+                                      $hinh=$img_path."sanpham/".$cart[2];
+                                      $ttien=$cart[5]*$cart[6];
                                       $tong+=$ttien;
                                       echo '<tr class="bb">
                                                 <td></td>
-                                                <td><img src="'.$hinh.'" alt=""><p class="np">'.$cart[2].'</p> <br><p>Size: 35cm</p></td>
-                                                <td ><span class="product-price">'.$cart[4].'</span></td>
+                                                <td><img src="'.$hinh.'" alt=""><p class="np">'.$cart[3].'</p> <br><p>Size: 35cm</p></td>
+                                                <td ><span class="product-price">'.$cart[5].'</span></td>
                                                 <td>
-                                                    '.$cart[5].'
+                                                    '.$cart[6].'
                                                 </td>
                                                 <td class="total-price">'.$ttien.'</td>
                                             </tr>';
                                     }
+                                    $tongtt=$tong+$pvc;
                                 ?>
                         
                             </table>
 
-                    <div class="pd">
+                            <div class="box_1 pd15" style="width: 100%;height: auto;background-color: #ffffff;">
+                                    <div class="bo1 hbo">
+                                    <p style=" font-size: large;color: #666;">Phương thức thanh toán</p>
+                                    <input type="radio" id="ob" name="pttt">
+                                    <label for="ob">Online Banking</label>
 
-                    </div>
+                                    <input type="radio" id="ttknh" name="pttt">
+                                    <label for="ttknh">Thanh toán khi nhận hàng</label>
+                                    </div>
+                                    <div class="bo2 hbo ct">
+                                        <p>Tổng tiền hàng:      <span><?php echo $tong ?>  ₫</span></p>
+                                        <p>Phí vận chuyển:      <span><?php echo $pvc  ?>  ₫</span></p>
+                                        <p>Tổng thanh toán:     <span class="ik"><?php echo $tongtt?>  ₫</span></p>
+                                    </div> 
+                                    <div class="bo3 hbo">
+                                      <p>Nhấn "Đặt hàng" đồng nghĩa với việc bạn đồng ý tuân theo <span><a href="#">Điều khoản dịch vụ</a></span></p>
+                                      <input class="sub" type="submit" name="dathang" value="Đặt hàng">
+                                    </div>
+                                </div>
+                           
+                        </form>
             </div>
             </div>
             

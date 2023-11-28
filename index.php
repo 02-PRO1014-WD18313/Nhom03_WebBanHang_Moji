@@ -32,8 +32,20 @@
 
 
             case "viewcart":
+                $sp1=["1","NHAN1","1.jpg","Nhẫn 1",200000,300000,"1"];
+                $sp2=["6","NHAN6","6.jpg","Nhẫn 6",200000,400000,"1"];
+                array_push($_SESSION['mycart'],$sp1,$sp2);
                 include 'layout/cart/cart.php';
             break;
+
+            case 'delcart':
+                if(isset($_GET['idcart'])){
+                    array_splice($_SESSION['mycart'],$_GET['idcart'],1);
+                } else{
+                    $_SESSION['mycart']=[];
+                }
+                include 'layout/cart/cart.php';
+                break;  
 
             case "bill":
                 include 'layout/cart/bill.php';
@@ -42,13 +54,14 @@
             case 'addtocart':
                 if(isset($_POST['addtocart']) && ($_POST['addtocart'])){
                     $id=$_POST['id'];
+                    $id_sp=$_POST['id_sp'];
                     $ten=$_POST['name'];
                     $img=$_POST['img'];
                     $gc=$_POST['giacu'];
                     $gm=$_POST['giamoi'];
                     $soluong=1;
                     $ttien=$soluong * $gm;
-                    $spadd=[$id,$img,$ten,$gc,$gm,$soluong,$ttien];
+                    $spadd=[$id,$id_sp,$img,$ten,$gc,$gm,$soluong,$ttien];
                     array_push($_SESSION['mycart'],$spadd);
                 }
                 include 'layout/cart/cart.php';

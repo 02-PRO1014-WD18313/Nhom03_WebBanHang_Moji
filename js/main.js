@@ -74,42 +74,8 @@ document.addEventListener("DOMContentLoaded", function() {
             })
         }
     }
-    countdown();
-    function countdown(){
-        let countDown = new Date("Nov 25, 2023 00:00:00").getTime();
-        x = setInterval(function(){
-            let now = new Date().getTime();
-            let distance = countDown - now;
-            document.getElementById('days').innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-            document.getElementById('hours').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById('minutes').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000);
-            if(distance < 0){
-                clearInterval(x);
-            }
-        }, 0);
-    }
-    cart();
-    function cart(){
-        var icons = document.querySelectorAll('.icons .icon-header');
-        var outCart = document.querySelectorAll('.fa-times');
-        console.log(outCart);
-        for(var i = 0; i < icons.length; i++){
-           icons[i].addEventListener('click', function(){
-                var showingUp = this.getAttribute('data-cart');
-                var showingContent = document.getElementById(showingUp);
-                for(var j = 0; j < showingContent.length; j++){
-                    this.classList.remove('rushOut')
-                }
-                showingContent.classList.add('rushOut');
-                for(var j = 0; j < outCart.length; j++){
-                    outCart[j].addEventListener('click', function(){
-                        showingContent.classList.remove('rushOut');
-                    })
-                }
-           }) 
-        }
-    }
+   
+    
 
 
 }, false);
@@ -118,27 +84,55 @@ function thongbao() {
     alert("Sản phẩm đã có trong giỏ hàng!!");
 }
 
-function adjustCounter(productId, value) {
-    console.log("productId:", productId);
-    console.log("value:", value);
-    console.log(document.getElementsByName(productId).value);
-    
-    var counterInput = document.getElementsByName(productId);
-    var counterValue = parseInt(counterInput.value);
+var productData = [];
 
-    if (value === 1 || (value === -1 && counterValue > 0)) {
-        counterValue += value;
-        counterInput.value = counterValue;
+   
+function updateCounter(id, value, tt) {
+    document.getElementById(id).value = value;
+    document.getElementById(id).closest('tr').querySelector('.total-price').innerText=tt;
+  }
 
-        // // Lấy giá của sản phẩm từ ô chứa giá
-        // var productPriceCell = counterInput.closest('.count').querySelector('.product-price');
-        // var pricePerUnit = parseFloat(productPriceCell.textContent);
+  function increment(id) {
+    let counterValue = document.getElementById(id).value;
+    let price = parseInt(document.getElementById(id).closest('tr').querySelector('.product-price').innerText);
+    let pricett = 0;
+    console.log(price);
+    counterValue++;
+    pricett=counterValue*price;
+    updateCounter(id, counterValue,pricett);
+  }
 
-        // // Tính toán lại thành tiền và cập nhật giá trị trong ô "Thành tiền"
-        // var totalPrice = pricePerUnit * counterValue;
-        // var totalPriceCell = counterInput.closest('.count').querySelector('.total-price');
-        // totalPriceCell.textContent = totalPrice;
-
-        // Thêm mã để cập nhật thành tiền tương ứng nếu cần
+  function decrement(id) {
+    let counterValue = parseInt(document.getElementById(id).value);
+    let price = parseInt(document.getElementById(id).closest('tr').querySelector('.product-price').innerText);
+    console.log(price);
+    let pricett = 0;
+    if (counterValue > 0) {
+      counterValue--;
+      pricett=counterValue*price;
+      updateCounter(id, counterValue, pricett);
     }
-}
+  }
+
+  function muaHang() {
+    var products = document.querySelectorAll('.tcart table tr.bb');
+    
+    products.forEach(function (product) {
+      var productID = parseInt(product.querySelector('.total-price p'));
+      console.log(productID);
+      var productQuantity = product.querySelector('.counter-input').value;
+      console.log(productQuantity);
+
+      var productInfo = {
+        ID: productID,
+        quantity: productQuantity
+      };
+
+      productData.push(productInfo);
+    });
+
+    // Now you can use the 'productData' array to send the information to your server or perform any other actions.
+    console.log(productData);
+  }
+  muaHang();
+
