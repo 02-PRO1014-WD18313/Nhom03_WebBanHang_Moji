@@ -7,6 +7,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    list-style-type: none;
 
 }
 body, html{
@@ -1211,23 +1212,24 @@ hr {
 
 .detail-product {
     width: 100%;
-    min-height: 100px;
+    height: 50px;
     /* border: 1px solid black ; */
     justify-content: center;
     align-items: center;
-    background-color: #f7f7f7;
+    /* background-color: #f7f7f7; */
 }
 
 .detail-product .directionaly {
     width: 100%;
     display: flex;
     justify-content: center;
-    line-height: 40px;
+    line-height: 50px;
     font-size: 28px;
 }
 
 .directionaly a {
-    margin: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     position: relative;
     cursor: pointer;
 }
@@ -1253,18 +1255,23 @@ hr {
     left: 0px;
 }
 
-.detail-product .information {
-    width: 100%;
-    height: 120px;
+.information {
+    width: 70%;
     /* border: 1px solid black ; */
+    margin: auto;
 }
 
-.detail-product .review {
-    /* display: none; */
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.4s;
+.review {
+    text-align: center;
+    display: none;
+
 }
+
+.hienra{
+    display: block ;
+}
+
+
 
 .price {
     display: flex;
@@ -1558,37 +1565,172 @@ hr {
     }
 
 
-.hienra{
-    display: block;
-}
+
 
 
 
 .container_sp {
     width: 100%;
-    min-height: 100vh;
+    min-height: 160vh;
     display: flex;
     margin-top: 60px;
     margin-bottom: 20px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+}
+
+.container_sp .filter .category_sp,
+.container_sp .filter .size_sp,
+.container_sp .filter .sale_sp
+{
+    width: 80%;
+    margin : 15px auto;
+}
+
+.category_sp ul li,
+.size_sp ul li,
+.sale_sp ul li
+{
+    /* margin: 8px; */
+    padding: 8px;
+}
+
+.size_sp ul li{
+    display: inline-block;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.price_sp {
+    width: 80%;
+    margin: 15px auto;    
+}
+
+.price_sp .price-input {
+
+    margin: 20px 0 25px;
+    width: 100%;
+    display: flex;
+}
+
+.price-input .separator {
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+}
+
+.price-input .field {
+    height: 45px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.slide_sp {
+    height: 5px;
+    background-color: #ddd;
+    border-radius: 5px ;
+    position: relative;
+}
+
+.progress {
+    height: 5px;
+    background-color: #17a2b8;
+    border-radius: 5px;
+    position: absolute;
+    left: 25%;
+    right: 25%;
+}
+
+.range-input {
+    position: relative;
+
+}
+
+.range-input input {
+    position: absolute;
+    top: -5px;
+    height: 5px;
+    width: 100%;
+    -webkit-appearance: none;
+    background: none;
+    pointer-events: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    background: #17a2b8;
+    pointer-events: auto;
+}
+
+.field input {
+    width: 60%;
+    height: 100%;
+    margin-left: 12px;
+    border: 1px solid #999;
+    outline: none;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 19px;
+}
+
+.line {
+    background-color: black;
+    width: 1px;
+    height: 152vh;
+    margin-top: 15px ;
 }
 
 .container_sp .filter {
     width: 27%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     float: left;
 }
 .container_sp .all-products {
-    width: 70%;
-    border: 1px solid black;
+    width: 73%;
     display: flex;
     flex-wrap: wrap;
-    min-height: 100vh;
+    height: 150vh;
+    justify-content: flex-start;
 }
 
 .container_sp .all-products .product_sp {
     width: 30%;
-    height: 30%;
+    height: 32%;
     border: 1px solid black;
+    margin: 15px auto;
+    border-radius: 10px;
+}
+
+.product_sp img {
+    width: 100%;
+    height: 70%;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.buy-now {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* justify-content: center; */
+}
+
+.buy-now > button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    margin: 5px;
+    background-color: #87C4FF;
+    color: #983030;
+}
+
+.hienra {
+    display: flex;
 }
 

@@ -50,13 +50,14 @@
             <a data-display="information">Information</a>
             <a data-display="review">Review</a>
         </div>
+        
+    </div>
         <div class="information display" id="information">
             <p style="text-align:center"><?php echo $mota ?></p>
         </div>
         <div class="review display" id="review">
             <h2>Abc</h2>
         </div>
-    </div>
     <hr>
     <h2 style="text-align:center; font-size:56px; margin-top:10px">Related Product</h2>
     <div class="related-product" >
@@ -86,11 +87,10 @@
     for(var i = 0; i < navigation.length; i++){
         
         navigation[i].addEventListener("click", function(){
-            
             let showing = this.getAttribute("data-display");
             let showingcontent = document.getElementById(showing);
             for(var j = 0; j < showingcontent.length; j++){
-                showingcontent.classList.remove = "hienra";
+                showingcontent[j].classList.remove = "hienra";
             }
             showingcontent.classList.add('hienra');
             console.log(showingcontent);

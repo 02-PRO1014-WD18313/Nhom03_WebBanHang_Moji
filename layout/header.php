@@ -20,7 +20,7 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
     <div class="header nb">
 
         <div class="logo">
-            <a href="index.php?act=home">
+            <a href="index.php">
                 <img src="image/z4876602114590_6223b9460e22e4f10da597208a1fa113.png" alt="">
             </a>
         </div>

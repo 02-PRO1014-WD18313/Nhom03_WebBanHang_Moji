@@ -82,4 +82,9 @@
     //     $data_sp = pdo_query($sql);
     //     return $data_sp;       
     // }
+    function loadAll_sp_dm($id) {
+        $sql = "SELECT * FROM `sanpham` WHERE `id_dm` = '$id'";
+        $get_sp = pdo_query($sql);
+        return $get_sp;
+    }
 ?>

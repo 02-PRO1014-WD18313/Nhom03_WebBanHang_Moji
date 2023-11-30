@@ -114,11 +114,15 @@
                     include 'layout/sanphamct.php';
                 }else {
                     include 'layout/sanphamct.php';
-
                 }
                 break;
             case "sanpham":
-                $data_sp_highlight = loadAll_sp_highlight();
+                if(isset($_GET['id_dm'])){
+                    $id_dm = $_GET['id_dm'];
+                    $loadAll_sp_dm = loadAll_sp_dm($id_dm);
+                }else {
+                    $loadAll_sp = loadAll_sp();
+                }
                 include 'layout/sanpham.php';
                 break;
             
