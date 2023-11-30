@@ -31,10 +31,10 @@ document.addEventListener("DOMContentLoaded", function() {
             
         }); 
     }
+    
     function autoSlide(){
         var slidesLct = 0;
         var slideNow = document.querySelector('.slides ul li.active');
-        // console.log(slideNow);
         for(var slidesLct = 0; slideNow = slideNow.previousElementSibling; slidesLct++){
 
         }
@@ -55,17 +55,22 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     preview();
+    // console.log("abc");
     function preview(){
         var click = document.querySelectorAll('.preview-icon');
         var content = document.querySelectorAll('.content-wrapper');
         var out = document.querySelectorAll('.icon-out');
         // console.log(out);
+        // console.log("object");
+        console.log(click);
+        console.log(content);
         for(var k=0; k < click.length; k++){
             click[k].addEventListener('click', function(){
                 var showingUp = this.getAttribute('data-preview');
                 var showingContent = document.getElementById(showingUp);
+                console.log(showingUp);
+                console.log(showingContent);
                 showingContent.classList.add('rushOut');
-                // console.log(showingContent);
                 for(var i=0; i < out.length; i++){
                     out[i].addEventListener('click', function(){
                         showingContent.classList.remove('rushOut');
