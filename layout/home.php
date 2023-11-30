@@ -114,7 +114,7 @@
 ?>
     <div class="isotope-item product">
         <?php echo "<img class='img-product' src='upload/sanpham/".$value['img']."' >";  ?>
-        <p><a href="#" class="product-title"><?php echo $tensp?></a></p> <br>
+        <p><a href="#" class="product-title"><?php echo $tensp?></a></p> 
         <div class="price">
             <p class="newprice"><?php echo number_format($value['giamoi'], 0 , ','); ?> VNĐ</p>
             <p class="oldprice"><?php echo number_format($value['giacu'], 0 , ','); ?> VNĐ</p>
@@ -122,8 +122,6 @@
         <button class="onsale sale-label">On Sale</button>
         <div class="hover-product">
             <div class="icons-product">
-                <a class="icon first-icon"  href="#"><i class="fas fa-heart"></i></a>
-                <a class="icon" href="#"><i class="fas fa-snowflake"></i></a>
                 <a class="icon preview-icon" data-preview="preview" ><i class="fas fa-link"></i></a>
             </div>
         </div>
@@ -149,7 +147,7 @@
 ?>
     <div class="isotope-item product">
         <?php echo "<img class='img-product' src='upload/sanpham/".$value['img']."' >";  ?>
-        <p><a href="#" class="product-title"><?php echo $tensp?></a></p> <br>
+        <p><a href="#" class="product-title"><?php echo $tensp?></a></p> 
         <div class="price">
             <p class="newprice"><?php echo number_format($value['giamoi'], 0 , ','); ?> VNĐ</p>
             <p class="oldprice"><?php echo number_format($value['giacu'], 0 , ','); ?> VNĐ</p>
@@ -157,8 +155,6 @@
         <button class="onsale sale-label">On Sale</button>
         <div class="hover-product">
             <div class="icons-product">
-                <a class="icon first-icon"  href="#"><i class="fas fa-heart"></i></a>
-                <a class="icon" href="#"><i class="fas fa-snowflake"></i></a>
                 <a class="icon preview-icon" data-preview="preview" ><i class="fas fa-link"></i></a>
             </div>
         </div>
@@ -168,17 +164,18 @@
 </div>
 
 
-<div class="preview content-wrapper" id="preview">
+<!-- <div class="preview content-wrapper" id="preview">
 <a class="icon-out">
     <i class="fas fa-plus"></i>
 </a>
-<div class="preview-image" style="background-image: url(image/photo-1-1571065781331448666071.jpg);">
+
+<div class="preview-image" style="background-image: url(upload/sanpham/<?php echo $value['img']; ?>);">
 
 </div>
 <div class="information-product">
     <div class="text-content-product">
-        <h3 class="heading">Tên Sản Phẩm</h3>
-        <span class="price"> <del>Giá</del>  -  Giá</span>
+        <h3 class="heading"></h3>
+
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus rem repellat ipsam ex soluta voluptas error ducimus illum consequuntur sit perferendis, inventore aliquam! Deserunt quisquam recusandae libero excepturi cumque dignissimos dolor cupiditate. Et harum ab doloribus dolores dolorum reiciendis provident minus sed eum nulla dolorem, necessitatibus cupiditate mollitia aperiam.</p>
         <p style="font-size: 20px; margin-top:10px ;color: black;">Material</p>
     </div>
@@ -217,7 +214,7 @@
         <p>Tags: </p>
     </div>
 </div>
-</div>
+</div> -->
 <br>
 <div class="cart cart-product" id="cart">
 <a class="outCart" style="cursor: pointer;"><i class="fas fa-times"></i></a>
@@ -274,7 +271,7 @@
 </div>
 
 <div class="form-label">
-<input type="text" name="password" class="form-input" placeholder="Password">
+<input type="password" name="password" class="form-input" placeholder="Password">
 </div>
 <input type="submit" name="login" class="form-button" value="ĐĂNG NHẬP">
     </div>

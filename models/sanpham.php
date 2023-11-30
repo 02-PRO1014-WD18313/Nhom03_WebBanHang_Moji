@@ -40,17 +40,17 @@
         return $get_sp;
     }
 
-    function update_sp($tensp, $id, $soluong, $giacu, $giamoi, $mota, $motangan, $img, $iddm) {
-        if($img != "") {
-            $sql = "UPDATE `sanpham` SET `tensp`='$tensp', `id_sp` = '$id', `soluong` = '$soluong', `giacu` = '$giacu', `giamoi` = '$giamoi',
-            `mota` = '$mota', `motangan` = '$motangan', `img` = '$img', `id_dm` = '$iddm' WHERE `id_sp` = '$id'";
-        }
-        else {
-            $sql = "UPDATE `sanpham` SET `tensp`='$tensp', `id_sp` = '$id', `soluong` = '$soluong', `giacu` = '$giacu', `giamoi` = '$giamoi',
-            `mota` = '$mota', `motangan` = '$motangan', `id_dm` = '$iddm' WHERE `id_sp` = '$id'";
-        }
-        pdo_execute($sql);
-    }
+        // function update_sp($tensp, $id, $soluong, $giacu, $giamoi, $mota, $motangan, $img, $iddm) {
+        //     if($img != "") {
+        //         $sql = "UPDATE `sanpham` SET `tensp`='$tensp', `id_sp` = '$id', `soluong` = '$soluong', `giacu` = '$giacu', `giamoi` = '$giamoi',
+        //         `mota` = '$mota', `motangan` = '$motangan', `img` = '$img', `id_dm` = '$iddm' WHERE `id_sp` = '$id'";
+        //     }
+        //     else {
+        //         $sql = "UPDATE `sanpham` SET `tensp`='$tensp', `id_sp` = '$id', `soluong` = '$soluong', `giacu` = '$giacu', `giamoi` = '$giamoi',
+        //         `mota` = '$mota', `motangan` = '$motangan', `id_dm` = '$iddm' WHERE `id_sp` = '$id'";
+        //     }
+        //     pdo_execute($sql);
+        // }
 
     function search($key) {
         $sql = "SELECT * FROM `sanpham` WHERE `tensp` like '%".$key."%'";

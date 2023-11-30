@@ -98,7 +98,19 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
                 if(isset($_SESSION['user'])) {
                     extract($_SESSION['user']);
             ?>
-            <p>Xin chào, <strong><?=$username?></strong>!</p>
+   
+
+
+        <a data-cart="user" class="icon-header" data-bs-toggle="dropdown">Xin chào, <strong><?=$username?></strong></a></li>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Link 1</a></li>
+                <li><a class="dropdown-item" href="#">Link 2</a></li>
+                <li><a class="dropdown-item" href="#">Link 3</a></li>
+            </ul>
+
+            <a data-cart="cart" class="icon-header">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
             <?php 
                 }else {
             ?>
