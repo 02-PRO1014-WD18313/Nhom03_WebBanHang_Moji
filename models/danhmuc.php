@@ -15,11 +15,19 @@
         return $data_dm;       
     }
 
+    function loadall_danhmuc_home(){
+        $sql = "select * from danhmuc where 1 order by iddm desc limit 0,3";
+        $listdanhmuc=pdo_query($sql);
+        return $listdanhmuc;
+    }
+
     function loadOne_dm($id) {
         $sql = "SELECT * FROM `danhmuc` where `iddm` = '$id'";
         $get_dm = pdo_query_one($sql);
         return $get_dm;
     }
+
+    
 
     function update_dm($tendm, $id, $img) {
         if($img != "") {
