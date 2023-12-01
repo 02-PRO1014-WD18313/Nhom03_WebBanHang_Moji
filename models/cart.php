@@ -12,8 +12,8 @@
             return $tong;
     }
 
-    function insert_bill($pttt,$ngaydathang,$tongdonhang){
-        $sql = "insert into bill(pttt,ngaydathang,total) values('$pttt','$ngaydathang','$tongdonhang')";
+    function insert_bill($id_user,$name,$address,$tel,$email,$pttt,$ngaydathang,$tongdonhang){
+        $sql = "insert into bill(id_user,user_name,dia_chi,tel,email,pttt,ngaydathang,total) values('$id_user','$name','$address','$tel','$email','$pttt','$ngaydathang','$tongdonhang')";
         return pdo_execute_return_lastInsertId($sql);
     }
 
@@ -26,6 +26,12 @@
         $sql="select * from bill where id=".$id;
         $bill=pdo_query_one($sql);
         return $bill;
+    }
+
+    function loadone_sanphamCart ($idList) {
+        $sql = 'SELECT * FROM sanpham WHERE id IN ('. $idList . ')';
+        $sanpham = pdo_query($sql);
+        return $sanpham;
     }
 
     function loadall_cart($idbill){

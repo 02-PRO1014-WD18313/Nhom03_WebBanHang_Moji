@@ -14,69 +14,7 @@
             extract($data_sp_highlight);
         }
     ?>
-<div class="slide-wrapper">
 
-<div class="slides">
-    <ul>
-        <li class="active">
-            <div class="slide">
-                <div class="img" style="background-image: url(image/slide1.avif);"></div>
-                <img src="image/big_brown.png" alt="" class="below-brown">
-                <img src="image/big_brown.png" alt="" class="above-brown">
-                <img src="image/small_brown.png" alt="" class="right-brown">
-                <div class="text-content">
-                    <h2>01</h2>
-                    <small>TH true milk</small>
-                    <div class="dot"></div>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, quod perferendis. Earum, optio veritatis? Corrupti incidunt sed asperiores eligendi necessitatibus, soluta dolor atque vitae blanditiis nobis fugit est eius aliquid.</p>
-                    <a href="" class="button">See Project</a>
-                </div>
-                
-            </div>
-        </li>
-        <li>
-            <div class="slide">
-                <div class="img" style="background-image: url('image/slide2.avif');"></div>
-                <img src="image/big_blue.png" alt="" class="below-brown">
-                <img src="image/big_blue.png" alt="" class="above-brown">
-                <img src="image/small_blue.png" alt="" class="right-brown">
-                <div class="text-content">
-                    <h2>02</h2>
-                    <small>TH true milk</small>
-                    <div class="dot"></div>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, quod perferendis. Earum, optio veritatis? Corrupti incidunt sed asperiores eligendi necessitatibus, soluta dolor atque vitae blanditiis nobis fugit est eius aliquid.</p>
-                    <a href="" class="button">See Project</a>
-                </div>
-                
-            </div>
-        </li>
-        <li>
-            <div class="slide">
-                <div class="img" style="background-image: url(image/slide3.avif);"></div>
-                <img src="image/big_red.png" alt="" class="below-brown">
-                <img src="image/big_red.png" alt="" class="above-brown">
-                <img src="image/small_red.png" alt="" class="right-brown">
-                <div class="text-content">
-                    <h2>03</h2>
-                    <small>TH true milk</small>
-                    <div class="dot"></div>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, quod perferendis. Earum, optio veritatis? Corrupti incidunt sed asperiores eligendi necessitatibus, soluta dolor atque vitae blanditiis nobis fugit est eius aliquid.</p>
-                    <a href="" class="button">See Project</a>
-                </div>
-                
-            </div>
-        </li>
-    </ul>
-    
-</div>
-<div class="transfer-slides">
-    <ul>
-        <li class="transfer">1</li>
-        <li>2</li>
-        <li>3</li>
-    </ul>
-</div>
-</div>
 <div class="h2">
 
 <h2 class="h2_title">Sản Phẩm Gợi Ý </h2>
@@ -90,13 +28,8 @@
     <div class="section_title section_title_1">
         <h5>Our recommendation</h5>
         <h4><?php echo $value['tensp']; ?></h4>
-<<<<<<< HEAD
-        <p><?php echo $value['motangan']; ?></p>
-        <a href="" class="button button_size_2">
-=======
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, fugiat!</p>
         <a href="index.php?act=sanphamct&id_sp=<?php echo $id_sp?>" class="button button_size_2">
->>>>>>> origin/ngoc
             <span class="button_label">Buy Now</span>
         </a>
     </div>
@@ -130,40 +63,6 @@
 </div>
 
 <div class="mcb-backgound">
-<!-- <div class="image-wrapper mcb-wrap-inner">
-    <img src="image/Bộ-Trang-Sức-Kim-Đính-Cương-Nhân-Tạo-iGems-2-scaled.jpg" alt="">
-    
-        <div class="sale-label">
-            <h5>-33%</h5>
-        </div>
-    
-</div>
-<div class="mcb-wrap-backgound-overlay mcb-wrap-inner">
-    <h2 class="title">Special Offer</h2>
-    <p class="title">Tên Sản Phẩm</p>
-    <div class="parent-quick-fact">
-        <div class="quick-fact">
-            <div id="days" class="number-wrap"></div>
-            <h3 class="tittle">Days</h3>
-        </div>
-        <div class="quick-fact">
-            <div id="hours" class="number-wrap"></div>
-            <h3 class="tittle">Hours</h3>
-            
-        </div>
-        <div class="quick-fact">
-            <div id="minutes" class="number-wrap"></div>
-            <h3 class="tittle">Minutes</h3>
-        </div>
-        <div class="quick-fact">
-            <div id="seconds" class="number-wrap"></div>
-            <h3 class="tittle">Seconds</h3>
-        </div>
-    </div>
-    <h3>Tên Sản Phẩm</h3>
-    <p class="title">Giá</p>
-    <button class="button-size-2">Buy Now</button>
-</div> -->
 <img src="image/banner2.png" alt="">
 </div>
 
@@ -235,32 +134,6 @@
 </div>
 </div>
 
-
-<!-- <div class="preview content-wrapper" id="preview">
-<a class="icon-out">
-    <i class="fas fa-plus"></i>
-</a>
-<div class="preview-image" style="background-image: url(image/photo-1-1571065781331448666071.jpg);">
-
-</div>
-<div class="information-product">
-    <div class="text-content-product">
-        <h3 class="heading">Tên Sản Phẩm</h3>
-        <span class="price"> <del>Giá</del>  -  Giá</span>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus rem repellat ipsam ex soluta voluptas error ducimus illum consequuntur sit perferendis, inventore aliquam! Deserunt quisquam recusandae libero excepturi cumque dignissimos dolor cupiditate. Et harum ab doloribus dolores dolorum reiciendis provident minus sed eum nulla dolorem, necessitatibus cupiditate mollitia aperiam.</p>
-        <p style="font-size: 20px; margin-top:10px ;color: black;">Material</p>
-    </div>
-    <div class="variations-form cart">
-        <div class="input-number">
-            <input type="number" min="1" max="10" name="" value="1">
-            <button class="plus"><i class="fas fa-plus"></i></button>
-            <button class="minus"><i class="fas fa-minus"></i></button>
-            <input type="submit" value="Add to Cart">
-        </div>
-        <p>Tags: </p>
-    </div>
-</div>
-</div> -->
 <?php 
     foreach ($data_sp_top8 as $value) :
         extract($value);
@@ -287,7 +160,7 @@
             <input type="number" min="1" max="10" name="" value="1">
             <button class="plus"><i class="fas fa-plus"></i></button>
             <button class="minus"><i class="fas fa-minus"></i></button>
-            <input type="submit" value="Add to Cart">
+            <input data-id="<?= $id ?>" onclick="addToCart(<?= $id ?>, '<?= $tensp ?>', <?= $giacu ?>,<?= $giamoi ?>)"  type="submit" value="Add to Cart">
         </div>
         <p>Tags: </p>
     </div>
@@ -312,19 +185,10 @@
 </div>
 <div class="form-control">
 <div  class="form-label">
-    <input type="text" class="form-input" name="name" placeholder="Họ tên">
-</div>
-<div  class="form-label">
     <input type="text" class="form-input" name="username" placeholder="Username">
 </div>
 <div  class="form-label">
     <input type="text" class="form-input" name="email" placeholder="Email">
-</div>
-<div  class="form-label">
-    <input type="text" class="form-input" name="sdt" placeholder="Số điện thoại">
-</div>
-<div  class="form-label">
-    <input type="text" class="form-input" name="dia_chi" placeholder="Địa chỉ">
 </div>
 <div class="form-label">
     <input type="password" class="form-input" name="password" placeholder="Password">
@@ -360,3 +224,24 @@
 </div>
 </form>
 
+<script>
+    function addToCart(productId, productName, oldPrice, newPrice) {
+        $.ajax({
+            type: 'POST',
+            // Đường dẫ tới tệp PHP xử lý dữ liệu
+            url: 'view/addToCart.php',
+            data: {
+                id: productId,
+                name: productName,
+                giacu: oldPrice,
+                giamoi: newPrice
+            },
+            success: function(response) {
+                alert('Bạn đã thêm sản phẩm vào giỏ hàng thành công!')
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    }
+</script>

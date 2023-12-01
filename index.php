@@ -10,8 +10,7 @@
     include 'layout/header.php';
     include 'global.php';
 
-    if(!isset($_SESSION['mycart'])) $_SESSION['mycart']=[];
-
+    if(!isset($_SESSION['cart'])) $_SESSION['cart']=[];
     // main
     $data_sp_top8 = loadAll_sp_top8();
     $data_dm = loadAll_dm();
@@ -38,59 +37,38 @@
 
 
             case "viewcart":
-                $sp1=[1,"NHAN1","1.jpg","Nhẫn 1",200000,300000,"1"];
-                $sp2=[6,"NHAN6","6.jpg","Nhẫn 6",200000,400000,"1"];
-                array_push($_SESSION['mycart'],$sp1,$sp2);
-                include 'layout/cart/cart.php';
+                if (!empty($_SESSION['cart'])) {
+                    $cart = $_SESSION['cart'];
+
+                    $productId = array_column($cart, 'id');
+                    $idList = implode(',', $productId);
+                    $dataDb = loadone_sanphamCart($idList);
+                }
+                include 'view/cart.php';
             break;
 
-            case 'delcart':
-                if(isset($_GET['idcart'])){
-                    array_splice($_SESSION['mycart'],$_GET['idcart'],1);
-                } else{
-                    $_SESSION['mycart']=[];
-                }
-                include 'layout/cart/cart.php';
-                break;  
-
             case "bill":
-                include 'layout/cart/bill.php';
+                if (!empty($_SESSION['cart'])) {
+                    $cart = $_SESSION['cart'];
+
+                    $productId = array_column($cart, 'id');
+                    $idList = implode(',', $productId);
+                    $dataDb = loadone_sanphamCart($idList);
+                }
+                include 'view/bill.php';
             break;
 
             case 'billconfirm':
-                if(isset($_POST['dongydathang']) && ($_POST['dongydathang'])){ 
+                if(isset($_POST['dongydathang']) && ($_POST['dongydathang'])){
+                    $user = $_SESSION['user'];
                     $pttt=$_POST['pttt'];
                     $ngaydathang=date('h:i:sa d/m/Y');
                     $tongdonhang=$_POST['tongthanhtoan'];
-                    //tạo bill
-                    insert_bill($pttt,$ngaydathang,$tongdonhang);
-
-                    //insert into cart: $session['mycart] & idbill
-
-                    foreach ($_SESSION['mycart'] as $cart) {
-                        insert_cart($cart[0],$cart[2],$cart[3],$cart[5],$cart[6]);
-                    }
-                    //Xóa session
-                    $_SESSION['mycart']=[];
+                    $idbill=insert_bill($user['id'],$user['name'],$user['dia_chi'],$user['sdt'],$user['email'],$pttt,$ngaydathang,$tongdonhang);
                 }
-                include "layout/cart/billconfirm.php";
+                include "view/billconfirm.php";
                 break; 
 
-            case 'addtocart':
-                if(isset($_POST['addtocart']) && ($_POST['addtocart'])){
-                    $id=$_POST['id'];
-                    $id_sp=$_POST['id_sp'];
-                    $ten=$_POST['name'];
-                    $img=$_POST['img'];
-                    $gc=$_POST['giacu'];
-                    $gm=$_POST['giamoi'];
-                    $soluong=1;
-                    $ttien=$soluong * $gm;
-                    $spadd=[$id,$id_sp,$img,$ten,$gc,$gm,$soluong,$ttien];
-                    array_push($_SESSION['mycart'],$spadd);
-                }
-                include 'layout/cart/cart.php';
-                break; 
             case "login":
                 if((isset($_POST['login'])) && ($_POST['login']) ){
                     $username = $_POST['username'];
@@ -107,23 +85,7 @@
                     }
                 }
                 break;
-            
-            case "login":
-                if((isset($_POST['login'])) && ($_POST['login']) ){
-                    $username = $_POST['username'];
-                    $password = $_POST['password'];
-            
-                    $check_user = check_user($username, $password);
-            
-                    if(is_array($check_user)) {
-                        $_SESSION['user'] = $check_user;
-                        header('location: index.php');
-                        exit(); // Kết thúc thực thi sau khi chuyển hướng
-                    } else {
-                        include 'layout/home.php';
-                    }
-                }
-                break;
+  
                 ob_end_flush();
 
             case "register":

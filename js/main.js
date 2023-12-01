@@ -79,7 +79,27 @@ document.addEventListener("DOMContentLoaded", function() {
             })
         }
     }
-   
+    cart();
+    function cart(){
+        var icons = document.querySelectorAll('.icons .icon-header');
+        var outCart = document.querySelectorAll('.fa-times');
+        console.log(outCart);
+        for(var i = 0; i < icons.length; i++){
+           icons[i].addEventListener('click', function(){
+                var showingUp = this.getAttribute('data-cart');
+                var showingContent = document.getElementById(showingUp);
+                for(var j = 0; j < showingContent.length; j++){
+                    this.classList.remove('rushOut')
+                }
+                showingContent.classList.add('rushOut');
+                for(var j = 0; j < outCart.length; j++){
+                    outCart[j].addEventListener('click', function(){
+                        showingContent.classList.remove('rushOut');
+                    })
+                }
+           }) 
+        }
+    }
     
 
 
@@ -88,35 +108,21 @@ document.addEventListener("DOMContentLoaded", function() {
 function thongbao() {
     alert("Sản phẩm đã có trong giỏ hàng!!");
 }
-
-var productData = [];
-var tong=parseInt(document.getElementById('tong').innerText);
-   
-function updateCounter(id, value, tt,tong) {
-    document.getElementById(id).value = value;
-    document.getElementById(id).closest('tr').querySelector('.total-price').innerText=tt;
-    document.getElementById('tong').innerText = tong;
+function updateCounter(id, value) {
+    document.getElementById("quantity_" + id).value = value;
   }
 
   function increment(id) {
-    let counterValue = document.getElementById(id).value;
-    let price = parseInt(document.getElementById(id).closest('tr').querySelector('.product-price').innerText);
-    let pricett = 0;
+    let counterValue = document.getElementById("quantity_" + id).value;
     counterValue++;
-    pricett=counterValue*price;
-    tong+=price;
-    updateCounter(id, counterValue,pricett,tong);
+    updateCounter(id, counterValue);
   }
 
   function decrement(id) {
-    let counterValue = parseInt(document.getElementById(id).value);
-    let price = parseInt(document.getElementById(id).closest('tr').querySelector('.product-price').innerText);
-    let pricett = 0;
+    let counterValue = parseInt(document.getElementById("quantity_" + id).value);
     if (counterValue > 0) {
       counterValue--;
-      pricett=counterValue*price;
-      tong-=price;
-      updateCounter(id, counterValue, pricett,tong);
+      updateCounter(id, counterValue);
     }
   }
 

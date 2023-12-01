@@ -16,6 +16,7 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
     <link href="https://fonts.googleapis.com/css2?family=Epilogue&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
 
@@ -40,13 +41,16 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
                 if(isset($_SESSION['user'])) {
                     extract($_SESSION['user']);
             ?>
-            <p>Xin chào, <strong><?=$username?></strong>!</p>
+            <a>Xin chào, <strong><?=$username?></strong>!</a>
+            <a data-cart="cart" href="index.php?act=viewcart" class="icon-header">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
             <?php 
                 }else {
             ?>
             <a data-cart="register" class="icon-header">Đăng Kí</a>
             <a data-cart="login" class="icon-header">Đăng Nhập</a></li>
-            <a data-cart="cart" class="icon-header">
+            <a data-cart="cart" href="index.php?act=viewcart" class="icon-header">
                 <i class="fas fa-shopping-cart"></i>
             </a>
             <?php } ?>
