@@ -33,7 +33,7 @@
             <h2 style="margin-top:10px">Danh Mục</h2>
             <ul>
                 <li>
-                    <input data-products="NH01" type="checkbox" value="index.php?act=sanpham&id_dm=NH01" name="category[]">
+                    <input data-products="NH01" type="checkbox" value="?id_dm=NH01" name="category[]">
                     <span>Nhẫn</span>
                 </li>
                 <li>
@@ -108,7 +108,7 @@
     ?>
         
     </div>
-    <div class="all-products"  id="NH01">
+    <div class="all-products"  id="NH01" style="display:none;">
         <?php
             if(isset($loadAll_sp_dm)):
                 foreach($loadAll_sp_dm as $value):
