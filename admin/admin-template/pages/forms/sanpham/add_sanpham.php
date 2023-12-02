@@ -43,6 +43,10 @@
                         <input type="text" class="form-control"  placeholder="Nhập mô tả" name="mota">
                       </div>
                       <div class="form-group">
+                      <label for="exampleInputName1">Mô tả ngắn:</label>
+                      <input type="text" class="form-control" name="motangan">
+                      </div>
+                      <div class="form-group">
                         <label for="exampleSelectGender">Danh mục</label>
                         <select class="form-control" name="danhmuc">
                             <?php foreach($data_dm as $value): ?>
