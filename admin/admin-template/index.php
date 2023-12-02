@@ -32,6 +32,7 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
         $giamoi = $_POST['giamoi'];
         $soluong = $_POST['soluong'];
         $mota = $_POST['mota'];
+        $motangan = $_POST['motangan'];
         $img = $_FILES['img']['name'];
         $iddm = $_POST['danhmuc'];
 
@@ -44,7 +45,7 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
             #echo "Sorry, there was an error uploading your file.";
         }
 
-        insert_sanpham($tensp, $masp, $giacu, $giamoi, $soluong, $mota, $img, $iddm);
+        insert_sanpham($tensp, $masp, $giacu, $giamoi, $soluong, $mota, $motangan, $img, $iddm);
         $THONG_BAO = "BẠN ĐÃ THÊM THÀNH CÔNG!";
     };
       $data_dm = loadAll_dm();
@@ -75,6 +76,7 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
           $giacu = $_POST['giacu'];
           $giamoi = $_POST['giamoi'];
           $mota = $_POST['mota'];
+          $motangan = $_POST['motangan'];
           $img = $_FILES['img']['name'];
           $iddm = $_POST['danhmuc'];
 
@@ -86,7 +88,7 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
               move_uploaded_file($_FILES['img']['tmp_name'], "../../upload/sanpham/$photo");
           }
 
-          update_sp($tensp, $id, $soluong, $giacu, $giamoi, $mota, $img, $iddm);
+          update_sp($tensp, $id, $soluong, $giacu, $giamoi, $mota, $motangan, $img, $iddm);
           $THONG_BAO = "BẠN ĐÃ CẬP NHẬT THÀNH CÔNG!";
       };
       $data_sp = loadAll_sp();

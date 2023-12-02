@@ -1,7 +1,7 @@
 <?php 
-    function insert_user($username, $password, $email) {
-        $sql = "INSERT INTO `taikhoan`(`username`, `password`, `email`)
-        VALUES ('$username', '$password', '$email')";
+    function insert_user($name, $username, $password, $email, $sdt, $dia_chi) {
+        $sql = "INSERT INTO `taikhoan`(`name`, `username`, `password`, `email`, `sdt`, `dia_chi`)
+        VALUES ('$name', '$username', '$password', '$email', '$sdt', '$dia_chi')";
         pdo_execute($sql);
     }
 
