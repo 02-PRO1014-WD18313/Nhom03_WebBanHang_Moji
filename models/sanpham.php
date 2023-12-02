@@ -41,7 +41,7 @@
         return $get_sp;
     }
 
-<<<<<<< HEAD
+
         // function update_sp($tensp, $id, $soluong, $giacu, $giamoi, $mota, $motangan, $img, $iddm) {
         //     if($img != "") {
         //         $sql = "UPDATE `sanpham` SET `tensp`='$tensp', `id_sp` = '$id', `soluong` = '$soluong', `giacu` = '$giacu', `giamoi` = '$giamoi',
@@ -53,10 +53,8 @@
         //     }
         //     pdo_execute($sql);
         // }
-=======
-<<<<<<< HEAD
-    function update_sp($tensp, $id, $soluong, $giacu, $giamoi, $mota, $motangan, $img, $iddm) {
-=======
+
+
 
     function loadOne_sp_nhan_home(){
         $sql = "select * from sanpham where id_dm = 'NH01' order by soluong desc limit 1";
@@ -71,7 +69,7 @@
     }
 
     function update_sp($tensp, $id, $soluong, $giacu, $giamoi, $mota, $img, $iddm) {
->>>>>>> 561bdd60a2d2ba856c0e55934f7118a0ddffdc1c
+
         if($img != "") {
             $sql = "UPDATE `sanpham` SET `tensp`='$tensp', `id_sp` = '$id', `soluong` = '$soluong', `giacu` = '$giacu', `giamoi` = '$giamoi',
             `mota` = '$mota', `motangan` = '$motangan', `img` = '$img', `id_dm` = '$iddm' WHERE `id_sp` = '$id'";
@@ -82,7 +80,7 @@
         }
         pdo_execute($sql);
     }
->>>>>>> 921540be845c74484b0f64d0b372dae66b3b8f59
+
 
     function search($key) {
         $sql = "SELECT * FROM `sanpham` WHERE `tensp` like '%".$key."%'";

@@ -3,7 +3,6 @@
     session_start();
     include 'models/pdo.php';
     include 'models/taikhoan.php';
-
     include 'models/sanpham.php';
     include 'models/danhmuc.php';
 
@@ -18,15 +17,6 @@
     if(isset($_GET['act']) && $_GET['act'] != "") {
         $act = $_GET['act'];
         switch($act) {
-            case "home":
-
-                $data_sp_highlight = loadAll_sp_highlight();
-                $data_sp_top2 = loadAll_sp_top2();
-
-                $data_sp_top8 = loadAll_sp_top8();
-                $data_dm = loadAll_dm();
-                include 'layout/home.php';
-                break;
         
             case "unset":
                 session_destroy();
@@ -105,7 +95,11 @@
                 };
             include 'layout/home.php';
             break;
-            
+            case "logout":
+                session_unset();
+                header('loacation: index.php');
+                break;
+                
         }
     } else {
         $data_sp_highlight = loadAll_sp_highlight();

@@ -26,7 +26,7 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
         </div>
         <nav class="navbar">
 
-            <a href="index.php?act=home">Trang Chủ</a>
+            <a href="index.php">Trang Chủ</a>
             <a href="#">Sản Phẩm</a>
             <a href="#">Blog</a>
             <a href="#">Liên Hệ</a>
@@ -34,17 +34,18 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
         </nav>
         <?php ?>
         <div class="icons">
-<<<<<<< HEAD
+
             <?php 
                 if(isset($_SESSION['user'])) {
                     extract($_SESSION['user']);
+                    // echo $_SESSION['user'];
             ?>
    
 
 
         <a data-cart="user" class="icon-header" data-bs-toggle="dropdown">Xin chào, <strong><?=$username?></strong></a></li>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                <li><a class="dropdown-item" href="index.php?act=logout">Đăng xuất</a></li>
                 <li><a class="dropdown-item" href="#">Link 2</a></li>
                 <li><a class="dropdown-item" href="#">Link 3</a></li>
             </ul>
@@ -61,13 +62,13 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
                 <i class="fas fa-shopping-cart"></i>
             </a>
             <?php } ?>
-=======
-                <a data-cart="register" class="icon-header">Đăng Kí</a>
+
+                <!-- <a data-cart="register" class="icon-header">Đăng Kí</a>
                 <a data-cart="login" class="icon-header">Đăng Nhập</a></li>
                 <a data-cart="cart" class="icon-header">
 
                     <i class="fas fa-shopping-cart"></i>
-                </a>
->>>>>>> 561bdd60a2d2ba856c0e55934f7118a0ddffdc1c
+                </a> -->
+
         </div>
 </div>
