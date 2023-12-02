@@ -41,7 +41,7 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
                 if(isset($_SESSION['user'])) {
                     extract($_SESSION['user']);
             ?>
-            <a>Xin chào, <strong><?=$username?></strong>!</a>
+            <a href="index.php?act=account&id=<?= $id ?>">Xin chào, <strong><?=$username?></strong>!</a>
             <a data-cart="cart" href="index.php?act=viewcart" class="icon-header">
                 <i class="fas fa-shopping-cart"></i>
             </a>
@@ -56,3 +56,49 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
             <?php } ?>
         </div>
 </div>
+<form action="index.php?act=register" method="post">
+<div class="registration" id="register">
+<div class="regis-top">
+    <img src="image/z4876602114590_6223b9460e22e4f10da597208a1fa113.png" alt="">
+    <h4>Sign Up</h4> <br>
+</div>
+<div class="form-control">
+<div  class="form-label">
+    <input type="text" class="form-input" name="username" placeholder="Username">
+</div>
+<div  class="form-label">
+    <input type="text" class="form-input" name="email" placeholder="Email">
+</div>
+<div class="form-label">
+    <input type="password" class="form-input" name="password" placeholder="Password">
+</div>
+<div class="form-label">
+    <input type="password" class="form-input" name="confirm" placeholder="Confirm password">
+</div>
+<input type="submit" class="form-button" name="register" value="ĐĂNG KÍ">
+</div>
+<br>
+<a class="outCart"><i class="fas fa-times"></i></a>
+</div>
+</form>
+
+<form action="index.php?act=login" method="post">
+<div class="registration login" id="login">
+<div class="login-top">
+    <img src="image/z4876602114590_6223b9460e22e4f10da597208a1fa113.png" alt="">
+    <h4>Sign In</h4> <br>
+</div>
+<div class="form-control">
+<div  class="form-label">
+<input type="text" name="username" class="form-input" placeholder="Username">
+</div>
+
+<div class="form-label">
+<input type="text" name="password" class="form-input" placeholder="Password">
+</div>
+<input type="submit" name="login" class="form-button" value="ĐĂNG NHẬP">
+    </div>
+<a class="outCart"><i class="fas fa-times"></i></a>
+
+</div>
+</form>

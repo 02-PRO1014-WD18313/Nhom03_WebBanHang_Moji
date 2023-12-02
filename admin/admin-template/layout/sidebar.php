@@ -53,7 +53,7 @@
               </div></li>
 
               <li class="nav-item"><div class="nav-link">
-                <span class="menu-title" >Đơn hàng</span>
+              <a class="menu-title" href="../admin-template/index.php?act=list_bill" style="text-decoration: none;">Đơn hàng</a>
                 <i class="fa-solid fa-boxes-packing" style="color: #bba8bff5;"></i>
               </div></li>
 

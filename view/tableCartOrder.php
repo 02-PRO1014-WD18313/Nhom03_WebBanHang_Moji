@@ -113,6 +113,17 @@ if (!empty($_SESSION['cart'])) {
                     </div>
             </div>
        </div>
+            <?php
+                if(isset($_SESSION['user']) && ($_SESSION['user'])){
+                    $dh='<form action="index.php?act=bill" method="post">
+                    <input class="sub" type="submit" name="dongydathang" value="Đặt hàng">
+                    </form>';
+                } else {
+                    $dh='<input class="sub" type="button" value="Đặt hàng" onclick="thongbao()">';
+                }
+            ?>
+
+
        <div class="box_1" <?= $hien ?> style="width: 100%;padding:0px 9%;height: auto;">
             <div class="bo1 hbo">
                 <p class="ct">Tổng sản phẩm :<span class="ik"> <?php echo count($dataDb) ?></span></p>
@@ -122,9 +133,7 @@ if (!empty($_SESSION['cart'])) {
             </div> 
             <div class="bo3 hbo">
                 <p></p>
-                <form action="index.php?act=bill" method="post">
-                <input class="sub" type="submit" name="dongydathang" value="Đặt hàng">
-                </form>
+                <?= $dh?>
             </div>
         </div>
        

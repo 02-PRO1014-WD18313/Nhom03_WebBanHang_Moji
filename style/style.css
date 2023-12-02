@@ -1323,6 +1323,34 @@ hr {
     margin-top: 75px;
 }
 
+.bi{
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-top: 0px;
+}
+
+.bi input{
+    width: 100%;
+    color: #000;
+    padding: 0 20px;
+    height: 40px;
+}
+
+.bi:last-child{
+    display: inline;
+}
+
+.bi input[type="submit"],
+.bi input[type="reset"]{
+    display: inline-block;
+    width: 100px;
+    float: left;
+    background-color: #5FBDFF;
+    color: #ffffff;
+    border: none;
+    margin-right: 10px;
+}
+
 .hbo{
     height: 33%;
     background-color: #fff;
@@ -1465,6 +1493,17 @@ hr {
     
 }
 
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px; 
+  }
+
+.pdrow td{
+    height: 100px;
+}
+
 .ik{
     font-size: x-large;
     margin-left: 20px;
@@ -1478,6 +1517,7 @@ hr {
 .tcart table{
     width: 100%;
     border-collapse: collapse;
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .tcart table tr th {
@@ -1519,7 +1559,6 @@ hr {
 }
 .tcart table td:nth-child(1){
     width: 5%;
-    text-align: center;
 
 }
 
@@ -1560,7 +1599,6 @@ hr {
 
 .tcart table td:nth-child(2){
     width: 10%;
-    text-align: center;
     background-color: #ffffff;
     text-align: left;
 }
@@ -1573,29 +1611,24 @@ hr {
 
 .tcart table td:nth-child(3){
     width: 25%;
-    text-align: center;
     background-color: #ffffff;
 }
 .tcart table td:nth-child(4){
     width: 20%;
-    text-align: center;
     background-color: #ffffff;
 }
 .tcart table td:nth-child(5){
     width: 15%;
-    text-align: center;
     background-color: #ffffff;
 }
 
 .tcart table td:nth-child(6){
     width: 15%;
-    text-align: center;
     background-color: #ffffff;
 }
 
 .tcart table td:nth-child(7){
     width: 10%;
-    text-align: center;
     background-color: #ffffff;
 }
 
@@ -1647,7 +1680,34 @@ hr {
     display: block;
 }
 
+.boxleft{
+    width:20%;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    height: auto;
+  }
+  .boxright{
+   background-color: #ffffff;
+   padding: 0 3%;
+    width:80%;
+    height:auto;
+  }
 
+  .menu-item {
+    display: block;
+    float: left;
+    padding: 10px;
+    width: 100%;
+    font-size: large;
+    text-decoration: none;
+    color: #000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+
+  .menu-item:hover {
+    color: #5FBDFF;
+  }
 
 .container_sp {
     width: 100%;

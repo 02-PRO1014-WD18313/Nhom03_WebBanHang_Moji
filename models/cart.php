@@ -17,8 +17,8 @@
         return pdo_execute_return_lastInsertId($sql);
     }
 
-    function insert_cart($idpro,$img,$name,$price,$soluong){
-        $sql = "insert into cart(id_pro,img,name,price,soluong) values('$idpro','$img','$name','$price','$soluong')";
+    function insert_cart($idpro,$idsp,$img,$name,$giacu,$giamoi,$soluong,$thanhtien,$idbill){
+        $sql = "insert into cart(id_pro,id_sp,img,name,giacu,giamoi,soluong,thanhtien,id_bill) values('$idpro','$idsp','$img','$name','$giacu','$giamoi','$soluong','$thanhtien','$idbill')";
         return pdo_execute($sql);
     }
 
@@ -41,19 +41,27 @@
     }
 
     function loadall_cart_count($idbill){
-        $sql="select * from cart where idbill=".$idbill;
+        $sql="select * from cart where id_bill=".$idbill;
         $bill=pdo_query($sql);
         return sizeof($bill);
     }
 
     function loadall_bill($kyw="",$iduser=0){
         $sql="select * from bill where 1";
-        if($iduser>0) $sql.= " AND iduser=".$iduser;
+        if($iduser>0) $sql.= " AND id_user=".$iduser;
         if($kyw!="") $sql.= " AND id like '%".$kyw."%'";
         $sql.=" order by id desc";
         $listbill=pdo_query($sql);
         return $listbill;
     }
+
+    function load_bill($id,$iduser){
+        $sql="select * from bill where 1 AND id_user=$iduser AND id like $id order by id desc";
+        $listbill=pdo_query($sql);
+        return $listbill;
+    }
+
+    
 
     function delete_bill($id){
         $sql="delete from bill where id=".$id;
@@ -132,7 +140,7 @@
     }
 
     function update_bill($id,$tt){
-        $sql = "update bill set bill_status='".$tt."' where id=".$id;
+        $sql = "update bill set tinh_trang='".$tt."' where id=".$id;
         pdo_execute($sql);
     }
 ?>

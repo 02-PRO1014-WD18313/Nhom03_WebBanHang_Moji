@@ -30,10 +30,32 @@
                 include 'layout/home.php';
                 break;
         
-            case "unset":
-                session_destroy();
-                include 'layout/home.php';
+            case "account":
+                if(isset($_GET['id'])){
+                    $id =$_GET['id'];
+                    $listbill=loadall_bill("",0);
+                }
+                include 'view/account.php';
             break;
+
+
+            case 'edit_taikhoan':
+                if(isset($_POST['capnhat']) && ($_POST['capnhat'])){
+                    $name=$_POST['name'];
+                    $username=$_POST['user'];
+                    $password=$_POST['pass'];
+                    $email=$_POST['email'];
+                    $address=$_POST['address'];
+                    $tel=$_POST['tel'];
+                    $id=$_POST['id'];
+                    
+                    update_tk_user($id,$username, $password,$name,$sdt, $email, $address);
+                    $_SESSION['user']=check_user($username,$password);
+                    $thongbao="Cập nhật tài khoản thành công";
+                        header('location:index.php?act=edit_taikhoan');
+                }
+                include "view/edit_taikhoan.php";
+                break;  
 
 
             case "viewcart":
@@ -61,10 +83,15 @@
             case 'billconfirm':
                 if(isset($_POST['dongydathang']) && ($_POST['dongydathang'])){
                     $user = $_SESSION['user'];
+                    $cart = $_SESSION['cart'];
                     $pttt=$_POST['pttt'];
                     $ngaydathang=date('h:i:sa d/m/Y');
                     $tongdonhang=$_POST['tongthanhtoan'];
                     $idbill=insert_bill($user['id'],$user['name'],$user['dia_chi'],$user['sdt'],$user['email'],$pttt,$ngaydathang,$tongdonhang);
+                    foreach ($cart as $item) {
+                        insert_cart($item['id'],$item['idsp'],$item['img'],$item['name'],$item['giacu'],$item['giamoi'],$item['quantity'],$item['giamoi'] * $item['quantity'],$idbill);
+                    }
+                    unset($_SESSION['cart']);
                 }
                 include "view/billconfirm.php";
                 break; 
@@ -87,6 +114,11 @@
                 break;
   
                 ob_end_flush();
+
+            case 'thoat':
+                session_unset();
+                header('location:index.php');
+                break;   
 
             case "register":
                 if((isset($_POST['register'])) && ($_POST['register']) ){

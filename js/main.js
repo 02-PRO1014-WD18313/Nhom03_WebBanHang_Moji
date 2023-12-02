@@ -106,7 +106,8 @@ document.addEventListener("DOMContentLoaded", function() {
 }, false);
 
 function thongbao() {
-    alert("Sản phẩm đã có trong giỏ hàng!!");
+    alert("Đăng nhập để tiếp tục mua hàng!!");
+    document.querySelector('[data-cart="login"]').click();
 }
 function updateCounter(id, value) {
     document.getElementById("quantity_" + id).value = value;

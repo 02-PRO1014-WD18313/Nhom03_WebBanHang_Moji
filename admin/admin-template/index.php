@@ -8,6 +8,7 @@ include '../../models/pdo.php';
 include '../../models/danhmuc.php';
 include '../../models/sanpham.php';
 include '../../models/taikhoan.php';
+include '../../models/cart.php';
 include 'layout/header.php'; 
   
 include 'layout/sidebar.php'; 
@@ -193,6 +194,22 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
       };
       include 'pages/forms/user/list_user.php';
       break;
+
+      case "list_bill":
+        $listbill=loadall_bill("",0);
+        include 'pages/forms/bill/listBill.php';
+        break;
+
+      case 'updatett':
+        if(isset($_POST['capnhat']) && ($_POST['capnhat'])){
+            $id=$_GET['id'];
+            $tt=$_POST['cars'];
+            update_bill($id,$tt);
+            $thongbao="Cập nhật thành công";
+            }
+            $listbill=loadall_bill("",0);
+        include 'pages/forms/bill/listBill.php';
+        break; 
 
     case "timkiem":
         include '../views/timkiem.php';

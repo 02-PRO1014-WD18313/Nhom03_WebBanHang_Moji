@@ -33,4 +33,10 @@
         `role` = '$role' WHERE `id` = ".$id;
         pdo_execute($sql);
     }
+
+    function update_tk_user($id,$username, $password,$name,$sdt, $email, $address) {
+        $sql = "UPDATE `taikhoan` SET `name`='$name', `username` = '$username', `password` = '$password', `email` = '$email',
+        `sdt` = '$sdt', `dia_chi` = '$address' WHERE `id` = ".$id;
+        pdo_execute($sql);
+    }
 ?>

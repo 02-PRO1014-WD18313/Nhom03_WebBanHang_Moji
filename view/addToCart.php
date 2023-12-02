@@ -8,6 +8,8 @@ if (!isset($_SESSION['cart'])) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $productId = $_POST['id'];
     $productName = $_POST['name'];
+    $img = $_POST['img'];
+    $idsp = $_POST['idsp'];
     $giacu = $_POST['giacu'];
     $giamoi= $_POST['giamoi'];
 
@@ -22,7 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $product = [
             'id' => $productId,
+            'idsp' => $idsp,
             'name' => $productName,
+            'img' => $img,
             'giacu' => $giacu,
             'giamoi' => $giamoi,
             'quantity' => 1
