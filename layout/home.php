@@ -30,11 +30,8 @@
         <h4><?php echo $value['tensp']; ?></h4>
 
 <!--         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, fugiat!</p> -->
-        <a href="index.php?act=sanphamct&id_sp=<?php echo $id_sp?>" class="button button_size_2">
-
         <p><?php echo $value['motangan']; ?></p>
-        <a href="" class="button button_size_2">
-
+        <a href="index.php?act=sanphamct&id_sp=<?php echo $id_sp?>" class="button button_size_2">
             <span class="button_label">Buy Now</span>
         </a>
     </div>
