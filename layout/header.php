@@ -36,7 +36,6 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
         </nav>
         <?php ?>
         <div class="icons">
-<<<<<<< HEAD
             <?php 
                 if(isset($_SESSION['user'])) {
                     extract($_SESSION['user']);
@@ -51,13 +50,12 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
                 <i class="fas fa-shopping-cart"></i>
             </a>
             <?php } ?>
-=======
-                <a data-cart="register" class="icon-header">Đăng Kí</a>
+                <!-- <a data-cart="register" class="icon-header">Đăng Kí</a>
                 <a data-cart="login" class="icon-header">Đăng Nhập</a></li>
                 <a data-cart="cart" class="icon-header">
 
                     <i class="fas fa-shopping-cart"></i>
-                </a>
->>>>>>> 561bdd60a2d2ba856c0e55934f7118a0ddffdc1c
+                </a> -->
+
         </div>
 </div>

@@ -203,7 +203,7 @@
     </div>
 </div>
 </div>
-<?php endforeach; ?>
+
 <!-- <div class="preview content-wrapper" id="preview_1">
 <a class="icon-out">
     <i class="fas fa-plus"></i>
