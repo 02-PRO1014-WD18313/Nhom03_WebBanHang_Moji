@@ -1,10 +1,30 @@
 <?php
-    if(isset($loadAll_sp_dm)){
-        foreach($loadAll_sp_dm as $value){
-            extract($value);
-        }
+    if(isset($loadAll_sp)){
+        // print_r($loadAll_sp);
+        // echo json_encode($loadAll_sp, JSON_UNESCAPED_SLASHES);
+    }        
+    if(isset($load_idsp_tensp)){
     }
 ?>
+
+
+<form action="" class="search-product" autocomplete="off">
+    <div class="autocomplete-wrapper" id="autocomplete-wrapper">
+        <input id="autocomplete-input" type="text" placeholder="Search" class="search">
+        <!-- <ul class="autocomplete-list">
+            <li>
+                <a href="">Bông tai</a>
+            </li>
+            <li>
+                <a href="">Bông tai</a>
+            </li>
+            <li>
+                <a href="">Bông tai</a>
+            </li>
+        </ul> -->
+    </div>
+        <button type="submit" class="btn-submit">Send</button>
+</form>
 <div class="container_sp">
     <div class="filter">
         <div class="price_sp">
@@ -33,7 +53,7 @@
             <h2 style="margin-top:10px">Danh Mục</h2>
             <ul>
                 <li>
-                    <input data-products="NH01" type="checkbox" value="?id_dm=NH01" name="category[]">
+                    <input data-products="NH01" type="checkbox" value="index.php?act=sanpham&id_dm=NH01" name="category[]">
                     <span>Nhẫn</span>
                 </li>
                 <li>
@@ -159,4 +179,56 @@
         
     })
 
+</script>
+<script>
+    
+    var myObj = <?php echo json_encode($load_idsp_tensp); ?>;
+    
+    console.log(myObj);
+    console.log(myObj[1].id_sp);
+    const inputEL = document.getElementById('autocomplete-input');
+    // console.log(inputEL);
+    inputEL.addEventListener("input", onInputChange);
+
+    function onInputChange(){
+        
+        removeDropDown();
+        let value = this.value;
+        if(value.length === 0) return;
+        let data = search(value, myObj);
+        console.log(data);
+        createAutoComplete(data);
+    
+    }
+    
+    function search(value, data){
+        const filteredData = [];
+        for(var i = 0; i < data.length; i++) {
+            value = value.toLowerCase();
+            let name = data[i].tensp.toLowerCase();
+            if(name.includes(value)){
+                filteredData.push(data[i].tensp);
+            }
+        }
+        return filteredData;
+    }
+    function createAutoComplete(list){
+        const listEl = document.createElement('ul');
+        listEl.className = "autocomplete-list";
+        listEl.id = "autocomplete-list";
+        document.querySelector('#autocomplete-wrapper').appendChild(listEl);
+        list.forEach((name) => {
+            let listItem = document.createElement('li');
+            let aName = document.createElement('a');
+            aName.innerHTML = list;
+            listItem.appendChild(aName);
+            listEl.appendChild(listItem);
+        });
+    }
+
+    function removeDropDown(){
+        const listEl = document.querySelector('#autocomplete-list');
+        if(listEl) listEl.remove();
+    }
+    
 </script>

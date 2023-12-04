@@ -125,6 +125,7 @@
                     $loadAll_sp_dm = loadAll_sp_dm($id_dm);
                 }else {
                     $loadAll_sp = loadAll_sp();
+                    $load_idsp_tensp = load_idsp_tensp();
                 }
                 include 'layout/sanpham.php';
                 break;
@@ -144,4 +145,5 @@
 
     // footer
     include 'layout/footer.php';
+    
 ?>

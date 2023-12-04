@@ -89,4 +89,9 @@
         $get_sp = pdo_query($sql);
         return $get_sp;
     }
+    function load_idsp_tensp(){
+        $sql = "SELECT `id_sp`, `tensp` FROM `sanpham` where 1";
+        $get_sp = pdo_query($sql);
+        return $get_sp;
+    }
 ?>
