@@ -252,7 +252,8 @@
 <div class="form-label">
     <input type="password" class="form-input" name="confirm" placeholder="Confirm password">
 </div>
-<input type="submit" class="form-button" name="register" value="ĐĂNG KÍ">
+<input type="submit" class="btn btn-primary" name="register" value="ĐĂNG KÍ">
+<input type="button" onclick="window.location = '<?php echo $login_url; ?>'" class="btn btn-danger" name="register" value="ĐĂNG KÍ">
 </div>
 <br>
 <a class="outCart"><i class="fas fa-times"></i></a>
