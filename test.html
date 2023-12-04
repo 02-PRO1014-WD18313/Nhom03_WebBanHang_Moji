@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+    }
+
+    #navigation {
+      width: 200px;
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+
+    #content {
+      flex: 1;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .menu-item {
+      margin-bottom: 10px;
+    }
+
+    .menu-item:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div id="navigation">
+    <div class="menu-item" onclick="changeContent('Page 1')">Page 1</div>
+    <div class="menu-item" onclick="changeContent('Page 2')">Page 2</div>
+    <div class="menu-item" onclick="changeContent('Page 3')">Page 3</div>
+  </div>
+  <div id="content">
+    <p>Welcome to the default content.</p>
+  </div>
+
+  <script>
+    function changeContent(content) {
+      document.getElementById('content').innerHTML = `<p>Welcome to ${content}.</p>`;
+    }
+  </script>
+</body>
+</html>

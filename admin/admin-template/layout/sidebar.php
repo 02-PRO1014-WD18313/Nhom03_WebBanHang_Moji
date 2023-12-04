@@ -43,12 +43,12 @@
             </ul>
 
               <li class="nav-item"><div class="nav-link">
-                <a class="menu-title"  style="text-decoration: none; color: inherit; font-size: 0.875rem; ">Bình luận</a>
+                <a class="menu-title" href="../admin-template/index.php?act=list_binhluan" style="text-decoration: none; color: inherit; font-size: 0.875rem; ">Bình luận</a>
                 <i class="fa-solid fa-comment-dots" style="color: #bba8bff5;"></i>
               </div></li>
 
               <li class="nav-item"><div class="nav-link">
-                <a class="menu-title" href="../admin-template/index.php?act=list_user" style="text-decoration: none;">Khách hàng</a>
+                <a class="menu-title" href="../admin-template/index.php?act=list_user" style="text-decoration: none; color: inherit; font-size: 0.875rem; ">Khách hàng</a>
                 <i class="fa-solid fa-user-group" style="color: #bba8bff5;"></i>
               </div></li>
 
