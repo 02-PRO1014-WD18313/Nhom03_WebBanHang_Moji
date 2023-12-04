@@ -8,9 +8,11 @@ include '../../models/pdo.php';
 include '../../models/danhmuc.php';
 include '../../models/sanpham.php';
 include '../../models/taikhoan.php';
+include '../../models/binhluan.php';
 include 'layout/header.php'; 
   
 include 'layout/sidebar.php'; 
+
 
 if(isset($_GET['act']) && $_GET['act'] != "") {
   $act = $_GET['act'];
@@ -193,6 +195,11 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
       };
       include 'pages/forms/user/list_user.php';
       break;
+    
+      case "list_binhluan":
+        $data_list_binhluan = loadAll_list_binhluan();
+        include 'pages/forms/binhluan/list_binhluan.php';
+        break;
 
     case "timkiem":
         include '../views/timkiem.php';
@@ -206,7 +213,6 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
 else {
   include 'layout/home.php';
 }
-
 ?>
     
     

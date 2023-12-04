@@ -74,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
             })
         }
     }
+
     countdown();
     function countdown(){
         let countDown = new Date("Nov 25, 2023 00:00:00").getTime();
@@ -89,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }, 0);
     }
+
     cart();
     function cart(){
         var icons = document.querySelectorAll('.icons .icon-header');

@@ -43,6 +43,21 @@
 
 
 
+        // function update_sp($tensp, $id, $soluong, $giacu, $giamoi, $mota, $motangan, $img, $iddm) {
+        //     if($img != "") {
+        //         $sql = "UPDATE `sanpham` SET `tensp`='$tensp', `id_sp` = '$id', `soluong` = '$soluong', `giacu` = '$giacu', `giamoi` = '$giamoi',
+        //         `mota` = '$mota', `motangan` = '$motangan', `img` = '$img', `id_dm` = '$iddm' WHERE `id_sp` = '$id'";
+        //     }
+        //     else {
+        //         $sql = "UPDATE `sanpham` SET `tensp`='$tensp', `id_sp` = '$id', `soluong` = '$soluong', `giacu` = '$giacu', `giamoi` = '$giamoi',
+        //         `mota` = '$mota', `motangan` = '$motangan', `id_dm` = '$iddm' WHERE `id_sp` = '$id'";
+        //     }
+        //     pdo_execute($sql);
+        // }
+
+
+
+
     function loadOne_sp_nhan_home(){
         $sql = "select * from sanpham where id_dm = 'NH01' order by soluong desc limit 1";
         $get_sp = pdo_query_one($sql);
@@ -55,7 +70,8 @@
         return $get_dm;
     }
 
-    function update_sp($tensp, $id, $soluong, $giacu, $giamoi, $mota, $img, $iddm) {
+
+    function update_sp($tensp, $id, $soluong, $giacu, $giamoi, $mota, $motangan, $img, $iddm) {
 
         if($img != "") {
             $sql = "UPDATE `sanpham` SET `tensp`='$tensp', `id_sp` = '$id', `soluong` = '$soluong', `giacu` = '$giacu', `giamoi` = '$giamoi',
@@ -68,11 +84,13 @@
         pdo_execute($sql);
     }
 
+
     function productSamilar($id_sp, $id_dm){
         $sql = "select * from sanpham where id_sp <> '$id_sp' and id_dm = '$id_dm'";
         $get_sp = pdo_query($sql);
         return $get_sp;
     }
+
 
     function search($key) {
         $sql = "SELECT * FROM `sanpham` WHERE `tensp` like '%".$key."%'";
