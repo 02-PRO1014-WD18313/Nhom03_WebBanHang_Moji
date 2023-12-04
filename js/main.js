@@ -74,21 +74,23 @@ document.addEventListener("DOMContentLoaded", function() {
             })
         }
     }
-    // countdown();
-    // function countdown(){
-    //     let countDown = new Date("Nov 25, 2023 00:00:00").getTime();
-    //     x = setInterval(function(){
-    //         let now = new Date().getTime();
-    //         let distance = countDown - now;
-    //         document.getElementById('days').innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-    //         document.getElementById('hours').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    //         document.getElementById('minutes').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    //         document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000);
-    //         if(distance < 0){
-    //             clearInterval(x);
-    //         }
-    //     }, 0);
-    // }
+
+    countdown();
+    function countdown(){
+        let countDown = new Date("Nov 25, 2023 00:00:00").getTime();
+        x = setInterval(function(){
+            let now = new Date().getTime();
+            let distance = countDown - now;
+            // document.getElementById('days').innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+            // document.getElementById('hours').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            // document.getElementById('minutes').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            // document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000);
+            if(distance < 0){
+                clearInterval(x);
+            }
+        }, 0);
+    }
+
     cart();
     function cart(){
         var icons = document.querySelectorAll('.icons .icon-header');

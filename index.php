@@ -3,10 +3,9 @@
     session_start();
     include 'models/pdo.php';
     include 'models/taikhoan.php';
-<<<<<<< HEAD
+
     include 'models/cart.php';
-=======
->>>>>>> fa71d5a4885ce99de9847b5f7fb42f1b2cf32bc5
+
     include 'models/sanpham.php';
     include 'models/danhmuc.php';
 
@@ -20,7 +19,7 @@
     if(isset($_GET['act']) && $_GET['act'] != "") {
         $act = $_GET['act'];
         switch($act) {
-<<<<<<< HEAD
+
             case "home":
 
 
@@ -33,8 +32,7 @@
                 include 'layout/slideShow.php';
                 include 'layout/home.php';
                 break;
-=======
->>>>>>> fa71d5a4885ce99de9847b5f7fb42f1b2cf32bc5
+
         
             case "account":
                 if(isset($_GET['id'])){
@@ -135,6 +133,7 @@
                     insert_user($username, $password, $email);
                     $THONG_BAO = "BẠN ĐÃ ĐĂNG KÍ THÀNH CÔNG!";
                 }
+
                 $data_sp_highlight = loadAll_sp_highlight();
                 $data_sp_top2 = loadAll_sp_top2();
 
@@ -144,32 +143,40 @@
                 include 'layout/slideShow.php';
             include 'layout/home.php';
             break;
-<<<<<<< HEAD
+
+            include 'layout/home.php';
+            break;
+
             case "sanphamct":
                 if(isset($_GET['id_sp'])){
                     $id = $_GET['id_sp'];
                     $onesp = loadOne_sp($id);
+
                     // echo $id_sp;
                     extract($onesp);
                     $relatedProduct = productSamilar($id_sp, $id_dm);
+
+                    // extract($onesp);
+                    // $relatedProduct = productSamilar($id_sp, $id_dm);
+
                     include 'layout/sanphamct.php';
                 }else {
                     include 'layout/sanphamct.php';
 
                 }
                 break;
+
             case "sanpham":
                 $data_sp_highlight = loadAll_sp_highlight();
                 include 'layout/sanpham.php';
                 break;
-            
-=======
+
             case "logout":
                 session_unset();
                 header('loacation: index.php');
                 break;
                 
->>>>>>> fa71d5a4885ce99de9847b5f7fb42f1b2cf32bc5
+
         }
     } else {
 

@@ -41,8 +41,7 @@
         return $get_sp;
     }
 
-<<<<<<< HEAD
-=======
+
 
         // function update_sp($tensp, $id, $soluong, $giacu, $giamoi, $mota, $motangan, $img, $iddm) {
         //     if($img != "") {
@@ -57,7 +56,7 @@
         // }
 
 
->>>>>>> fa71d5a4885ce99de9847b5f7fb42f1b2cf32bc5
+
 
     function loadOne_sp_nhan_home(){
         $sql = "select * from sanpham where id_dm = 'NH01' order by soluong desc limit 1";
@@ -71,11 +70,8 @@
         return $get_dm;
     }
 
-<<<<<<< HEAD
+
     function update_sp($tensp, $id, $soluong, $giacu, $giamoi, $mota, $motangan, $img, $iddm) {
-=======
-    function update_sp($tensp, $id, $soluong, $giacu, $giamoi, $mota, $img, $iddm) {
->>>>>>> fa71d5a4885ce99de9847b5f7fb42f1b2cf32bc5
 
         if($img != "") {
             $sql = "UPDATE `sanpham` SET `tensp`='$tensp', `id_sp` = '$id', `soluong` = '$soluong', `giacu` = '$giacu', `giamoi` = '$giamoi',
@@ -88,14 +84,13 @@
         pdo_execute($sql);
     }
 
-<<<<<<< HEAD
+
     function productSamilar($id_sp, $id_dm){
         $sql = "select * from sanpham where id_sp <> '$id_sp' and id_dm = '$id_dm'";
         $get_sp = pdo_query($sql);
         return $get_sp;
     }
-=======
->>>>>>> fa71d5a4885ce99de9847b5f7fb42f1b2cf32bc5
+
 
     function search($key) {
         $sql = "SELECT * FROM `sanpham` WHERE `tensp` like '%".$key."%'";
