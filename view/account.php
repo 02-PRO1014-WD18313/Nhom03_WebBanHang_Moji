@@ -12,12 +12,21 @@
                 </form>
             </div>
        </div>
+       <?php
+                                if(isset($_SESSION['user']) && (is_array($_SESSION['user']))){
+                                    extract($_SESSION['user']);
+                                    $rol="";
+                                    if($role==1){
+                                        $rol='<a class="menu-item" href="../Nhom03_WebBanHang_Moji/admin/admin-template/index.php">Trang quản trị</a>';
+                                    }
+                                }
+                            ?>
        <div class="box_1" style="width: 100%;padding:20px 9%;height: auto;display: flex;">
         <div class="boxleft">
-            <a class="menu-item" href="">Đơn hàng</a>
+            <a class="menu-item" href="index.php?act=account">Đơn hàng</a>
             <a class="menu-item" href="index.php?act=edit_taikhoan">Cập nhật tài khoản</a>
             <a class="menu-item" href="">Địa chỉ</a>
-            <a class="menu-item" href="">Trang quản trị</a>
+            <?= $rol?>
             <a class="menu-item" href="index.php?act=thoat">Thoát</a>
           </div>
           <div class="boxright">

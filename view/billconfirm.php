@@ -6,7 +6,7 @@
                     <img style="width: 80%;height: auto;" src="image/Screens.jpg" alt="">
                 </div>     
                 <div class="gio2" style="text-align: center;">
-                <h1>Mua hàng thành công</h1>
+                <h1>Đặt hàng thành công</h1>
                 </div>       
 </div>
     

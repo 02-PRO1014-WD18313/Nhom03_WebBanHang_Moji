@@ -23,7 +23,7 @@
                             ?>
        <div class="box_1" style="width: 100%;padding:20px 9%;height: auto;display: flex;">
         <div class="boxleft">
-            <a class="menu-item" href="">Đơn hàng</a>
+            <a class="menu-item" href="index.php?act=account">Đơn hàng</a>
             <a class="menu-item" href="index.php?act=edit_taikhoan">Cập nhật tài khoản</a>
             <a class="menu-item" href="">Địa chỉ</a>
             <a class="menu-item" <?= $rol ?>  href="../Nhom03_WebBanHang_Moji/admin/admin-template/index.php">Trang quản trị</a>

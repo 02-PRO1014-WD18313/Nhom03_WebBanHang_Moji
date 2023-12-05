@@ -14,10 +14,6 @@ body, html{
     font-family: 'Epilogue', sans-serif;
 }
 
-
-
-
-
 .slide-wrapper{
     position: relative;
     height: 100vh;
@@ -266,7 +262,7 @@ ul li.active .slide .right-brown{
     position: fixed;
     top :0;
     left: 0;
-    /* background-color: #fff; */
+    background-color: #ffffff;
     padding: 20px 9%;
     display: flex;
     align-items: center;
@@ -284,6 +280,7 @@ ul li.active .slide .right-brown{
     font-size: 20px;
     padding: 0 15px;
     color: rgb(199, 3, 3);
+text-decoration: none;
 } 
 .header .navbar a:hover{
     color: #dfdfdf;
@@ -293,7 +290,17 @@ ul li.active .slide .right-brown{
     margin-left: 15px;
     color: rgb(199, 3, 3);
     cursor: pointer;
+text-decoration: none;
 }
+
+.header .icons .session-user a{
+    font-size: 20px;
+    margin-left: 15px;
+    color: rgb(10, 9, 9);
+    cursor: pointer;
+    text-decoration: none;
+}
+
 .header .icons a:hover{
     color: #dfdfdf;
 }
@@ -379,6 +386,7 @@ ul li.active .slide .right-brown{
     margin-left: 30px;
     border-radius: 7px;
     box-shadow: 0 2px 4px rgba(95, 95, 95, 0.5);
+text-decoration: none;
 }
 .section_title_1 .button.button_size_2:hover,
 .section_title_2 .button.button_size_2:hover{
@@ -452,6 +460,7 @@ ul li.active .slide .right-brown{
 
 .category h4 a{
     color: #0B1A48;
+text-decoration: none;
 }
 .category span {
     font-size: 16px;
@@ -553,9 +562,7 @@ ul li.active .slide .right-brown{
     height: 240px;
     background-size: cover;
 
-    border-radius: 30px;
-
-}
+    }
 
 
 .sale-label {
@@ -592,7 +599,7 @@ ul li.active .slide .right-brown{
 
 .product-title {
     color: black;
-    
+    text-decoration: none;
 }
 
 
@@ -763,12 +770,14 @@ ul li.active .slide .right-brown{
     padding:0.6% 0%;
     color:rgb(199, 3, 3);
     font-size:0.8em;
+display:inline-block;
 }
     
 .footer .row a{
     text-decoration:none;
     color:rgb(199, 3, 3);
     transition:0.5s;
+
 }
     
 .footer .row a:hover{
@@ -822,8 +831,8 @@ ul li.active .slide .right-brown{
 }
 
 .preview .preview-image {
-    width: 70%;
-    height: 469px;
+    width: 80%;
+    height: 420px;
     background-size: cover;
     background-position: center;
     /* border: 1px solid black; */
@@ -904,7 +913,7 @@ input::-webkit-inner-spin-button{
     padding: 10px 10px;
     border: 1px solid black;
     border-radius: 10px;
-    width: 50%;
+    width: 35%;
     text-align: center;
     font-weight: 500;
     color: #ffffff;
@@ -1011,7 +1020,7 @@ del {
 
 .login#login
 {
-    border: 1px solid rgb(109, 106, 106);
+    border: 1px solid rgb(204, 201, 201);
     border-radius: 10px;
     background-color: white;
     position: fixed;
@@ -1063,16 +1072,16 @@ del {
 }
 
 .registration .form-label {
-    margin-left: 30px;
+    margin-left: 40px;
     margin: 10px;
 }
 
 .registration .form-input {
-    border-radius: 15px;
+    border-radius: 5px;
     border: 1px solid #000;
     background: #FFF;
     width: 370px;
-    height: 30px;
+    height: 40px;
     padding-left: 10px;
 }
 
@@ -1088,9 +1097,9 @@ del {
     margin-left: 7px;
 }
 
-/* .form-control {
+.form-control {
     padding-left: 38px;
-} */
+}
 
 
 .login-top {
@@ -1101,13 +1110,11 @@ del {
 
 .login-top>img {
     width: 70px;
-    height: 100px;
+    height: auto;
 }
 
 
-/* .content-wrapper {
-    display: none;
-} */
+
 
 
 
@@ -1127,7 +1134,8 @@ del {
 
 .mcb-backgound-overlay {
     width: 100%;
-    height: 550px;
+    height: 920px;
+/* border: 1px black solid; */
     margin-top: 70px;
     display: flex;
     justify-content: center;
@@ -1319,6 +1327,10 @@ hr {
 
 /* huydq css */
 
+.error{
+    color: red;
+}
+
 .mt{
     margin-top: 75px;
 }
@@ -1461,7 +1473,7 @@ hr {
 }
 
 .nb{
-    background-color: rgb(255, 255, 255,0.7) ;
+    /* background-color: rgb(255, 255, 255,0.7) ; */
     box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
@@ -1500,8 +1512,13 @@ hr {
     max-width: 100px; 
   }
 
+  .pdrow{
+    border-collapse: collapse;
+  }
+
 .pdrow td{
     height: 100px;
+    border-collapse: collapse;
 }
 
 .ik{

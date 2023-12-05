@@ -31,10 +31,7 @@
                 break;
         
             case "account":
-                if(isset($_GET['id'])){
-                    $id =$_GET['id'];
-                    $listbill=loadall_bill("",0);
-                }
+                    $listbill=loadall_bill("",$_SESSION['user']['id']);
                 include 'view/account.php';
             break;
 
@@ -108,6 +105,7 @@
                         header('location: index.php');
                         exit(); // Kết thúc thực thi sau khi chuyển hướng
                     } else {
+                        header('location: index.php');
                         include 'layout/home.php';
                     }
                 }
@@ -122,16 +120,20 @@
 
             case "register":
                 if((isset($_POST['register'])) && ($_POST['register']) ){
-                    $name = $_POST['name'];
                     $username = $_POST['username'];
                     $password = $_POST['password'];
                     $email = $_POST['email'];
-                    $sdt = $_POST['sdt'];
-                    $dia_chi = $_POST['dia_chi'];
     
-                    insert_user($name, $username, $password, $email, $sdt, $dia_chi);
+                    insert_user($username, $password, $email);
                     $THONG_BAO = "BẠN ĐÃ ĐĂNG KÍ THÀNH CÔNG!";
                 }
+                $data_sp_highlight = loadAll_sp_highlight();
+                $data_sp_top2 = loadAll_sp_top2();
+
+
+                $data_sp_top8 = loadAll_sp_top8();
+                $data_dm = loadAll_dm();
+                include 'layout/slideShow.php';
             include 'layout/home.php';
             break;
             case "sanphamct":

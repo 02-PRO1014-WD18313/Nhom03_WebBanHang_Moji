@@ -37,7 +37,7 @@
                     <input type="number" min="1" max="10" name="" value="1">
                     <button class="plus"><i class="fas fa-plus"></i></button>
                     <button class="minus"><i class="fas fa-minus"></i></button>
-                    <input type="submit" value="Add to Cart">
+                    <input data-id="<?= $id ?>" onclick="addToCart(<?= $id ?>,'<?= $id_sp?>', '<?= $tensp ?>', '<?= $img ?>', <?= $giacu ?>,<?= $giamoi ?>)"  type="submit" value="Add to Cart">
                 </div>
             </div>
         </div>
@@ -97,4 +97,27 @@
         })
     }
     
+</script>
+<script>
+    function addToCart(productId,idSp, productName,image, oldPrice, newPrice) {
+        $.ajax({
+            type: 'POST',
+            // Đường dẫ tới tệp PHP xử lý dữ liệu
+            url: 'view/addToCart.php',
+            data: {
+                id: productId,
+                idsp: idSp,
+                name: productName,
+                img: image,
+                giacu: oldPrice,
+                giamoi: newPrice
+            },
+            success: function(response) {
+                alert('Bạn đã thêm sản phẩm vào giỏ hàng thành công!')
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    }
 </script>
