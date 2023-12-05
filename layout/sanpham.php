@@ -1,47 +1,4 @@
-<<<<<<< HEAD
 
-<div class="container_sp">
-    <div class="filter"></div>
-    <div class="all-products">
-        <div class="product_sp">
-            
-        </div>
-        <div class="product_sp">
-
-        </div>
-        <div class="product_sp">
-
-        </div>
-        <div class="product_sp">
-
-        </div>
-        <div class="product_sp">
-
-        </div>
-        <div class="product_sp">
-
-        </div>
-        <div class="product_sp">
-
-        </div>
-        <div class="product_sp">
-
-        </div>
-        <div class="product_sp">
-
-        </div>
-        <div class="product_sp">
-
-        </div>
-        <div class="product_sp">
-
-        </div>
-        <div class="product_sp">
-
-        </div>
-    </div>
-</div>
-=======
 <?php
     if(isset($loadAll_sp)){
         // print_r($loadAll_sp);
@@ -276,4 +233,3 @@
     }
     
 </script>
->>>>>>> origin/ngoc
