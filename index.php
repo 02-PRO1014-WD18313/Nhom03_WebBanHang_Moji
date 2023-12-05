@@ -3,9 +3,7 @@
     session_start();
     include 'models/pdo.php';
     include 'models/taikhoan.php';
-
     include 'models/cart.php';
-
     include 'models/sanpham.php';
     include 'models/danhmuc.php';
 
@@ -35,10 +33,7 @@
 
         
             case "account":
-                if(isset($_GET['id'])){
-                    $id =$_GET['id'];
-                    $listbill=loadall_bill("",0);
-                }
+                    $listbill=loadall_bill("",$_SESSION['user']['id']);
                 include 'view/account.php';
             break;
 
@@ -112,6 +107,7 @@
                         header('location: index.php');
                         exit(); // Kết thúc thực thi sau khi chuyển hướng
                     } else {
+                        header('location: index.php');
                         include 'layout/home.php';
                     }
                 }
@@ -133,7 +129,6 @@
                     insert_user($username, $password, $email);
                     $THONG_BAO = "BẠN ĐÃ ĐĂNG KÍ THÀNH CÔNG!";
                 }
-
                 $data_sp_highlight = loadAll_sp_highlight();
                 $data_sp_top2 = loadAll_sp_top2();
 

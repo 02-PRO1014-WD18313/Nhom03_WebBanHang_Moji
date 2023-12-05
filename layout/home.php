@@ -22,8 +22,7 @@
 <div class="section">
 <?php
     foreach ($data_sp_top2 as $value) :
-        extract($value);
-?>
+        ?>
 <div class="section_wrapper section_wrapper_1 " style="background-image: url(upload/sanpham/<?php echo $value['img']; ?>);">
     <div class="section_title section_title_1">
         <h5>Our recommendation</h5>
@@ -41,7 +40,7 @@
 
 <div class="mcb mcb-wrap one">
 <div class="mcb-column-inner">
-    <h3 class="title">Top Rated Category</h3>
+    <h3 class="title">Danh Mục Sản Phẩm</h3>
     <div class="column-attr mfn-inline-editor">
         Best choice
     </div>
@@ -104,7 +103,7 @@
 
 <div class="mcb mcb-wrap two">
 <div class="mcb-column-inner">
-    <h3 class="title">Our Newest Products</h3>
+    <h3 class="title">Sản Phẩm Mới</h3>
     <div class="column-attr mfn-inline-editor">
         Best choice
     </div>
@@ -125,9 +124,8 @@
         <button class="onsale sale-label">On Sale</button>
         <div class="hover-product">
             <div class="icons-product">
-                
-                <a class="icon" href="index.php?act=sanphamct&id_sp=<?php echo $id_sp?>"><i class="fas fa-link"></i></a>
-                <a class="icon preview-icon" data-preview="<?php echo $id_sp ?>" ><i class="fas fa-expand-arrows-alt"></i></a>
+                <a class="icon preview-icon" data-preview="preview"  href="index.php?act=sanphamct&id_sp=<?= $id_sp ?>">
+                    <i class="fas fa-link"></i></a>
             </div>
         </div>
     </div>
@@ -140,7 +138,7 @@
     </div>
     <div class="mcb mcb-wrap two">
 <div class="mcb-column-inner">
-    <h3 class="title">Our Best-seller Products</h3>
+    <h3 class="title">Sản Phẩm Bán Chạy</h3>
     <div class="column-attr mfn-inline-editor">
         Best choice
     </div>
@@ -160,9 +158,7 @@
         <button class="onsale sale-label">On Sale</button>
         <div class="hover-product">
             <div class="icons-product">
-
-                <a class="icon" href="index.php?act=sanphamct&id_sp=<?php echo $id_sp?>"><i class="fas fa-link"></i></a>
-                <a class="icon preview-icon" data-preview="<?php echo $id_sp ?>" ><i class="fas fa-expand-arrows-alt"></i></a>
+<a class="icon preview-icon" data-preview="preview" ><i class="fas fa-link"></i></a>
             </div>
         </div>
     </div>

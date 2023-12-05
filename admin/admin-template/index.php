@@ -9,6 +9,7 @@ include '../../models/danhmuc.php';
 include '../../models/sanpham.php';
 include '../../models/taikhoan.php';
 include '../../models/binhluan.php';
+include '../../models/cart.php';
 include 'layout/header.php'; 
   
 include 'layout/sidebar.php'; 
@@ -200,6 +201,22 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
         $data_list_binhluan = loadAll_list_binhluan();
         include 'pages/forms/binhluan/list_binhluan.php';
         break;
+
+      case "list_bill":
+        $listbill=loadall_bill("",0);
+        include 'pages/forms/bill/listBill.php';
+        break;
+
+      case 'updatett':
+        if(isset($_POST['capnhat']) && ($_POST['capnhat'])){
+            $id=$_GET['id'];
+            $tt=$_POST['cars'];
+            update_bill($id,$tt);
+            $thongbao="Cập nhật thành công";
+            }
+            $listbill=loadall_bill("",0);
+        include 'pages/forms/bill/listBill.php';
+        break; 
 
     case "timkiem":
         include '../views/timkiem.php';

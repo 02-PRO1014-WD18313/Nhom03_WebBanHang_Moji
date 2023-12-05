@@ -12,7 +12,8 @@
                 </form>
             </div>
        </div>
-
+       <script src="js/main.js"></script>
+        
        <?php
             $an="";
             $hien="";
@@ -114,8 +115,9 @@
                 <?= $dh?>
             </div>
         </div>
-       
+        
     </div>
+    
 
     <script>
     // hàm cập nhật số lượng

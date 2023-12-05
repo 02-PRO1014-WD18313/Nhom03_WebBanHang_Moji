@@ -1,7 +1,7 @@
 <?php 
-    function insert_user($name, $username, $password, $email, $sdt, $dia_chi) {
-        $sql = "INSERT INTO `taikhoan`(`name`, `username`, `password`, `email`, `sdt`, `dia_chi`)
-        VALUES ('$name', '$username', '$password', '$email', '$sdt', '$dia_chi')";
+    function insert_user($username, $password, $email) {
+        $sql = "INSERT INTO `taikhoan`( `username`, `password`, `email`)
+        VALUES ('$username', '$password', '$email')";
         pdo_execute($sql);
     }
 
@@ -31,6 +31,12 @@
     function update_user($id, $name, $username, $password, $email, $role) {
         $sql = "UPDATE `taikhoan` SET `name`='$name', `username` = '$username', `password` = '$password', `email` = '$email',
         `role` = '$role' WHERE `id` = ".$id;
+        pdo_execute($sql);
+    }
+
+    function update_tk_user($id,$username, $password,$name,$sdt, $email, $address) {
+        $sql = "UPDATE `taikhoan` SET `name`='$name', `username` = '$username', `password` = '$password', `email` = '$email',
+        `sdt` = '$sdt', `dia_chi` = '$address' WHERE `id` = ".$id;
         pdo_execute($sql);
     }
 ?>
