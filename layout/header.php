@@ -42,18 +42,7 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
                     extract($_SESSION['user']);
                     // echo $_SESSION['user'];
             ?>
-   
-
-
-        <a data-cart="user" class="icon-header" data-bs-toggle="dropdown">Xin chào, <strong><?=$username?></strong></a></li>
-
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="index.php?act=logout">Đăng xuất</a></li>
-                <li><a class="dropdown-item" href="index.php?act=account&id=<?= $id ?>">Tài khoản</a></li>
-                <li><a class="dropdown-item" href="#">Link 3</a></li>
-            </ul>
-
-
+            <a href="index.php?act=account">Xin chào, <strong><?=$username?></strong>!</a>
             <a data-cart="cart" href="index.php?act=viewcart" class="icon-header">
                 <i class="fas fa-shopping-cart"></i>
             </a>
