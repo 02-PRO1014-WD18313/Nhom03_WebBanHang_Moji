@@ -212,6 +212,5 @@
         <?php  endif;?>
         </div>
         
-        <?php endforeach; ?>
     </div>
 
