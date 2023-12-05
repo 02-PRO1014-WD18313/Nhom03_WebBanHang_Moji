@@ -102,4 +102,14 @@
     //     $data_sp = pdo_query($sql);
     //     return $data_sp;       
     // }
+    function loadAll_sp_dm($id) {
+        $sql = "SELECT * FROM `sanpham` WHERE `id_dm` = '$id'";
+        $get_sp = pdo_query($sql);
+        return $get_sp;
+    }
+    function load_idsp_tensp(){
+        $sql = "SELECT `id_sp`, `tensp` FROM `sanpham` where 1";
+        $get_sp = pdo_query($sql);
+        return $get_sp;
+    }
 ?>

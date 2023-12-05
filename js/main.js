@@ -31,10 +31,10 @@ document.addEventListener("DOMContentLoaded", function() {
             
         }); 
     }
+    
     function autoSlide(){
         var slidesLct = 0;
         var slideNow = document.querySelector('.slides ul li.active');
-        // console.log(slideNow);
         for(var slidesLct = 0; slideNow = slideNow.previousElementSibling; slidesLct++){
 
         }
@@ -55,17 +55,22 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     preview();
+    // console.log("abc");
     function preview(){
         var click = document.querySelectorAll('.preview-icon');
         var content = document.querySelectorAll('.content-wrapper');
         var out = document.querySelectorAll('.icon-out');
         // console.log(out);
+        // console.log("object");
+        console.log(click);
+        console.log(content);
         for(var k=0; k < click.length; k++){
             click[k].addEventListener('click', function(){
                 var showingUp = this.getAttribute('data-preview');
                 var showingContent = document.getElementById(showingUp);
+                console.log(showingUp);
+                console.log(showingContent);
                 showingContent.classList.add('rushOut');
-                // console.log(showingContent);
                 for(var i=0; i < out.length; i++){
                     out[i].addEventListener('click', function(){
                         showingContent.classList.remove('rushOut');
@@ -95,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function cart(){
         var icons = document.querySelectorAll('.icons .icon-header');
         var outCart = document.querySelectorAll('.fa-times');
-        console.log(outCart);
+        // console.log(outCart);
         for(var i = 0; i < icons.length; i++){
            icons[i].addEventListener('click', function(){
                 var showingUp = this.getAttribute('data-cart');
@@ -112,7 +117,59 @@ document.addEventListener("DOMContentLoaded", function() {
            }) 
         }
     }
+    // console.log("acb");
+    rangeSlider();
+    function rangeSlider() {
+        let rangeInput = document.querySelectorAll('.range-input input');
+        const progress = document.querySelector(".slide_sp .progress");
+        let priceInput = document.querySelectorAll(".price-input input");
+        let priceGap = 1000;
+        // progress.style.backgroundColor = "black";
+        // console.log(progress);
+        priceInput.forEach(input => {
+            input.addEventListener("input", (e)=>{
+                let minVal = parseInt(priceInput[0].value);
+                let maxVal = parseInt(priceInput[1].value);
+                let percent = (minVal / rangeInput[0].max) * 100;
 
+                if( (maxVal - minVal >= priceGap) && maxVal < 10000 && minVal > 0){
+                    if(e.target.className === "input-min"){
+                        rangeInput[0].value = minVal;
+                        progress.style.left = percent + "%";
+
+                    }else {
+                        rangeInput[1].value = maxVal;
+                        progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                    }
+                }
+            });
+        });
+        rangeInput.forEach(input => {
+            input.addEventListener("input", (e)=>{
+                let minVal = parseInt(rangeInput[0].value);
+                let maxVal = parseInt(rangeInput[1].value);
+                let percent = (minVal / rangeInput[0].max) * 100;
+
+                if( maxVal - minVal < priceGap){
+                    if(e.target.className === "range-min"){
+                        rangeInput[0].value = maxVal - priceGap;
+
+                    }else {
+                        rangeInput[1].value = minVal + priceGap;
+                    }
+                }else {
+                    priceInput[0].value = minVal;
+                    priceInput[1].value = maxVal;
+                    progress.style.left = percent + "%";
+                    progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                }
+            });
+        });
+    }
+
+    // function header(){
+    //     Window.
+    // }
 
 }, false);
 

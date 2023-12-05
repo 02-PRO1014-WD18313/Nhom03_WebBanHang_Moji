@@ -151,32 +151,25 @@
                 if(isset($_GET['id_sp'])){
                     $id = $_GET['id_sp'];
                     $onesp = loadOne_sp($id);
-
                     // echo $id_sp;
                     extract($onesp);
                     $relatedProduct = productSamilar($id_sp, $id_dm);
-
-                    // extract($onesp);
-                    // $relatedProduct = productSamilar($id_sp, $id_dm);
-
                     include 'layout/sanphamct.php';
                 }else {
                     include 'layout/sanphamct.php';
-
                 }
                 break;
-
             case "sanpham":
-                $data_sp_highlight = loadAll_sp_highlight();
+                if(isset($_GET['id_dm'])){
+                    $id_dm = $_GET['id_dm'];
+                    $loadAll_sp_dm = loadAll_sp_dm($id_dm);
+                }else {
+                    $loadAll_sp = loadAll_sp();
+                    $load_idsp_tensp = load_idsp_tensp();
+                }
                 include 'layout/sanpham.php';
                 break;
-
-            case "logout":
-                session_unset();
-                header('loacation: index.php');
-                break;
-                
-
+            
         }
     } else {
 
@@ -192,4 +185,5 @@
 
     // footer
     include 'layout/footer.php';
+    
 ?>
