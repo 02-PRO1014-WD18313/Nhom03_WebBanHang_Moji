@@ -16,15 +16,15 @@
         return $data_binhluan;       
     }
 
-    // function delete_binhluan($id) {
-    //     $sql = "DELETE FROM `binhluan` WHERE `idBL` = ".$id;
-    //     pdo_execute($sql);
-    // }
+    function delete_binhluan($id) {
+        $sql = "DELETE FROM `binhluan` WHERE `id` = ".$id;
+        pdo_execute($sql);
+    }
 
-    // function loadOne_binhluan($id) {
-    //     $sql = "SELECT * FROM `binhluan` inner join `user` on binhluan.idUser=user.idUser where `idBL` = ".$id;
-    //     $get_binhluan = pdo_query_one($sql);
-    //     return $get_binhluan;
-    // }
+    function loadOne_binhluan($id) {
+        $sql = "SELECT * FROM `binhluan` inner join `taikhoan` on binhluan.id_user=taikhoan.id where binhluan.id = ".$id;
+        $get_binhluan = pdo_query_one($sql);
+        return $get_binhluan;
+    }
 
 ?>

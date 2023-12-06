@@ -42,8 +42,14 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
                     extract($_SESSION['user']);
                     // echo $_SESSION['user'];
             ?>
+
+
+
+            <a data-cart="cart" class="icon-header">
+
             <a href="index.php?act=account">Xin chào, <strong><?=$username?></strong>!</a>
             <a data-cart="cart" href="index.php?act=viewcart" class="icon-header">
+
                 <i class="fas fa-shopping-cart"></i>
             </a>
             <?php 
@@ -55,6 +61,7 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
                 <i class="fas fa-shopping-cart"></i>
             </a>
             <?php } ?>
+
         </div>
 </div>
 <form action="index.php?act=register" method="post" onsubmit="return validateRegisterForm()">
@@ -86,6 +93,7 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
         <a class="outCart"><i class="fas fa-times"></i></a>
     </div>
 </form>
+
 
 <!-- Login Form -->
 <form action="index.php?act=login" method="post" onsubmit="return validateLoginForm()">

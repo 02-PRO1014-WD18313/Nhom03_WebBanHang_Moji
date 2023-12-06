@@ -28,8 +28,8 @@
         return $get_user;
     }
 
-    function update_user($id, $name, $username, $password, $email, $role) {
-        $sql = "UPDATE `taikhoan` SET `name`='$name', `username` = '$username', `password` = '$password', `email` = '$email',
+    function update_user($id, $name, $username, $email, $role) {
+        $sql = "UPDATE `taikhoan` SET `name`='$name', `username` = '$username', `email` = '$email',
         `role` = '$role' WHERE `id` = ".$id;
         pdo_execute($sql);
     }

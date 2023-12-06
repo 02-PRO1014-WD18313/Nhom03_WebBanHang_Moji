@@ -39,7 +39,7 @@
                         </thead>
                         <tbody>
                           <?php foreach($data_list_binhluan as $key => $value): ?>
-                            
+                            <?php $chitiet = "index.php?act=chitiet_binhluan&id=".$value['id_pro']; ?>
                   
                         <tr>
                         <td><input class="form-check-input" type="checkbox" id="check1" name="option1" value="something"></td>

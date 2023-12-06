@@ -185,21 +185,37 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
           $id = $_POST['id'];
           $name = $_POST['name'];
           $username = $_POST['username'];
-          $password = $_POST['password'];
           $email = $_POST['email'];
           $diachi = $_POST['diachi'];
           $role = $_POST['role'];
           
 
-          update_user($id, $name, $username, $password, $email, $role);
+          update_user($id, $name, $username, $email, $role);
           $THONG_BAO = "BẠN ĐÃ CẬP NHẬT THÀNH CÔNG!";
       };
+      $data_user = loadAll_user();
       include 'pages/forms/user/list_user.php';
       break;
     
       case "list_binhluan":
         $data_list_binhluan = loadAll_list_binhluan();
         include 'pages/forms/binhluan/list_binhluan.php';
+        break;
+
+
+      case "chitiet_binhluan":
+        if(isset($_GET['id']) && ($_GET['id'])>0) {
+          $get_binhluan = loadAll_binhluan($_GET['id']);
+        }
+        include 'pages/forms/binhluan/chitiet_binhluan.php';
+        break;
+
+      case "xoa_ctbl":
+        if(isset($_GET['idbl']) && ($_GET['idbl'])>0) {
+            delete_binhluan($_GET['idbl']);
+        }
+        $get_binhluan = loadAll_binhluan($_GET['id']);
+        include 'pages/forms/binhluan/chitiet_binhluan.php';
         break;
 
       case "list_bill":
@@ -217,6 +233,7 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
             $listbill=loadall_bill("",0);
         include 'pages/forms/bill/listBill.php';
         break; 
+
 
     case "timkiem":
         include '../views/timkiem.php';

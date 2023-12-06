@@ -167,6 +167,7 @@
 </div>
 
 
+
 <!-- <div class="preview content-wrapper" id="preview">
 <a class="icon-out">
     <i class="fas fa-plus"></i>
@@ -229,6 +230,7 @@
 </div>
 
 <?php endforeach ?>
+
 <br>
 <div class="cart cart-product" id="cart">
 <a class="outCart" style="cursor: pointer;"><i class="fas fa-times"></i></a>
@@ -244,31 +246,25 @@
     <img src="image/z4876602114590_6223b9460e22e4f10da597208a1fa113.png" alt="">
     <h4>Sign Up</h4> <br>
 </div>
-<div class="form-control">
-<div  class="form-label">
-    <input type="text" class="form-input" name="name" placeholder="Họ tên">
-</div>
-<div  class="form-label">
-    <input type="text" class="form-input" name="username" placeholder="Username">
-</div>
-<div  class="form-label">
-    <input type="text" class="form-input" name="email" placeholder="Email">
-</div>
-<div  class="form-label">
-    <input type="text" class="form-input" name="sdt" placeholder="Số điện thoại">
-</div>
-<div  class="form-label">
-    <input type="text" class="form-input" name="dia_chi" placeholder="Địa chỉ">
-</div>
-<div class="form-label">
-    <input type="password" class="form-input" name="password" placeholder="Password">
-</div>
-<div class="form-label">
-    <input type="password" class="form-input" name="confirm" placeholder="Confirm password">
-</div>
-<input type="submit" class="btn btn-primary" name="register" value="ĐĂNG KÍ">
-<input type="button" onclick="window.location = '<?php echo $login_url; ?>'" class="btn btn-danger" name="register" value="ĐĂNG KÍ">
-</div>
+    <div class="form-control">
+        
+        <div  class="form-label">
+            <input type="text" class="form-input" name="username" placeholder="Username">
+        </div>
+        <div  class="form-label">
+            <input type="text" class="form-input" name="email" placeholder="Email">
+        </div>
+
+        <div class="form-label">
+            <input type="password" class="form-input" name="password" placeholder="Password">
+        </div>
+        <div class="form-label">
+            <input type="password" class="form-input" name="confirm" placeholder="Confirm password">
+        </div>
+        <div class="form-label">
+            <input type="submit" class="form-button" name="register" value="ĐĂNG KÍ">
+        </div>
+    </div>
 <br>
 <a class="outCart"><i class="fas fa-times"></i></a>
 </div>
@@ -288,7 +284,9 @@
 <div class="form-label">
 <input type="password" name="password" class="form-input" placeholder="Password">
 </div>
+<div class="form-label">
 <input type="submit" name="login" class="form-button" value="ĐĂNG NHẬP">
+</div>
     </div>
 <a class="outCart"><i class="fas fa-times"></i></a>
 

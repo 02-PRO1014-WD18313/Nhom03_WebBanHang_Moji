@@ -139,8 +139,6 @@
             include 'layout/home.php';
             break;
 
-            include 'layout/home.php';
-            break;
 
             case "sanphamct":
                 if(isset($_GET['id_sp'])){
@@ -164,7 +162,15 @@
                 }
                 include 'layout/sanpham.php';
                 break;
-            
+
+
+            case "logout":
+                session_unset();
+                header('loacation: index.php');
+                break;
+                
+
+
         }
     } else {
 

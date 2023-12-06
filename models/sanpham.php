@@ -55,6 +55,10 @@
     }
 
     function update_sp($tensp, $id, $soluong, $giacu, $giamoi, $mota, $motangan, $img, $iddm) {
+<<<<<<< HEAD
+
+=======
+>>>>>>> 5145f0516ac63b398de1f893e6b1a39fcebd14f7
 
         if($img != "") {
             $sql = "UPDATE `sanpham` SET `tensp`='$tensp', `id_sp` = '$id', `soluong` = '$soluong', `giacu` = '$giacu', `giamoi` = '$giamoi',
