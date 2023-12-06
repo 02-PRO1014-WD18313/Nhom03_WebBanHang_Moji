@@ -1281,7 +1281,7 @@ hr {
 
 .review {
     text-align: center;
-    display: none;
+    /* display: none; */
 
 }
 
@@ -1806,5 +1806,11 @@ input[type="range"]::-webkit-slider-thumb {
     padding: 0.5em;
 }
 
+.product-image-wrapper {
+    width: 500px;
+}
 
 
+.variations-form {
+    margin-left: 80px;
+}

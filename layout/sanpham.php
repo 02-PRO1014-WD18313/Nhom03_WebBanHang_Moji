@@ -197,7 +197,8 @@
         if(value.length === 0) return;
         let data = search(value, myObj);
         console.log(data);
-        createAutoComplete(data);
+            createAutoComplete(data);
+        
     
     }
     
@@ -220,7 +221,7 @@
         list.forEach((name) => {
             let listItem = document.createElement('li');
             let aName = document.createElement('a');
-            aName.innerHTML = list;
+            aName.innerHTML = name;
             listItem.appendChild(aName);
             listEl.appendChild(listItem);
         });

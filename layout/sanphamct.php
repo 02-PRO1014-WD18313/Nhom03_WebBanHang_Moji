@@ -4,7 +4,8 @@
     
     
     <div class="mcb-backgound-overlay">
-        <div class="product-image-wrapper" style="background-image: url(upload/sanpham/<?php echo $img?>);">
+        <div id="img-container" class="product-image-wrapper">
+        <img src="upload/sanpham/<?php echo $img?>"  alt="">
             <a><i class="fas fa-search"></i></a>
         </div>
         <div class="entry-sumary-column">
@@ -55,8 +56,8 @@
         <div class="information display" id="information">
             <p style="text-align:center"><?php echo $mota ?></p>
         </div>
-        <div class="review display" id="review">
-            <h2>Abc</h2>
+        <div class="review display"  id="review">
+                <iframe src="layout/binhluan.php?idsp=<?php echo $id_sp ?>" width="100%" height="400px" frameborder="0"></iframe>
         </div>
     <hr>
     <h2 style="text-align:center; font-size:56px; margin-top:10px">Related Product</h2>
@@ -96,5 +97,19 @@
             console.log(showingcontent);
         })
     }
+
+
+    var options1 = {
+        width: 460,
+        height: 460,
+        zoomWidth: 200,
+        offset: {vertical: 0, horizontal: 10},
+
+    };
+
+
+
+    new ImageZoom(document.getElementById("img-container"), options1);
+
     
 </script>
