@@ -3,9 +3,7 @@
     session_start();
     include 'models/pdo.php';
     include 'models/taikhoan.php';
-
     include 'models/cart.php';
-
     include 'models/sanpham.php';
     include 'models/danhmuc.php';
 
@@ -35,10 +33,7 @@
 
         
             case "account":
-                if(isset($_GET['id'])){
-                    $id =$_GET['id'];
-                    $listbill=loadall_bill("",0);
-                }
+                    $listbill=loadall_bill("",$_SESSION['user']['id']);
                 include 'view/account.php';
             break;
 
@@ -112,6 +107,7 @@
                         header('location: index.php');
                         exit(); // Kết thúc thực thi sau khi chuyển hướng
                     } else {
+                        header('location: index.php');
                         include 'layout/home.php';
                     }
                 }
@@ -133,7 +129,6 @@
                     insert_user($username, $password, $email);
                     $THONG_BAO = "BẠN ĐÃ ĐĂNG KÍ THÀNH CÔNG!";
                 }
-
                 $data_sp_highlight = loadAll_sp_highlight();
                 $data_sp_top2 = loadAll_sp_top2();
 
@@ -144,45 +139,37 @@
             include 'layout/home.php';
             break;
 
-<<<<<<< HEAD
-=======
-            include 'layout/home.php';
-            break;
 
->>>>>>> 5145f0516ac63b398de1f893e6b1a39fcebd14f7
             case "sanphamct":
                 if(isset($_GET['id_sp'])){
                     $id = $_GET['id_sp'];
                     $onesp = loadOne_sp($id);
-
                     // echo $id_sp;
                     extract($onesp);
                     $relatedProduct = productSamilar($id_sp, $id_dm);
-
-                    // extract($onesp);
-                    // $relatedProduct = productSamilar($id_sp, $id_dm);
-
                     include 'layout/sanphamct.php';
                 }else {
                     include 'layout/sanphamct.php';
-
                 }
                 break;
-
             case "sanpham":
-                $data_sp_highlight = loadAll_sp_highlight();
+                if(isset($_GET['id_dm'])){
+                    $id_dm = $_GET['id_dm'];
+                    $loadAll_sp_dm = loadAll_sp_dm($id_dm);
+                }else {
+                    $loadAll_sp = loadAll_sp();
+                    $load_idsp_tensp = load_idsp_tensp();
+                }
                 include 'layout/sanpham.php';
                 break;
-<<<<<<< HEAD
-            
-=======
->>>>>>> 5145f0516ac63b398de1f893e6b1a39fcebd14f7
+
 
             case "logout":
                 session_unset();
                 header('loacation: index.php');
                 break;
                 
+
 
         }
     } else {
@@ -199,4 +186,5 @@
 
     // footer
     include 'layout/footer.php';
+    
 ?>

@@ -9,6 +9,7 @@ include '../../models/danhmuc.php';
 include '../../models/sanpham.php';
 include '../../models/taikhoan.php';
 include '../../models/binhluan.php';
+include '../../models/cart.php';
 include 'layout/header.php'; 
   
 include 'layout/sidebar.php'; 
@@ -201,6 +202,7 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
         include 'pages/forms/binhluan/list_binhluan.php';
         break;
 
+
       case "chitiet_binhluan":
         if(isset($_GET['id']) && ($_GET['id'])>0) {
           $get_binhluan = loadAll_binhluan($_GET['id']);
@@ -215,6 +217,23 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
         $get_binhluan = loadAll_binhluan($_GET['id']);
         include 'pages/forms/binhluan/chitiet_binhluan.php';
         break;
+
+      case "list_bill":
+        $listbill=loadall_bill("",0);
+        include 'pages/forms/bill/listBill.php';
+        break;
+
+      case 'updatett':
+        if(isset($_POST['capnhat']) && ($_POST['capnhat'])){
+            $id=$_GET['id'];
+            $tt=$_POST['cars'];
+            update_bill($id,$tt);
+            $thongbao="Cập nhật thành công";
+            }
+            $listbill=loadall_bill("",0);
+        include 'pages/forms/bill/listBill.php';
+        break; 
+
 
     case "timkiem":
         include '../views/timkiem.php';

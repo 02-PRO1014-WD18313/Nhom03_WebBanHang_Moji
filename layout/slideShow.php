@@ -65,11 +65,7 @@
                 </div>
             </li>
         </ul>
-
 </div>
-
-    </div>
-
     <div class="transfer-slides">
         <ul>
             <li class="transfer">1</li>

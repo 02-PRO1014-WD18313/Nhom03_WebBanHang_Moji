@@ -31,10 +31,10 @@ document.addEventListener("DOMContentLoaded", function() {
             
         }); 
     }
+    
     function autoSlide(){
         var slidesLct = 0;
         var slideNow = document.querySelector('.slides ul li.active');
-        // console.log(slideNow);
         for(var slidesLct = 0; slideNow = slideNow.previousElementSibling; slidesLct++){
 
         }
@@ -55,17 +55,22 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
     preview();
+    // console.log("abc");
     function preview(){
         var click = document.querySelectorAll('.preview-icon');
         var content = document.querySelectorAll('.content-wrapper');
         var out = document.querySelectorAll('.icon-out');
         // console.log(out);
+        // console.log("object");
+        console.log(click);
+        console.log(content);
         for(var k=0; k < click.length; k++){
             click[k].addEventListener('click', function(){
                 var showingUp = this.getAttribute('data-preview');
                 var showingContent = document.getElementById(showingUp);
+                console.log(showingUp);
+                console.log(showingContent);
                 showingContent.classList.add('rushOut');
-                // console.log(showingContent);
                 for(var i=0; i < out.length; i++){
                     out[i].addEventListener('click', function(){
                         showingContent.classList.remove('rushOut');
@@ -74,23 +79,6 @@ document.addEventListener("DOMContentLoaded", function() {
             })
         }
     }
-
-    countdown();
-    function countdown(){
-        let countDown = new Date("Nov 25, 2023 00:00:00").getTime();
-        x = setInterval(function(){
-            let now = new Date().getTime();
-            let distance = countDown - now;
-            // document.getElementById('days').innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-            // document.getElementById('hours').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            // document.getElementById('minutes').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            // document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000);
-            if(distance < 0){
-                clearInterval(x);
-            }
-        }, 0);
-    }
-
     cart();
     function cart(){
         var icons = document.querySelectorAll('.icons .icon-header');
@@ -112,35 +100,176 @@ document.addEventListener("DOMContentLoaded", function() {
            }) 
         }
     }
+    // console.log("acb");
+    rangeSlider();
+    function rangeSlider() {
+        let rangeInput = document.querySelectorAll('.range-input input');
+        const progress = document.querySelector(".slide_sp .progress");
+        let priceInput = document.querySelectorAll(".price-input input");
+        let priceGap = 1000;
+        // progress.style.backgroundColor = "black";
+        // console.log(progress);
+        priceInput.forEach(input => {
+            input.addEventListener("input", (e)=>{
+                let minVal = parseInt(priceInput[0].value);
+                let maxVal = parseInt(priceInput[1].value);
+                let percent = (minVal / rangeInput[0].max) * 100;
 
+                if( (maxVal - minVal >= priceGap) && maxVal < 10000 && minVal > 0){
+                    if(e.target.className === "input-min"){
+                        rangeInput[0].value = minVal;
+                        progress.style.left = percent + "%";
+
+                    }else {
+                        rangeInput[1].value = maxVal;
+                        progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                    }
+                }
+            });
+        });
+        rangeInput.forEach(input => {
+            input.addEventListener("input", (e)=>{
+                let minVal = parseInt(rangeInput[0].value);
+                let maxVal = parseInt(rangeInput[1].value);
+                let percent = (minVal / rangeInput[0].max) * 100;
+
+                if( maxVal - minVal < priceGap){
+                    if(e.target.className === "range-min"){
+                        rangeInput[0].value = maxVal - priceGap;
+
+                    }else {
+                        rangeInput[1].value = minVal + priceGap;
+                    }
+                }else {
+                    priceInput[0].value = minVal;
+                    priceInput[1].value = maxVal;
+                    progress.style.left = percent + "%";
+                    progress.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                }
+            });
+        });
+    }
+
+    // function header(){
+    //     Window.
+    // }
 
 }, false);
 
 function thongbao() {
-    alert("Sản phẩm đã có trong giỏ hàng!!");
+    alert("Đăng nhập để tiếp tục mua hàng!!");
+    document.querySelector('[data-cart="login"]').click();
+}
+function loginFail() {
+    alert("Đăng nhập không thành công!!");
+    document.querySelector('[data-cart="login"]').click();
 }
 
-function adjustCounter(productId, value) {
-    console.log("productId:", productId);
-    console.log("value:", value);
-    console.log(document.getElementsByName(productId).value);
-    
-    var counterInput = document.getElementsByName(productId);
-    var counterValue = parseInt(counterInput.value);
 
-    if (value === 1 || (value === -1 && counterValue > 0)) {
-        counterValue += value;
-        counterInput.value = counterValue;
+function updateCounter(id, value) {
+    document.getElementById("quantity_" + id).value = value;
+  }
 
-        // // Lấy giá của sản phẩm từ ô chứa giá
-        // var productPriceCell = counterInput.closest('.count').querySelector('.product-price');
-        // var pricePerUnit = parseFloat(productPriceCell.textContent);
+  function increment(id) {
+    let counterValue = document.getElementById("quantity_" + id).value;
+    counterValue++;
+    updateCounter(id, counterValue);
+  }
 
-        // // Tính toán lại thành tiền và cập nhật giá trị trong ô "Thành tiền"
-        // var totalPrice = pricePerUnit * counterValue;
-        // var totalPriceCell = counterInput.closest('.count').querySelector('.total-price');
-        // totalPriceCell.textContent = totalPrice;
-
-        // Thêm mã để cập nhật thành tiền tương ứng nếu cần
+  function decrement(id) {
+    let counterValue = parseInt(document.getElementById("quantity_" + id).value);
+    if (counterValue > 0) {
+      counterValue--;
+      updateCounter(id, counterValue);
     }
+  }
+
+  function validatePassword(password) {
+    var passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/;
+    return passwordRegex.test(password);
 }
+function validateEmail(email) {
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+    function validateRegisterForm() {
+        var username = document.getElementById('username').value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        var confirm = document.getElementById('confirm').value;
+
+        var usernameError = document.getElementById('usernameError');
+        var emailError = document.getElementById('emailError');
+        var passwordError = document.getElementById('passwordError');
+        var confirmError = document.getElementById('confirmError');
+
+        usernameError.innerHTML = "";
+        emailError.innerHTML = "";
+        passwordError.innerHTML = "";
+        confirmError.innerHTML = "";
+
+        // Validate Username
+        if (username === "") {
+            usernameError.innerHTML = "Vui lòng nhập tên đăng nhập";
+            return false;
+        } else if (username.length < 8) {
+            usernameError.innerHTML = "Tên đăng nhập phải có ít nhất 8 ký tự";
+            return false;
+        } else if (!/^[A-Za-z0-9]+$/.test(username)) {
+            usernameError.innerHTML = "Tên đăng nhập không dấu ";
+            return false;
+        }
+
+        if (email === "") {
+            emailError.innerHTML = "Vui lòng nhập địa chỉ email";
+            return false;
+        } else if (!validateEmail(email)) {
+            emailError.innerHTML = "Địa chỉ email không hợp lệ";
+            return false;
+        }
+        if (password === "") {
+            passwordError.innerHTML = "Vui lòng nhập mật khẩu";
+            return false;
+        } else if (!validatePassword(password)) {
+            passwordError.innerHTML = "Mật khẩu phải viết hoa, có chữ và số, và ít nhất 8 ký tự";
+            return false;
+        }
+        if (confirm === "") {
+            confirmError.innerHTML = "Vui lòng xác nhận mật khẩu";
+            return false;
+        } else if (confirm !== password) {
+            confirmError.innerHTML = "Xác nhận mật khẩu phải giống với mật khẩu";
+            return false;
+        }
+        // Add other validation checks for email, password, and confirmation here
+        alert("Đăng kí thành công!!")
+        return true;
+    }
+
+    function validateLoginForm() {
+        var loginUsername = document.getElementById('loginUsername').value;
+        var loginPassword = document.getElementById('loginPassword').value;
+    
+        var loginUsernameError = document.getElementById('loginUsernameError');
+        var loginPasswordError = document.getElementById('loginPasswordError');
+    
+        loginUsernameError.innerHTML = "";
+        loginPasswordError.innerHTML = "";
+    
+        // Validate Login Username
+        if (loginUsername === "") {
+            loginUsernameError.innerHTML = "Vui lòng nhập tên người dùng";
+            return false;
+        }
+    
+        // Validate Login Password
+        if (loginPassword === "") {
+            loginPasswordError.innerHTML = "Vui lòng nhập mật khẩu";
+            return false;
+        }
+    
+        // Bổ sung các quy tắc kiểm tra khác tại đây nếu cần
+    
+        return true;
+    }
