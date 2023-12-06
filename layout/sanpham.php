@@ -11,17 +11,6 @@
 <form action="" class="search-product" autocomplete="off">
     <div class="autocomplete-wrapper" id="autocomplete-wrapper">
         <input id="autocomplete-input" type="text" placeholder="Search" class="search">
-        <!-- <ul class="autocomplete-list">
-            <li>
-                <a href="">Bông tai</a>
-            </li>
-            <li>
-                <a href="">Bông tai</a>
-            </li>
-            <li>
-                <a href="">Bông tai</a>
-            </li>
-        </ul> -->
     </div>
         <button type="submit" class="btn-submit">Send</button>
 </form>
@@ -104,54 +93,21 @@
     <div class="line"></div>
     
     <div class="all-products" id="all-products">
-        <?php
-            if(isset($loadAll_sp)):
-
-                foreach($loadAll_sp as $value):
-                    extract($value);            
-                
-        ?>
-        <div class="product_sp">
-            <img src="upload/sanpham/<?php echo $img ?>" alt="">
-            <p style="text-align:center"><a href="index.php?act=sanphamct&id_sp=<?php echo $id_sp?>" class="product-title"><?php echo $tensp?></a></p> <br>
-            <div class="price" >
-                <p class="newprice"><?php echo number_format($giamoi, 0 , ','); ?> VNĐ</p>
-                <p class="oldprice"><?php echo number_format($giacu, 0 , ','); ?> VNĐ</p>
-            </div>
-            <div class="buy-now">
-                <button class="detail">Detail</button>
-                <button class="buyNow">Buy Now</button>
-            </div>
-        </div>
-    <?php endforeach;
-        endif;
-    ?>
+        
         
     </div>
-    <div class="all-products"  id="NH01" style="display:none;">
-        <?php
-            if(isset($loadAll_sp_dm)):
-                foreach($loadAll_sp_dm as $value):
-                    extract($value);            
-            
-        ?>
-        <div class="product_sp" >
-            <img src="upload/sanpham/<?php echo $img ?>" alt="">
-            <p style="text-align:center"><a href="index.php?act=sanphamct&id_sp=<?php echo $id_sp?>" class="product-title"><?php echo $tensp?></a></p> <br>
-            <div class="price" >
-                <p class="newprice"><?php echo number_format($giamoi, 0 , ','); ?> VNĐ</p>
-                <p class="oldprice"><?php echo number_format($giacu, 0 , ','); ?> VNĐ</p>
-            </div>
-            <div class="buy-now">
-                <button class="detail">Detail</button>
-                <button class="buyNow">Buy Now</button>
-            </div>
-        </div>
-    <?php endforeach;
-        endif; ?>
     
-        
-    </div>
+</div>
+<div class="content-pagging">
+    <ul>
+        <li class="btn-back"><i class="fas fa-angle-left"></i></li>
+        <div class="number-page" id="numberpage">
+            <!-- <li class="active-pagging">1</li>
+            <li>2</li>
+            <li>3</li> -->
+        </div>
+        <li class="btn-next"><i class="fas fa-angle-right"></i></li>
+    </ul>
 </div>
 
 <script>
@@ -242,3 +198,105 @@
     }
     
 </script>
+
+<script >
+    document.addEventListener('DOMContentLoaded', function(){
+        let myProduct = <?php echo json_encode($loadAll_sp)?>;
+        
+        // console.log(myProduct);
+        let perpage = 9;
+        let CurrentPage = 1;
+        let start = 0;
+        let end = perpage;
+        const totalPage = Math.ceil(myProduct.length / perpage);
+        // console.log(totalPage);
+        const back = document.querySelector('.btn-back');
+        const next = document.querySelector('.btn-next');
+        
+        function getCurrentPage(CurrentPage){
+            start = (CurrentPage - 1 ) * perpage;
+            end = CurrentPage * perpage;
+            // console.log(start, end);
+        }
+        // getCurrentPage(2);
+
+        function renderProduct(){
+            html ="";
+            const content = myProduct.map((item, index) => {
+                if(index >= start && index < end){
+
+                html += '<div class="product_sp">';
+                html += `<img src="upload/sanpham/${item.img}" alt="" class="img-product">`
+                html += '<p>';
+                html += `<a style="color:black" href="index.php?act=sanphamct&id_sp=${item.id_sp}">${item.tensp}`
+                html += '</a>';
+                html += '</p>';
+                html += '<br>';
+                html += '<div class="price">';
+                html += `<p class="oldprice">${item.giamoi} VNĐ`;
+                html += '</p>';
+                html += `<p class="newprice">${item.giacu} VNĐ`;
+                html += '</p>';
+                html += '</div>';
+                html += '</div>';
+                return html;
+            }
+                
+            });
+            document.getElementById('all-products').innerHTML = html;
+        }
+        renderProduct();
+        renderpagination();
+
+        function renderpagination(){
+            let html = "";
+            html += `<li class="active-pagging">1</li>`;
+            for(let i = 2 ; i <= totalPage ; i++){
+                html += `<li>${i}</li>`;
+            }
+            document.getElementById('numberpage').innerHTML = html;
+        }
+
+
+        function changpages(){
+            const currentPages = document.querySelectorAll('#numberpage li');
+            console.log(currentPages);
+            for(let i = 0 ; i < currentPages.length ; i++){
+                currentPages[i].addEventListener('click', function(){
+                    const value = i+1;
+                    console.log(value);
+                    getCurrentPage(value);
+                    // console.log(getCurrentPage(value));
+                    renderProduct();
+                }); 
+            }
+        }
+
+        changpages()
+        
+        next.addEventListener('click', function(){
+            CurrentPage++;
+            
+            // console.log(start, end);
+            if(CurrentPage > totalPage){
+                CurrentPage = totalPage;
+            }
+            // console.log(start, end);
+            // if(CurrentPage === totalPage){
+            //     document.querySelector('.btn-next').classList = 'btn-active';
+            // }
+            getCurrentPage(CurrentPage);
+            renderProduct();
+        });
+        back.addEventListener('click', function(){
+            CurrentPage--;
+            if(CurrentPage <= 1 ){
+                CurrentPage = 1;
+            }
+            // console.log(start, end);
+            getCurrentPage(CurrentPage);
+            renderProduct();
+        });
+    });
+</script>
+
