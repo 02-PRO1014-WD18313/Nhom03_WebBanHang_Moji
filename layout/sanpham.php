@@ -184,8 +184,8 @@
     
     var myObj = <?php echo json_encode($load_idsp_tensp); ?>;
     
-    console.log(myObj);
-    console.log(myObj[1].id_sp);
+    // console.log(myObj);
+    // console.log(myObj[1].id_sp);
     const inputEL = document.getElementById('autocomplete-input');
     // console.log(inputEL);
     inputEL.addEventListener("input", onInputChange);
@@ -198,8 +198,6 @@
         let data = search(value, myObj);
         console.log(data);
             createAutoComplete(data);
-        
-    
     }
     
     function search(value, data){
@@ -207,8 +205,13 @@
         for(var i = 0; i < data.length; i++) {
             value = value.toLowerCase();
             let name = data[i].tensp.toLowerCase();
+            let href = data[i].id_sp;
+            let obj = [
+                name,
+                href
+            ]
             if(name.includes(value)){
-                filteredData.push(data[i].tensp);
+                filteredData.push(obj);
             }
         }
         return filteredData;
@@ -221,7 +224,13 @@
         list.forEach((name) => {
             let listItem = document.createElement('li');
             let aName = document.createElement('a');
-            aName.innerHTML = name;
+            console.log(name);
+            for(let i = 0; i < name.length; i++){
+                aName.innerHTML = name[0];
+                // console.log(name[1]);
+                aName.setAttribute("href", `index.php?act=sanphamct&id_sp=${name[1]}`);
+            }
+            aName.style.color = "black";
             listItem.appendChild(aName);
             listEl.appendChild(listItem);
         });
