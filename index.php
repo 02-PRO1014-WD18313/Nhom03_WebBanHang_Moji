@@ -3,10 +3,9 @@
     session_start();
     include 'models/pdo.php';
     include 'models/taikhoan.php';
-<<<<<<< HEAD
+
     include 'models/cart.php';
-=======
->>>>>>> fa71d5a4885ce99de9847b5f7fb42f1b2cf32bc5
+
     include 'models/sanpham.php';
     include 'models/danhmuc.php';
 
@@ -20,7 +19,7 @@
     if(isset($_GET['act']) && $_GET['act'] != "") {
         $act = $_GET['act'];
         switch($act) {
-<<<<<<< HEAD
+
             case "home":
 
 
@@ -33,8 +32,7 @@
                 include 'layout/slideShow.php';
                 include 'layout/home.php';
                 break;
-=======
->>>>>>> fa71d5a4885ce99de9847b5f7fb42f1b2cf32bc5
+
         
             case "account":
                 if(isset($_GET['id'])){
@@ -144,7 +142,7 @@
                 include 'layout/slideShow.php';
             include 'layout/home.php';
             break;
-<<<<<<< HEAD
+
             case "sanphamct":
                 if(isset($_GET['id_sp'])){
                     $id = $_GET['id_sp'];
@@ -163,13 +161,13 @@
                 include 'layout/sanpham.php';
                 break;
             
-=======
+
             case "logout":
                 session_unset();
                 header('loacation: index.php');
                 break;
                 
->>>>>>> fa71d5a4885ce99de9847b5f7fb42f1b2cf32bc5
+
         }
     } else {
 

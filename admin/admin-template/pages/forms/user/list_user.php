@@ -34,7 +34,6 @@
                             <th>Họ tên</th>
                             <th> Email </th>
                             <th> Username </th>
-                            <th> Password </th>
                             <th>Số Điện Thoại</th>
                             <th> Role </th>
                             <th>Hành động</th>
@@ -52,7 +51,6 @@
                             <td><?php echo $value['name']; ?></td>
                             <td><?php echo $value['email']; ?></td>
                             <td><?php echo $value['username']; ?></td>
-                            <td><?php echo $value['password']; ?></td>
                             <td><?php echo $value['sdt']; ?></td>
 
                             <?php if($value['role'] == 0): ?>

@@ -999,11 +999,11 @@ del {
 
 .registration#register
 {
-    border: 1px solid rgb(109, 106, 106);
-    border-radius: 10px;
+    border: 1px solid rgb(175, 173, 173);
+    border-radius: 4px;
     background-color: white;
     position: fixed;
-    height: 65%;
+    height: 55%;
     width: 30%;
     top: 50%;
     left: 50%;
@@ -1014,8 +1014,8 @@ del {
 
 .login#login
 {
-    border: 1px solid rgb(109, 106, 106);
-    border-radius: 10px;
+    border: 1px solid rgb(164, 162, 162);
+    border-radius: 4px;
     background-color: white;
     position: fixed;
     height: 43%;
@@ -1051,7 +1051,7 @@ del {
 
 .regis-top>img {
     width: 70px;
-    height: 100px;
+    height: auto;
 }
 
 .registration .outCart {
@@ -1068,19 +1068,21 @@ del {
 .registration .form-label {
     margin-left: 30px;
     margin: 10px;
+    padding-left: 15px;
 }
 
 .registration .form-input {
-    border-radius: 15px;
+    border-radius: 8px;
     border: 1px solid #000;
     background: #FFF;
     width: 370px;
-    height: 30px;
+    height: 35px;
     padding-left: 10px;
 }
 
+
 .form-button {
-    width: 375px;
+    width: 372px;
     height: 40px;
     border-radius: 35px;
     background: rgb(185, 3, 3);
@@ -1088,12 +1090,10 @@ del {
     font-family: 'Quicksand', sans-serif;
     border-color: white;
     font-size: medium;
-    margin-left: 7px;
+   
+
 }
 
-/* .form-control {
-    padding-left: 38px;
-} */
 
 
 .login-top {
@@ -1104,7 +1104,7 @@ del {
 
 .login-top>img {
     width: 70px;
-    height: 100px;
+    height: auto;
 }
 
 

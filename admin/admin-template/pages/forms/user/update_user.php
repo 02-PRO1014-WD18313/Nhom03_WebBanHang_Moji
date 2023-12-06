@@ -16,7 +16,7 @@
             <form class="forms-sample" method="post" action="index.php?act=update_user" enctype="multipart/form-data">
               <div class="form-group">
                 <label for="exampleInputName1">Tên khách hàng:</label>
-                <input type="text" class="form-control" name="ten" value="<?php echo $name; ?>">
+                <input type="text" class="form-control" name="name" value="<?php echo $name; ?>">
               </div>
               <div class="form-group">
                 <label for="exampleInputName1">Mã khách hàng:</label>
@@ -28,12 +28,12 @@
               </div>
               <div class="form-group">
                 <label for="exampleInputName1">Username:</label>
-                <input type="text" class="form-control" name="ussername" value="<?php echo $username;?>">
+                <input type="text" class="form-control" name="username" value="<?php echo $username;?>">
               </div>
-                <div class="form-group">
-                <label for="exampleInputName1">Password:</label>
-                <input type="text" class="form-control" name="password" value="<?php echo $password;?>">
-                </div>
+              <div class="form-group">
+                <label for="exampleInputName1">Địa chỉ:</label>
+                <input type="text" class="form-control" name="diachi" value="<?php echo $username;?>">
+              </div>
                 <div class="form-group">
                 <label for="exampleInputName1">Vai trò:</label>
                     <select class="form-control" name="role" style="height: 45px;">

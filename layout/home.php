@@ -164,57 +164,6 @@
 </div>
 
 
-<!-- <div class="preview content-wrapper" id="preview">
-<a class="icon-out">
-    <i class="fas fa-plus"></i>
-</a>
-
-<div class="preview-image" style="background-image: url(upload/sanpham/<?php echo $value['img']; ?>);">
-
-</div>
-<div class="information-product">
-    <div class="text-content-product">
-        <h3 class="heading"></h3>
-
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus rem repellat ipsam ex soluta voluptas error ducimus illum consequuntur sit perferendis, inventore aliquam! Deserunt quisquam recusandae libero excepturi cumque dignissimos dolor cupiditate. Et harum ab doloribus dolores dolorum reiciendis provident minus sed eum nulla dolorem, necessitatibus cupiditate mollitia aperiam.</p>
-        <p style="font-size: 20px; margin-top:10px ;color: black;">Material</p>
-    </div>
-    <div class="variations-form cart">
-        <div class="input-number">
-            <input type="number" min="1" max="10" name="" value="1">
-            <button class="plus"><i class="fas fa-plus"></i></button>
-            <button class="minus"><i class="fas fa-minus"></i></button>
-            <input type="submit" value="Add to Cart">
-        </div>
-        <p>Tags: </p>
-    </div>
-</div>
-</div>
-<div class="preview content-wrapper" id="preview_1">
-<a class="icon-out">
-    <i class="fas fa-plus"></i>
-</a>
-<div class="preview-image" style="background-image: url(image/photo-1-1571065781331448666071.jpg);">
-
-</div>
-<div class="information-product">
-    <div class="text-content-product">
-        <h3 class="heading">Tên Sản Phẩm</h3>
-        <span class="price"> <del>Giá</del>  -  Giá</span>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus rem repellat ipsam ex soluta voluptas error ducimus illum consequuntur sit perferendis, inventore aliquam! Deserunt quisquam recusandae libero excepturi cumque dignissimos dolor cupiditate. Et harum ab doloribus dolores dolorum reiciendis provident minus sed eum nulla dolorem, necessitatibus cupiditate mollitia aperiam.</p>
-        <p style="font-size: 20px; margin-top:10px ;color: black;">Material</p>
-    </div>
-    <div class="variations-form">
-        <div class="input-number">
-            <input type="number" min="1" max="10" name="" value="1">
-            <button class="plus"><i class="fas fa-plus"></i></button>
-            <button class="minus"><i class="fas fa-minus"></i></button>
-            <input type="submit" value="Add to Cart">
-        </div>
-        <p>Tags: </p>
-    </div>
-</div>
-</div> -->
 <br>
 <div class="cart cart-product" id="cart">
 <a class="outCart" style="cursor: pointer;"><i class="fas fa-times"></i></a>
@@ -230,31 +179,25 @@
     <img src="image/z4876602114590_6223b9460e22e4f10da597208a1fa113.png" alt="">
     <h4>Sign Up</h4> <br>
 </div>
-<div class="form-control">
-<div  class="form-label">
-    <input type="text" class="form-input" name="name" placeholder="Họ tên">
-</div>
-<div  class="form-label">
-    <input type="text" class="form-input" name="username" placeholder="Username">
-</div>
-<div  class="form-label">
-    <input type="text" class="form-input" name="email" placeholder="Email">
-</div>
-<div  class="form-label">
-    <input type="text" class="form-input" name="sdt" placeholder="Số điện thoại">
-</div>
-<div  class="form-label">
-    <input type="text" class="form-input" name="dia_chi" placeholder="Địa chỉ">
-</div>
-<div class="form-label">
-    <input type="password" class="form-input" name="password" placeholder="Password">
-</div>
-<div class="form-label">
-    <input type="password" class="form-input" name="confirm" placeholder="Confirm password">
-</div>
-<input type="submit" class="btn btn-primary" name="register" value="ĐĂNG KÍ">
-<input type="button" onclick="window.location = '<?php echo $login_url; ?>'" class="btn btn-danger" name="register" value="ĐĂNG KÍ">
-</div>
+    <div class="form-control">
+        
+        <div  class="form-label">
+            <input type="text" class="form-input" name="username" placeholder="Username">
+        </div>
+        <div  class="form-label">
+            <input type="text" class="form-input" name="email" placeholder="Email">
+        </div>
+
+        <div class="form-label">
+            <input type="password" class="form-input" name="password" placeholder="Password">
+        </div>
+        <div class="form-label">
+            <input type="password" class="form-input" name="confirm" placeholder="Confirm password">
+        </div>
+        <div class="form-label">
+            <input type="submit" class="form-button" name="register" value="ĐĂNG KÍ">
+        </div>
+    </div>
 <br>
 <a class="outCart"><i class="fas fa-times"></i></a>
 </div>
@@ -274,7 +217,9 @@
 <div class="form-label">
 <input type="password" name="password" class="form-input" placeholder="Password">
 </div>
+<div class="form-label">
 <input type="submit" name="login" class="form-button" value="ĐĂNG NHẬP">
+</div>
     </div>
 <a class="outCart"><i class="fas fa-times"></i></a>
 
