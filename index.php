@@ -133,6 +133,7 @@
                     insert_user($username, $password, $email);
                     $THONG_BAO = "BẠN ĐÃ ĐĂNG KÍ THÀNH CÔNG!";
                 }
+
                 $data_sp_highlight = loadAll_sp_highlight();
                 $data_sp_top2 = loadAll_sp_top2();
 
@@ -143,24 +144,39 @@
             include 'layout/home.php';
             break;
 
+<<<<<<< HEAD
+=======
+            include 'layout/home.php';
+            break;
+
+>>>>>>> 5145f0516ac63b398de1f893e6b1a39fcebd14f7
             case "sanphamct":
                 if(isset($_GET['id_sp'])){
                     $id = $_GET['id_sp'];
                     $onesp = loadOne_sp($id);
+
                     // echo $id_sp;
                     extract($onesp);
                     $relatedProduct = productSamilar($id_sp, $id_dm);
+
+                    // extract($onesp);
+                    // $relatedProduct = productSamilar($id_sp, $id_dm);
+
                     include 'layout/sanphamct.php';
                 }else {
                     include 'layout/sanphamct.php';
 
                 }
                 break;
+
             case "sanpham":
                 $data_sp_highlight = loadAll_sp_highlight();
                 include 'layout/sanpham.php';
                 break;
+<<<<<<< HEAD
             
+=======
+>>>>>>> 5145f0516ac63b398de1f893e6b1a39fcebd14f7
 
             case "logout":
                 session_unset();

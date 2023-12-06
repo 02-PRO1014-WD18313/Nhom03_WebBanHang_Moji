@@ -20,6 +20,7 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
 <body>
 
     <div class="header nb">
+
         <div class="logo">
             <a href="index.php?act=home">
                 <img src="image/z4876602114590_6223b9460e22e4f10da597208a1fa113.png" alt="">
@@ -46,6 +47,14 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
 
         <a data-cart="user" class="icon-header" data-bs-toggle="dropdown">Xin chào, <strong><?=$username?></strong></a></li>
 
+<<<<<<< HEAD
+=======
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.php?act=logout">Đăng xuất</a></li>
+                <li><a class="dropdown-item" href="#">Link 2</a></li>
+                <li><a class="dropdown-item" href="#">Link 3</a></li>
+            </ul>
+>>>>>>> 5145f0516ac63b398de1f893e6b1a39fcebd14f7
 
 
             <a data-cart="cart" class="icon-header">
@@ -60,7 +69,10 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
                 <i class="fas fa-shopping-cart"></i>
             </a>
             <?php } ?>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5145f0516ac63b398de1f893e6b1a39fcebd14f7
 
                 <!-- <a data-cart="register" class="icon-header">Đăng Kí</a>
                 <a data-cart="login" class="icon-header">Đăng Nhập</a></li>
