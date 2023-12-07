@@ -4,9 +4,19 @@
         // echo json_encode($loadAll_sp, JSON_UNESCAPED_SLASHES);
     }        
     if(isset($load_idsp_tensp)){
+        
+    }
+    if(isset($loadAll_sp_range)){
+        foreach($loadAll_sp_range as $value){
+            extract($value);
+            echo $tensp;
+        }
     }
 ?>
+<?php
+    
 
+?>
 
 <form action="" class="search-product" autocomplete="off">
     <div class="autocomplete-wrapper" id="autocomplete-wrapper">
@@ -21,20 +31,23 @@
             <div class="price-input">
                 <div class="field">
                     <span>Min</span>
-                    <input type="number" value="2500" class="input-min">
+                    <input type="number" value="2500000" class="input-min">
                 </div>
                 <div class="separator">-</div>
                 <div class="field">
                     <span>Max</span>
-                    <input type="number" value="7500" class="input-min">
+                    <input type="number" value="7500000" class="input-min">
                 </div>
             </div>
             <div class="slide_sp">
                 <div class="progress"></div>
             </div>
             <div class="range-input">
-                <input type="range" name="" class="range-min" min="0"  max="10000" value="2500" step="100" >
-                <input type="range" name="" class="range-max" min="0" max="10000" value="7500"  step="100">
+                <form action="index.php?act=range" method="POST">
+                    <input type="range" name="minPrice" class="range-min" min="0"  max="10000000" value="2500000" step="1000" >
+                    <input type="range" name="maxPrice" class="range-max" min="0" max="10000000" value="7500000"  step="1000">
+                    <button name="submitRange" type="submit" style="padding:10px; margin-top:10px;">ABCXYZ</button>
+                </form>
             </div>
         </div>
         <hr>
@@ -201,9 +214,18 @@
 
 <script >
     document.addEventListener('DOMContentLoaded', function(){
-        let myProduct = <?php echo json_encode($loadAll_sp)?>;
-        
-        // console.log(myProduct);
+        <?php
+            if(isset($loadAll_sp)){
+        ?>
+            let myProduct = <?php echo json_encode($loadAll_sp)?>;
+        <?php
+            }
+            elseif(isset($loadAll_sp_range)){
+        ?>
+            let myProduct = <?php echo json_encode($loadAll_sp_range)?>;
+            // console.log();
+        <?php }  ?>
+        console.log(myProduct);
         let perpage = 9;
         let CurrentPage = 1;
         let start = 0;
@@ -300,3 +322,5 @@
     });
 </script>
 
+
+<!--  -->

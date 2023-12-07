@@ -129,7 +129,14 @@
                 }
                 include 'layout/sanpham.php';
                 break;
-            
+            case "range":
+                if(isset($_POST['submitRange'])){
+                    $maxPrice = $_POST['maxPrice'];
+                    $minPrice = $_POST['minPrice'];
+                    $loadAll_sp_range = loadAll_sp_range($minPrice, $maxPrice);
+                }
+                include 'layout/sanpham.php';
+                break;
         }
     } else {
 
