@@ -101,7 +101,6 @@
                     $email = $_POST['email'];
                     $sdt = $_POST['sdt'];
                     $dia_chi = $_POST['dia_chi'];
-    
                     insert_user($name, $username, $password, $email, $sdt, $dia_chi);
                     $THONG_BAO = "BẠN ĐÃ ĐĂNG KÍ THÀNH CÔNG!";
                 }
