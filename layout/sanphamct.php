@@ -2,17 +2,10 @@
 
     extract($onesp);    
 ?>
+   
     
-    
-    <div class="mcb-backgound-overlay">
-        <div class="product-image-wrapper" style="background-image: url(upload/sanpham/<?php echo $img?>);">
-
-        extract($onesp);    
-?>
-    
-    
-    <div class="mcb-backgound-overlay">
-        <div class="product-image-wrapper" style="background-image: url(upload/sanpham/<?php echo $img?>);">
+    <div class="mcb-backgound-overlay" style="height: 620px;">
+        <div class="product-image-wrapper" style="background-image: url(upload/sanpham/<?php echo $img?>); height: 450px;">
             <a><i class="fas fa-search"></i></a>
         </div>
         <div class="entry-sumary-column">
@@ -35,42 +28,11 @@
                         <button class="minus"><i class="fas fa-minus"></i></button>
                         <input data-id="<?= $id ?>" onclick="addToCart(<?= $id ?>,'<?= $id_sp?>', '<?= $tensp ?>', '<?= $img ?>', <?= $giacu ?>,<?= $giamoi ?>)"  type="submit" value="Add to Cart">
                     </div>
-
-            <a href="">Home</a>
-            <a href="">Danh Mục</a>
-            <a href="">Tên Sản Phẩm</a>
-            <h3><?php echo $tensp ?></h3>
-            <div class="content-brighness">
-                <div class="parameter">
-                    <span>Weight</span>
-                    <span>Brand</span>
-                    <span>Size</span>
                 </div>
-                <div class="specifications">
-                    <span>20kg</span>
-                    <span>Do Ngoc</span>
-                    <span>1m, 2m, 3m </span>
-                </div>  
-            </div>
-            <div class="price">
-                <p class="oldprice" style="font-size:25px"><?php echo number_format($giacu, 0 , ','); ?> VNĐ</p>
-                <p class="newprice" style="font-size:30px"><?php echo number_format($giamoi, 0 , ','); ?> VNĐ</p>
-            </div>
-            <h3 style="font-size:25px">Size</h3>
-            <div class="information-product">
-
-            <div class="variations-form">
-                <div class="input-number">
-                    <input type="number" min="1" max="10" name="" value="1">
-                    <button class="plus"><i class="fas fa-plus"></i></button>
-                    <button class="minus"><i class="fas fa-minus"></i></button>
-                    <input data-id="<?= $id ?>" onclick="addToCart(<?= $id ?>,'<?= $id_sp?>', '<?= $tensp ?>', '<?= $img ?>', <?= $giacu ?>,<?= $giamoi ?>)"  type="submit" value="Add to Cart">
-                </div>
-            </div>
+            </div> 
         </div>
-
-
-        <div class="more-info">
+        </div>
+    <div class="more-info" style="width: 85%; display: flex;  justify-content: space-between; align-items: center; padding-left: 180px">
             <div class="quality-check">
                 <h4><i class="fas fa-award"></i> CAM KẾT CHẤT LƯỢNG</h4>
                 <p><i class="far fa-check-circle"></i> Thương hiệu trang sức cưới thuộc Tập đoàn Vàng bạc đá quý MOJI.</p>
@@ -86,44 +48,24 @@
                 <p><i class="far fa-check-circle"></i> Kiểm tra và xác nhận đơn hàng.</p>
             </div>
         </div>
-        
-    </div>
+        <br>
  
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <div id="binhluan">
     <script>
         $(document).ready(function(){
             $("#binhluan").load("view/binhluanform.php", {id_sp: <?php echo $id; ?>});
         });
     </script>
-    <div id="binhluan"></div> <br>
+    </div> <br>
 
 
    
-    <hr>
-    <h3 style="text-align:center; font-size:35px; margin-top:10px">Related Product</h3>
-    
-    <div class="products-wrapper-ct">
 
-        </div>
-    </div>
-    <hr>
-    <div class="detail-product">
-        <div class="directionaly">
-            <a data-display="information">Information</a>
-            <a data-display="review">Review</a>
-        </div>
-        
-    </div>
-        <div class="information display" id="information">
-            <p style="text-align:center"><?php echo $mota ?></p>
-        </div>
-        <div class="review display" id="review">
-            <h2>Abc</h2>
-        </div>
-    <hr>
-    <h2 style="text-align:center; font-size:56px; margin-top:10px">Related Product</h2>
-    <div class="related-product" >
+    <h2 style="text-align:center; font-size:56px; margin-top:10px">Sản Phẩm Liên Quan</h2>
+    <div class="products-wrapper" style="height: 500px;">
 
     <?php
     foreach ($relatedProduct as $value):
@@ -131,21 +73,23 @@
     ?>
 
   
-        <div class="isotope-item product">
-        <img src="<?php echo "upload/sanpham/$img"?>" alt="">
-            <p><a href="index.php?act=sanphamct&id_sp=<?php echo $id_sp ?>" class="product-title"><?php echo $tensp?></a></p> 
-            <div class="price">
-                <p class="oldprice"><?php echo number_format($giacu, 0 , ','); ?> VNĐ</p>
-                <p class="newprice"><?php echo number_format($giamoi, 0 , ','); ?> VNĐ</p>
-            </div>
-            <button class="onsale sale-label">On Sale</button>
-            <div class="hover-product">
-                <div class="icons-product">
-                    <a class="icon preview-icon" data-preview="preview" ><i class="fas fa-link"></i></a>
-                </div>
-            </div>
+<div class="isotope-item product">
+        <?php echo "<img class='img-product' src='upload/sanpham/".$value['img']."' >";  ?>
+        <p><a href="index.php?act=sanphamct&id_sp=<?= $id_sp ?>" class="product-title"><?php echo $tensp?></a></p> 
+        <div class="price">
+            <p class="newprice"><?php echo number_format($value['giamoi'], 0 , ','); ?> VNĐ</p>
+            <p class="oldprice"><?php echo number_format($value['giacu'], 0 , ','); ?> VNĐ</p>
         </div>
+        <button class="onsale sale-label">On Sale</button>
+        <!-- <div class="hover-product">
+            <div class="icons-product">
+                <a class="icon preview-icon" data-preview="preview"  href="index.php?act=sanphamct&id_sp=<?= $id_sp ?>">
+                    <i class="fas fa-link"></i></a>
+            </div>
+        </div> -->
+    </div>
         <?php endforeach; ?>
+    </div>
     </div>
 
 <script>
@@ -193,15 +137,7 @@
     }
 </script>
 
-        <div class="product-ct">
-            <img src="<?php echo "upload/sanpham/$img"?>" alt="">
-            <h2><a href="index.php?act=sanphamct&id_sp=<?php echo $id_sp ?>"><?php echo $tensp ?></a></h2>
-            <div class="price">
-                <p class="oldprice"><?php echo number_format($giacu, 0 , ','); ?> VNĐ</p>
-                <p class="newprice"><?php echo number_format($giamoi, 0 , ','); ?> VNĐ</p>
-            </div>
-                
-        </div>
         
-    </div>
+        
+
 

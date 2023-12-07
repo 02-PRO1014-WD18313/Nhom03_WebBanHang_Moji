@@ -1,5 +1,5 @@
 
-<div  class="mt" style="height: auto;width: 100%;background-color: rgba(0, 0, 0, 0.007);">
+<div  class="mt" style="height: auto;width: 100%;background-color: rgba(0, 0, 0, 0.03);">
        <div class="box" style="width: 100%;height:75px;padding: 20px 9%;display: block;border-bottom: 1px solid #66666637;background-color: #ffffff;padding-top: 10px;">
             <div style="float: left;color: rgb(199, 3, 3);font-size: x-large;padding-right: 30px;border-right: 1px solid #666;">
                 <p style="margin: 0px;">QUẢN LÝ TÀI KHOẢN</p>
@@ -25,11 +25,10 @@
         <div class="boxleft">
             <a class="menu-item" href="index.php?act=account">Đơn hàng</a>
             <a class="menu-item" href="index.php?act=edit_taikhoan">Cập nhật tài khoản</a>
-            <a class="menu-item" href="">Địa chỉ</a>
             <a class="menu-item" <?= $rol ?>  href="../Nhom03_WebBanHang_Moji/admin/admin-template/index.php">Trang quản trị</a>
             <a class="menu-item" href="index.php?act=thoat">Thoát</a>
           </div>
-          <div class="boxright">
+          <div class="boxright" style="background-color: rgba(0, 0, 0, 0.01)">
                             
                             <form action="index.php?act=edit_taikhoan" method="post">
                             <div class="bi">

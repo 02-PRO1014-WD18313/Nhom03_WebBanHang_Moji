@@ -19,8 +19,6 @@
         switch($act) {
 
             case "home":
-
-
                 $data_sp_highlight = loadAll_sp_highlight();
                 $data_sp_top2 = loadAll_sp_top2();
 
@@ -67,6 +65,17 @@
                 }
                 include 'view/cart.php';
             break;
+
+            case "ctdonhang":
+                if(isset($_GET['id'])){
+                    $id = $_GET['id'];
+                    $cart=loadall_cart($id);
+                    $bill=loadone_bill($id);
+                }
+                include 'view/ctdonhang.php';
+                break;
+            break;
+
 
             case "bill":
                 if (!empty($_SESSION['cart'])) {

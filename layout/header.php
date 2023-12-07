@@ -66,19 +66,19 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
         <div class="form-control">
             <div class="form-label">
                 <input type="text" class="form-input" name="username" id="username" placeholder="Username">
-                <span id="usernameError" class="error"></span>
+                <p id="usernameError" class="error"></p>
             </div>
             <div class="form-label">
                 <input type="text" class="form-input" name="email" id="email" placeholder="Email">
-                <span id="emailError" class="error"></span>
+                <p id="emailError" class="error"></p>
             </div>
             <div class="form-label">
                 <input type="password" class="form-input" name="password" id="password" placeholder="Password">
-                <span id="passwordError" class="error"></span>
+                <p id="passwordError" class="error"></p>
             </div>
             <div class="form-label">
                 <input type="password" class="form-input" name="confirm" id="confirm" placeholder="Confirm password">
-                <span id="confirmError" class="error"></span>
+                <p id="confirmError" class="error"></p>
             </div>
             <input type="submit" class="form-button" name="register" value="ĐĂNG KÍ">
         </div>
@@ -97,11 +97,11 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
         <div class="form-control">
             <div class="form-label">
                 <input type="text" name="username" id="loginUsername" class="form-input" placeholder="Username">
-                <span id="loginUsernameError" class="error"></span>
+                <p id="loginUsernameError" class="error"></p>
             </div>
             <div class="form-label">
                 <input type="text" name="password" id="loginPassword" class="form-input" placeholder="Password">
-                <span id="loginPasswordError" class="error"></span>
+                <p id="loginPasswordError" class="error"></p>
             </div>
             <input type="submit" name="login" class="form-button" value="ĐĂNG NHẬP">
         </div>

@@ -116,18 +116,18 @@
 ?>
     <div class="isotope-item product">
         <?php echo "<img class='img-product' src='upload/sanpham/".$value['img']."' >";  ?>
-        <p><a href="#" class="product-title"><?php echo $tensp?></a></p> 
+        <p><a href="index.php?act=sanphamct&id_sp=<?= $id_sp ?>" class="product-title"><?php echo $tensp?></a></p> <br>
         <div class="price">
             <p class="newprice"><?php echo number_format($value['giamoi'], 0 , ','); ?> VNĐ</p>
             <p class="oldprice"><?php echo number_format($value['giacu'], 0 , ','); ?> VNĐ</p>
         </div>
         <button class="onsale sale-label">On Sale</button>
-        <div class="hover-product">
+        <!-- <div class="hover-product">
             <div class="icons-product">
                 <a class="icon preview-icon" data-preview="preview"  href="index.php?act=sanphamct&id_sp=<?= $id_sp ?>">
                     <i class="fas fa-link"></i></a>
             </div>
-        </div>
+        </div> -->
     </div>
     <?php endforeach; ?>
 </div>

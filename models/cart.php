@@ -35,7 +35,7 @@
     }
 
     function loadall_cart($idbill){
-        $sql="select * from cart where idbill=".$idbill;
+        $sql="select * from cart where id_bill=".$idbill;
         $bill=pdo_query($sql);
         return $bill;
     }
@@ -94,6 +94,21 @@
         }
         return $tt;
     }
+
+    function get_pttt($n){
+        switch ($n) {
+            case '1':
+                $tt="Thanh toán khi nhận hàng";
+                break;
+              
+            case '2':
+                $tt="Thanh toán online";
+                break;
+            
+        }
+        return $tt;
+    }
+
 
     function select_tt($n){
         if($n==0)

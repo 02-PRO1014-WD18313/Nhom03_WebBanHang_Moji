@@ -5,7 +5,6 @@
 
                     <div class="img" style="background-image: url('image/19(1).jpg');"></div>
 
-                    <div class="img" style="background-image: url(image/slide1.avif);"></div>
 
                     <img src="image/big_brown.png" alt="" class="below-brown">
                     <img src="image/big_brown.png" alt="" class="above-brown">
@@ -29,8 +28,6 @@
 
                     <div class="img" style="background-image: url('image/daychuyen.webp');"></div>
 
-                    <div class="img" style="background-image: url('image/slide2.avif');"></div>
-
                     <img src="image/big_blue.png" alt="" class="below-brown">
                     <img src="image/big_blue.png" alt="" class="above-brown">
                     <img src="image/small_blue.png" alt="" class="right-brown">
@@ -48,8 +45,6 @@
                 <div class="slide">
 
                     <div class="img" style="background-image: url(image/lactaybac.jpg);"></div>
-
-                    <div class="img" style="background-image: url(image/slide3.avif);"></div>
 
                     <img src="image/big_red.png" alt="" class="below-brown">
                     <img src="image/big_red.png" alt="" class="above-brown">

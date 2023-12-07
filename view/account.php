@@ -1,5 +1,5 @@
 
-<div  class="mt" style="height: auto;width: 100%;background-color: rgba(0, 0, 0, 0.007);">
+<div  class="mt" style="height: auto;width: 100%;background-color: rgba(0, 0, 0, 0.03);">
        <div class="box" style="width: 100%;height:75px;padding: 20px 9%;display: block;border-bottom: 1px solid #66666637;background-color: #ffffff;padding-top: 10px;">
             <div style="float: left;color: #666;font-size: x-large;padding-right: 30px;border-right: 1px solid #666;">
                 <p style="margin: 0px;">Quản lý tài khoản</p>
@@ -25,17 +25,16 @@
         <div class="boxleft">
             <a class="menu-item" href="index.php?act=account">Đơn hàng</a>
             <a class="menu-item" href="index.php?act=edit_taikhoan">Cập nhật tài khoản</a>
-            <a class="menu-item" href="">Địa chỉ</a>
             <?= $rol?>
             <a class="menu-item" href="index.php?act=thoat">Thoát</a>
           </div>
-          <div class="boxright">
+          <div class="boxright" style="background-color: rgba(0, 0, 0, 0.01)">
           <div class="tcart">
                             <table>
                                 <tr class="ct bb pdrow">
-                                    <th style="width: 12%;">Đơn hàng</th>
-                                    <th style="width: 20%;">Ngày</th>
-                                    <th>Tình trạng</th>
+                                    <th style="width: 8%;">Đơn hàng</th>
+                                    <th style="width: 15%;">Ngày</th>
+                                    <th style="width: 15%;">Tình trạng</th>
                                     <th>Tổng</th>
                                     <th>Thao tác</th>
                                     <span></span>
@@ -48,10 +47,10 @@
                             $countsp=loadall_cart_count($bill['id']);
                             echo '<tr class="pdrow">
                                 <td>#'.$bill['id'].'</td>
-                                <td>'.$bill['ngaydathang'].'</td>
-                                <td>'.$ttdh.'</td>
+                                <td>'.substr($bill['ngaydathang'], strpos($bill['ngaydathang'], 'm') + 1).'</td>
+                                <td style="width: 15%;">'.$ttdh.'</td>
                                 <td>'.number_format((int)$bill['total'], 0, ",", ".").' cho '.$countsp.' mục</td>
-                                <td></td>
+                                <td><a href="index.php?act=ctdonhang&id='.$bill['id'].'"><button>Xem</button></a></td>
                             </tr>';
                         }
                     }
