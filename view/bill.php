@@ -103,8 +103,8 @@
     <script>
 
         document.getElementById('vnpay').addEventListener('click', function(){
-            window.location = window.location.href.replace("index.php?act=bill", "index.php?act=onlineCheckout&thanhtoan=vnpay");
-            console.log(window.location.href.replace("index.php?act=bill", "index.php?act=onlineCheckout&thanhtoan=vnpay"));
+            window.location = window.location.href.replace("index.php?act=bill", "index.php?act=onlineCheckout&thanhtoan=redirect");
+            console.log(window.location.href.replace("index.php?act=bill", "index.php?act=onlineCheckout&thanhtoan=redirect"));
         });
         document.getElementById('momo').addEventListener('click', function(){
             window.location = window.location.href.replace("index.php?act=bill", "index.php?act=onlineCheckout&thanhtoan=payUrl");

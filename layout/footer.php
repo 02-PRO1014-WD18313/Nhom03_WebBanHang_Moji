@@ -2,7 +2,7 @@
         
         <div class="footer">
             <div class="img">
-                <img src="image/z4876602108989_5f087e8f45e55b2ffc2d161404fe48f2_preview_rev_1.png" alt="">
+                <img src="image/z4876602108989_5f087e8f45e55b2ffc2d161404fe48f2_preview_rev_1.png" style="cursor:pointer" id="linkImg" alt="">
             </div>
             <div class="row">
                 <a href="#"><i class="fa fa-facebook"></i></a>
@@ -29,3 +29,10 @@
     <script src="js/main.js"></script>
 </body>
 </html>
+
+<script>
+    document.getElementById('linkImg').addEventListener('click', function(){
+        window.location = "http://localhost/moji";
+    });
+
+</script>
