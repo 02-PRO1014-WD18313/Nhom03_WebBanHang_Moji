@@ -71,8 +71,11 @@
                             <div class="box_1 pd15" style="width: 100%;height: auto;background-color: #ffffff;">
                                     <div class="bo1 hbo">
                                     <p style=" font-size: large;color: #666;">Phương thức thanh toán</p>
-                                    <input type="radio" id="ob" name="pttt" value="2">
-                                    <label for="ob">Online Banking</label>
+                                    <input type="radio" id="momo" name="payUrl" value="2">
+                                    <label for="momo">Thanh Toán Momo</label>
+                                    
+                                    <input type="radio" id="vnpay" name="pttt" value="3">
+                                    <label for="vnpay">Thanh Toán VnPay</label>
 
                                     <input type="radio" id="ttknh" name="pttt" value="1" checked>
                                     <label for="ttknh">Thanh toán khi nhận hàng</label>
@@ -96,3 +99,15 @@
         </div>
        
     </div>
+    <!--  -->
+    <script>
+
+        document.getElementById('vnpay').addEventListener('click', function(){
+            window.location = window.location.href.replace("index.php?act=bill", "index.php?act=onlineCheckout&thanhtoan=vnpay");
+            console.log(window.location.href.replace("index.php?act=bill", "index.php?act=onlineCheckout&thanhtoan=vnpay"));
+        });
+        document.getElementById('momo').addEventListener('click', function(){
+            window.location = window.location.href.replace("index.php?act=bill", "index.php?act=onlineCheckout&thanhtoan=payUrl");
+            console.log(window.location.href.replace("index.php?act=bill", "index.php?act=onlineCheckout&thanhtoan=payUrl"));
+        });
+    </script>

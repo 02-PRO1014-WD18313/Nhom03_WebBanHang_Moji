@@ -95,10 +95,10 @@
             <?php
                 if(isset($_SESSION['user']) && ($_SESSION['user'])){
                     $dh='<form action="index.php?act=bill" method="post">
-                    <input class="sub" type="submit" name="dongydathang" value="Đặt hàng">
+                    <input class="sub" type="submit" name="dongydathang" value="Tiến Hành Thanh Toán" style="cursor:pointer">
                     </form>';
                 } else {
-                    $dh='<input class="sub" type="button" value="Đặt hàng" onclick="thongbao()">';
+                    $dh='<input class="sub" type="button" value="Tiến hành thanh toán" style="cursor:pointer" onclick="thongbao()">';
                 }
             ?>
 

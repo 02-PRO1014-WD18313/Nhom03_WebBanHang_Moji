@@ -173,6 +173,12 @@
                 }
                 include 'layout/sanpham.php';
                 break;
+            case "onlineCheckout":
+                if(isset($_GET['thanhtoan'])){
+                    
+                }
+                include 'view/thanhtoanvnpay.php';
+                break;
             
         }
     } else {
