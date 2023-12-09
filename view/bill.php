@@ -67,7 +67,6 @@
                                     $pvc = 70000;
                                     ?>
                             </table>
-
                             <div class="box_1 pd15" style="width: 100%;height: auto;background-color: #ffffff;">
                                     <div class="bo1 hbo">
                                     <p style=" font-size: large;color: #666;">Phương thức thanh toán</p>
@@ -99,6 +98,7 @@
         </div>
        
     </div>
+    <?php echo $_SESSION['resultTotal']; ?>
     <!--  -->
     <script>
 

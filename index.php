@@ -101,6 +101,18 @@
                     }
                     unset($_SESSION['cart']);
                 }
+                if(isset($_GET['partnerCode'])){
+                    $user = $_SESSION['user'];
+                    $cart = $_SESSION['cart'];
+                    $pttt= 2;
+                    $tongdonhang = $_GET['amount'];
+                    $ngaydathang=date('h:i:sa d/m/Y');
+                    $idbill=insert_bill($user['id'],$user['name'],$user['dia_chi'],$user['sdt'],$user['email'],$pttt,$ngaydathang,$tongdonhang);
+                    foreach ($cart as $item) {
+                        insert_cart($item['id'],$item['idsp'],$item['img'],$item['name'],$item['giacu'],$item['giamoi'],$item['quantity'],$item['giamoi'] * $item['quantity'],$idbill);
+                    }
+                    unset($_SESSION['cart']);
+                }
                 include "view/billconfirm.php";
                 break; 
 

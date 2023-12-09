@@ -1,5 +1,5 @@
 <?php
-    
+    session_start();
     
     function execPostRequest($url, $data)
     {
@@ -123,6 +123,7 @@
                 , 'data' => $vnp_Url);
                 if (isset($_GET['redirect'])) {
                     header('Location: ' . $vnp_Url);
+                    // if($res['code']=='00') header("location :"+$res['data']);
                     die();
                 } else {
                     echo json_encode($returnData);
@@ -137,7 +138,10 @@
             $accessKey = 'klm05TvNBzhg7h7j';
             $secretKey = 'at67qH6mk8w5Y1nAyMoYKMWACiEi2bsa';
             $orderInfo = "Thanh toán qua MoMo";
-            $amount = "10000";
+            if(isset($_SESSION['resultTotal'])){
+                $price = $_SESSION['resultTotal']+70;
+            }
+            $amount = "$price";
             $orderId = rand(00, 9999);
             $redirectUrl = "http://localhost/moji/index.php?act=billconfirm";
             $ipnUrl = "http://localhost/moji/index.php?act=billconfirm";
