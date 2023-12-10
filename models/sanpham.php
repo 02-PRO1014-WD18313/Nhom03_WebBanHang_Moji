@@ -95,7 +95,7 @@
         return $get_sp;
     }
     function loadAll_sp_range($minPrice, $maxPrice) {
-        $sql = "SELECT * FROM `sanpham` WHERE '$minPrice' > 500000 AND giamoi < '$maxPrice'";
+        $sql = "SELECT * FROM `sanpham` WHERE '$minPrice' < giamoi AND giamoi < '$maxPrice'";
         $data_sp = pdo_query($sql);
         return $data_sp;       
     }

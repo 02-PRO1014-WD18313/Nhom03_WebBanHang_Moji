@@ -1934,3 +1934,22 @@ input[type="range"]::-webkit-slider-thumb {
 .btn-back {
     background-color: gainsboro;
 }
+
+.category_sp form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category_sp form > button {
+    width: 80%;
+    margin: 5px;
+    padding: 10px;
+    border: unset;
+    cursor: pointer;
+    /* height: 10px; */
+}
+
+.category_sp form > button:hover{
+    background-color: #87C4FF;
+}

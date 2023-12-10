@@ -119,13 +119,13 @@
                 }
                 break;
             case "sanpham":
-                if(isset($_GET['id_dm'])){
-                    $id_dm = $_GET['id_dm'];
-                    $loadAll_sp_dm = loadAll_sp_dm($id_dm);
-                }else {
+                // if(isset($_GET['id_dm'])){
+                //     $id_dm = $_GET['id_dm'];
+                //     $loadAll_sp_dm = loadAll_sp_dm($id_dm);
+                // }else {
                     $loadAll_sp = loadAll_sp();
                     $load_idsp_tensp = load_idsp_tensp();
-                }
+                // }
                 include 'layout/sanpham.php';
                 break;
             case "range":
@@ -134,6 +134,24 @@
                     $minPrice = $_POST['minPrice'];
                     $loadAll_sp_range = loadAll_sp_range($minPrice, $maxPrice);
                 }
+                $aboutPrice = "<h2 style='text-align:center; margin-top:20px'>Sản Phẩm Trong Khoảng Giá $minPrice VNĐ đến $maxPrice VNĐ :</h2>";
+                include 'layout/sanpham.php';
+                break;
+            case "danhmuc":
+                $loadAll_sp_dm = [];
+                if(isset($_POST['NH01'])){
+                    $loadAll_sp_dm = loadAll_sp_dm('NH01');
+                }
+                if(isset($_POST['LT01'])){
+                    $loadAll_sp_dm = loadAll_sp_dm('LT01');
+                }
+                if(isset($_POST['DC01'])){
+                    $loadAll_sp_dm = loadAll_sp_dm('DC01');
+                }
+                if(isset($_POST['BT01'])){
+                    $loadAll_sp_dm = loadAll_sp_dm('BT01');
+                }
+                    
                 include 'layout/sanpham.php';
                 break;
         }

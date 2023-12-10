@@ -6,17 +6,23 @@
     if(isset($load_idsp_tensp)){
         
     }
+    if(isset($loadAll_sp_dm)){
+        // foreach($loadAll_sp_dm as $value){
+        //     extract($value);
+        //     print_r($value);
+        // }
+    }
     if(isset($loadAll_sp_range)){
-        foreach($loadAll_sp_range as $value){
-            extract($value);
-            echo $tensp;
-        }
+        // foreach($loadAll_sp_range as $value){
+        //     extract($value);
+        //     echo $tensp;
+        // }
+    }
+    if(isset($loadAll_sp_dm)){
+        
     }
 ?>
-<?php
-    
 
-?>
 
 <form action="" class="search-product" autocomplete="off">
     <div class="autocomplete-wrapper" id="autocomplete-wrapper">
@@ -24,6 +30,12 @@
     </div>
         <button type="submit" class="btn-submit">Send</button>
 </form>
+<?php
+    
+    if(isset($aboutPrice)){
+        echo $aboutPrice;
+    }
+?>
 <div class="container_sp">
     <div class="filter">
         <div class="price_sp">
@@ -52,28 +64,16 @@
         </div>
         <hr>
         <div class="category_sp">
-            <h2 style="margin-top:10px">Danh Mục</h2>
-            <ul>
-                <li>
-                    <input data-products="NH01" type="checkbox" value="index.php?act=sanpham&id_dm=NH01" name="category[]">
-                    <span>Nhẫn</span>
-                </li>
-                <li>
-                    <input data-products="LT01" type="checkbox" value="index.php?act=sanpham&id_dm=LT01" name="category[]">
-                    <span>Lắc Tay</span>
-                </li>
-                <li>
-                    <input data-products="DC01" type="checkbox" value="index.php?act=sanpham&id_dm=DC01" name="category[]">    
-                    <span>Dây Chuyền</span>
-                </li>
-                <li>
-                    <input data-products="BT01" type="checkbox" value="index.php?act=sanpham&id_dm=BT01" name="category[]">    
-                    <span>Bông Tai</span>
-                </li>
-            </ul>
+            <h2 style="margin-top:10px; margin-bottom:10px">Danh Mục</h2>
+            <form action="index.php?act=danhmuc" method="POST">
+                <button type="submit" name="NH01" >Nhẫn</button>
+                <button type="submit" name="LT01">Lắc Tay</button>
+                <button type="submit" name="DC01">Dây Chuyền</button>
+                <button type="submit" name="BT01">Bông Tai</button>
+            </form>
         </div>
         <hr>
-        <div class="size_sp">
+        <!-- <div class="size_sp">
             <h2>Size</h2>
             <ul>
                 <li>8cm</li>
@@ -86,9 +86,9 @@
                 <li>8cm</li>
                 <li>8cm</li>
             </ul>
-        </div>
-        <hr>
-        <div class="sale_sp">
+        </div> -->
+        <!-- <hr> -->
+        <!-- <div class="sale_sp">
             <h2>Sale</h2>
             <ul>
                 <li>
@@ -100,7 +100,7 @@
                     <span>No Sale</span>
                 </li>
             </ul>
-        </div>
+        </div> -->
     </div>
     <!-- <hr> -->
     <div class="line"></div>
@@ -150,8 +150,19 @@
 
 </script>
 <script>
-    
+    <?php if(isset($load_idsp_tensp)): ?>;
     var myObj = <?php echo json_encode($load_idsp_tensp); ?>;
+    <?php endif; ?>;
+    <?php if(isset($loadAll_sp_range)): ?>;
+    var myObj = <?php echo json_encode($loadAll_sp_range); ?>;
+    <?php endif; ?>;
+    <?php if(isset($loadAll_sp_dm)): ?>;
+    var myObj = <?php echo json_encode($loadAll_sp_dm); ?>;
+    <?php endif; ?>;
+
+    
+
+    
     
     // console.log(myObj);
     // console.log(myObj[1].id_sp);
@@ -224,8 +235,11 @@
         ?>
             let myProduct = <?php echo json_encode($loadAll_sp_range)?>;
             // console.log();
-        <?php }  ?>
-        console.log(myProduct);
+        <?php }elseif(isset($loadAll_sp_dm)){  ?>;
+            let myProduct = <?php echo json_encode($loadAll_sp_dm)?>;
+
+            <?php }?>
+        // console.log(myProduct);
         let perpage = 9;
         let CurrentPage = 1;
         let start = 0;
@@ -255,9 +269,9 @@
                 html += '</p>';
                 html += '<br>';
                 html += '<div class="price">';
-                html += `<p class="oldprice">${item.giamoi} VNĐ`;
+                html += `<p class="oldprice">${item.giacu} VNĐ`;
                 html += '</p>';
-                html += `<p class="newprice">${item.giacu} VNĐ`;
+                html += `<p class="newprice">${item.giamoi} VNĐ`;
                 html += '</p>';
                 html += '</div>';
                 html += '</div>';
