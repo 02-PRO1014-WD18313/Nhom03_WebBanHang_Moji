@@ -17,10 +17,11 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
     <!--  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
 </head>
 <body>
 
-    <div class="header nb">
+    <div class="header nb " style="z-index:99">
 
         <div class="logo">
             <a href="index.php">
@@ -109,5 +110,6 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
         <a class="outCart"><i class="fas fa-times"></i></a>
     </div>
 </form>
+
 
 

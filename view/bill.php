@@ -68,16 +68,18 @@
                                     ?>
                             </table>
                             <div class="box_1 pd15" style="width: 100%;height: auto;background-color: #ffffff;">
-                                    <div class="bo1 hbo">
+                                    <div class="bo1 hbo" style="display:block">
                                     <p style=" font-size: large;color: #666;">Phương thức thanh toán</p>
                                     <input type="radio" id="momo" name="payUrl" value="2">
                                     <label for="momo">Thanh Toán Momo</label>
                                     
-                                    <input type="radio" id="vnpay" name="pttt" value="3">
-                                    <label for="vnpay">Thanh Toán VnPay</label>
+                                    <input  style="height:20px" type="radio" id="ttknh" name="pttt" value="1" checked>
+                                    <label style="margin-bottom:20px" for="ttknh">Thanh toán khi nhận hàng</label>
+                                    
+                                    
+                                    <div id="paypal-button-container"></div>
+                                        <p id="result-message"></p>
 
-                                    <input type="radio" id="ttknh" name="pttt" value="1" checked>
-                                    <label for="ttknh">Thanh toán khi nhận hàng</label>
                                     </div>
                                     <div class="bo2 hbo ct">
                                         <p>Tổng tiền hàng:      <span><?= number_format((int)$sum_total, 0, ",", ".")  ?> <u>đ</u></span></p>
@@ -98,16 +100,98 @@
         </div>
        
     </div>
-    <?php echo $_SESSION['resultTotal']; ?>
     <!--  -->
+    <?php $gia = ceil(($_SESSION['resultTotal'] + 70000)/24230);
+        
+    ?>
     <script>
 
-        document.getElementById('vnpay').addEventListener('click', function(){
-            window.location = window.location.href.replace("index.php?act=bill", "index.php?act=onlineCheckout&thanhtoan=redirect");
-            console.log(window.location.href.replace("index.php?act=bill", "index.php?act=onlineCheckout&thanhtoan=redirect"));
-        });
+        // document.getElementById('vnpay').addEventListener('click', function(){
+        //     window.location = window.location.href.replace("index.php?act=bill", "index.php?act=onlineCheckout&thanhtoan=redirect");
+        //     console.log(window.location.href.replace("index.php?act=bill", "index.php?act=onlineCheckout&thanhtoan=redirect"));
+        // });
         document.getElementById('momo').addEventListener('click', function(){
             window.location = window.location.href.replace("index.php?act=bill", "index.php?act=onlineCheckout&thanhtoan=payUrl");
             console.log(window.location.href.replace("index.php?act=bill", "index.php?act=onlineCheckout&thanhtoan=payUrl"));
         });
     </script>
+
+<script src="https://www.paypal.com/sdk/js?client-id=AU7CJ3QdjwBj0jC_B-x6v7SuXbjwV1922MuYqlFPDvqLzfTqVFtjFX2M7PKeYqCmf6jra4SV82JGexh0&currency=USD"></script>
+
+<script>
+    
+
+    function thePromiseCode() {
+
+return new Promise (function (resolve,reject) {
+  google.script.run
+    .withSuccessHandler (function (result) {
+      resolve (result);//What resolve does is return the result from the server back to the FIRST anonymous function in the "then" part
+    })
+    .withFailureHandler (function (error) {
+      reject (error);
+    })
+    .createA_PayPalOrder();//Call the server to create a PayPal order
+  })
+}
+
+function initPayPalButton() {  
+thePromiseCode()// Call the server code to create an order
+  .then(
+    function(response) {
+      console.log('response 89: ' + response)
+      var orderObj = JSON.parse(response);
+      window.payPalOrderId = orderObj.id;
+      console.log('payPalOrderId: ' + payPalOrderId)
+    },
+    function (error) {
+    //   showModalMessageBox("There was an error in the PayPal button!","ERROR!");
+      console.log(error);
+      return "Error";
+   }
+  );
+
+
+paypal.Buttons({
+  style: {
+    shape: 'rect',
+    color: 'gold',
+    layout: 'vertical',
+    label: 'paypal',
+  },
+
+  createOrder: function(data, actions) {
+    // This fnc sets up the details of the transaction, including the amount
+    return actions.order.create({
+      purchase_units:[
+        {"description":"My Product Name",
+         "amount":{
+           "currency_code":"USD",
+           "value":"<?php echo $gia?>",
+           }
+        }
+      ]
+    });
+  },
+
+  onApprove: function(data, actions) {
+    return actions.order.capture().then(function(details) {
+    //   payPalPaymentComplete();
+      console.log('Transaction completed by '  + details.payer.name.given_name + '!');
+    //   console.log(transaction.id);
+    window.location.replace('http://localhost/moji/index.php?act=billconfirm&thanhtoan=paypal&amount=<?php echo $gia?>')
+    });
+  },
+  onCancel: function(data) {
+    window.location.replace('http://localhost/moji/index.php?act=bill')
+  }
+
+  
+  
+}).render('#paypal-button-container');
+
+}
+initPayPalButton();
+
+</script>
+

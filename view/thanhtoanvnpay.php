@@ -139,7 +139,7 @@
             $secretKey = 'at67qH6mk8w5Y1nAyMoYKMWACiEi2bsa';
             $orderInfo = "Thanh toán qua MoMo";
             if(isset($_SESSION['resultTotal'])){
-                $price = $_SESSION['resultTotal']+70;
+                $price = $_SESSION['resultTotal']+70000;
             }
             $amount = "$price";
             $orderId = rand(00, 9999);
