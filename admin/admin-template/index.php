@@ -218,6 +218,11 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
         include 'pages/forms/bill/listBill.php';
         break; 
 
+        case 'thongke':
+          $listthongke=loadall_thongke();
+          include 'pages/forms/thongke/list.php';
+          break; 
+
     case "timkiem":
         include '../views/timkiem.php';
         break;

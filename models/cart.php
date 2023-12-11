@@ -147,9 +147,9 @@
         }  
 
     function loadall_thongke(){
-        $sql="select danhmuc.id as madm, danhmuc.name as tendm, count(sanpham.id) as countsp, min(sanpham.price) as minprice, max(sanpham.price) as maxprice, avg(sanpham.price) as avgprice";
-        $sql.=" from sanpham left join danhmuc on danhmuc.id=sanpham.id_dm";
-        $sql.=" group by danhmuc.id order by danhmuc.id desc";
+        $sql="select danhmuc.iddm as madm, danhmuc.tendm as tendm, count(sanpham.id) as countsp, min(sanpham.giamoi) as minprice, max(sanpham.giamoi) as maxprice, avg(sanpham.giamoi) as avgprice";
+        $sql.=" from sanpham left join danhmuc on danhmuc.iddm=sanpham.id_dm";
+        $sql.=" group by danhmuc.iddm order by danhmuc.iddm desc";
         $listtk=pdo_query($sql);
         return $listtk;
     }

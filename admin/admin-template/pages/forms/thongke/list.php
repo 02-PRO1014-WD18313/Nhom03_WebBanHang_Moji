@@ -1,8 +1,3 @@
-<?php 
-    if(is_array($listbill)) {
-        extract($listbill);
-    }
-?>
 
 <div class="main-panel">
           <div class="content-wrapper">
@@ -24,7 +19,7 @@
               <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title" style="color: #cf76fa;">DANH SÁCH ĐƠN HÀNG</h4>
+                    <h4 class="card-title" style="color: #cf76fa;">Thống kê</h4>
                     <div class="table-responsive">
                       <table class="table" style="text-align: center;">
                         <thead >
@@ -45,9 +40,9 @@
                                         <td>'.$madm.'</td>
                                         <td>'.$tendm.'</td>
                                         <td>'.$countsp.'</td>
-                                        <td>'.$maxprice.'</td>
-                                        <td>'.$minprice.'</td>
-                                        <td>'.$avgprice.'</td>
+                                        <td>'.number_format((int)$maxprice, 0, ",", ".").'</td>
+                                        <td>'.number_format((int)$minprice, 0, ",", ".").'</td>
+                                        <td>'.number_format((int)$avgprice, 0, ",", ".").'</td>
                                     </tr>';
                             }
                         ?>

@@ -43,6 +43,18 @@
                 if($_GET['id'] == 1){
                     $thongbao="Mật khẩu hiện tại không đúng!!";
                 }
+                if($_GET['id'] == 2){
+                    $thongbao="Chưa nhập mật khẩu mới!!";
+                }
+                if($_GET['id'] == 3){
+                    $thongbao="Hãy nhập xác nhận mật khẩu!!";
+                }
+                if($_GET['id'] == 4){
+                    $thongbao="Xác nhận mật khẩu không trùng khớp!!";
+                }
+                if($_GET['id'] == 5){
+                    $thongbao="Đổi mật khẩu thành công!!";
+                }
                 
             }
             include 'view/doimatkhau.php';
@@ -75,11 +87,20 @@
                     }else if($password != $_SESSION['user']['password'] ){
                         
                         header('location:index.php?act=dmk&id=1');
+                    }else if($pw1 == ""){
+                        
+                        header('location:index.php?act=dmk&id=2');
+                    }else if($pw2 == ""){
+                        
+                        header('location:index.php?act=dmk&id=3');
+                    } else if($pw1 != $pw2){
+                        
+                        header('location:index.php?act=dmk&id=4');
+                    }else{
+                    update_mk($id,$password);
+                    $_SESSION['user']=check_user($username,$password);
+                        header('location:index.php?act=dmk&id=5');
                     }
-                    // update_mk($id,$password);
-                    // $_SESSION['user']=check_user($username,$password);
-                    // $thongbao="Cập nhật tài khoản thành công";
-                    //     header('location:index.php?act=edit_taikhoan');
                 }
                 include "view/edit_taikhoan.php";
                 break;  

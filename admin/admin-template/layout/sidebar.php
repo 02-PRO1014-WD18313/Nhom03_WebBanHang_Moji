@@ -58,7 +58,7 @@
               </div></li>
 
               <li class="nav-item"><div class="nav-link">
-                <span class="menu-title" >Thống kê</span>
+              <a class="menu-title" href="../admin-template/index.php?act=thongke" style="text-decoration: none; color: inherit; font-size: 0.875rem; ">Thống kê</a>
                 <i class="fa-solid fa-chart-line" style="color: #bba8bff5;"></i>
               </div></li>
         <!-- Add more menu items as needed -->
