@@ -30,7 +30,7 @@
 
 <!--         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, fugiat!</p> -->
         <p><?php echo $value['motangan']; ?></p>
-        <a href="index.php?act=sanphamct&id_sp=<?php echo $id_sp?>" class="button button_size_2">
+        <a href="index.php?act=sanphamct&id_sp=<?php echo $value['id_sp']?>" class="button button_size_2">
             <span class="button_label">Buy Now</span>
         </a>
     </div>
@@ -115,7 +115,7 @@
         extract($value);
 ?>
     <div class="isotope-item product">
-        <?php echo "<img class='img-product' src='upload/sanpham/".$value['img']."' >";  ?>
+        <?php echo "<a href='index.php?act=sanphamct&id_sp=$id_sp'><img class='img-product' src='upload/sanpham/".$value['img']."' ></a>";  ?>
         <p><a href="index.php?act=sanphamct&id_sp=<?= $id_sp ?>" class="product-title"><?php echo $tensp?></a></p> <br>
         <div class="price">
             <p class="newprice"><?php echo number_format($value['giamoi'], 0 , ','); ?> VNĐ</p>
@@ -149,18 +149,13 @@
         extract($value);
 ?>
     <div class="isotope-item product">
-        <?php echo "<img class='img-product' src='upload/sanpham/".$value['img']."' >";  ?>
-        <p><a href="#" class="product-title"><?php echo $tensp?></a></p> 
+        <?php echo "<a href='index.php?act=sanphamct&id_sp=$id_sp'><img class='img-product' src='upload/sanpham/".$value['img']."' ></a>";  ?>
+        <p><a href="index.php?act=sanphamct&id_sp=<?= $id_sp ?>" class="product-title"><?php echo $tensp?></a></p> 
         <div class="price">
             <p class="newprice"><?php echo number_format($value['giamoi'], 0 , ','); ?> VNĐ</p>
             <p class="oldprice"><?php echo number_format($value['giacu'], 0 , ','); ?> VNĐ</p>
         </div>
         <button class="onsale sale-label">On Sale</button>
-        <div class="hover-product">
-            <div class="icons-product">
-<a class="icon preview-icon" data-preview="preview" ><i class="fas fa-link"></i></a>
-            </div>
-        </div>
     </div>
     <?php endforeach; ?>
 </div>

@@ -1,12 +1,22 @@
-
+<?php
+  $dc="";
+  $tb='';
+  if($_SESSION['user']['name']=="" || $_SESSION['user']['sdt']=="" || $_SESSION['user']['dia_chi']==""){
+    $dc='<p>Cần địa chỉ và liên hệ đầy đủ để tiến hành mua hàng!!!!</p><a href="index.php?act=edit_taikhoan">Thêm địa chỉ</a>';
+    $tb='type="button" onclick="chuadc()"';
+  } else{
+    $dc='<p><Strong style="margin-right: 10px;">'.$_SESSION['user']['name'].' '.$_SESSION['user']['sdt'].'</Strong>'.$_SESSION['user']['dia_chi'].'</p>';
+    $tb='type="submit" name="dongydathang"';
+  }
+?>
 <div class="mt" style="height: auto;width: 100%;background-color: rgba(0, 0, 0, 0.07);margin-bottom: 30px;">
        <div class="box" style="width: 100%;height:75px;padding: 20px 9%;display: block;border-bottom: 1px solid #66666637;background-color: #ffffff;">
-            <div style="float: left;color: #666;font-size: x-large;padding-right: 30px;border-right: 1px solid #666;">
+            <div style="float: left;color: rgb(199, 3, 3);font-size: x-large;padding-right: 30px;border-right: 1px solid rgb(199, 3, 3);">
                 <p style="margin: 0px;">Thanh toán</p>
             </div>
             <div style="float: right;width: 30%;">
-                <form action="" style="display:flex ;background-color: #666;border-radius: 5px;">
-                    <input style="display: inline-block;height: 5vh;width: 75%;border-radius: 5px 0 0 5px;border: 2px solid #666;font-size: 60%;" type="text" name="" id="" placeholder="    Tìm kiếm sản phẩm">
+                <form action="" style="display:flex ;background-color: rgb(199, 3, 3);border-radius: 5px;">
+                    <input style="display: inline-block;height: 5vh;width: 75%;border-radius: 5px 0 0 5px;border: 2px solid rgb(199, 3, 3);font-size: 60%;" type="text" name="" id="" placeholder="    Tìm kiếm sản phẩm">
                     <button class="sch" style="background-image: url('image/search.png');"></button>
                    
                 </form>
@@ -20,9 +30,7 @@
             <div class="bo1 pd15" style="background-color: #ffffff;padding:20px 2%; height: auto;display: block;">
                <div ><img style="width: 3vh;height: 3vh;" src="image/placeholder.png" alt=""><span style=" font-size: x-large;color: #666;padding: 4px;">  Địa chỉ nhận hàng</span></div>
                     <div class="diachi" style="margin-top: 25px;font-size: large;display: flex;">
-                        <p><Strong style="margin-right: 10px;"><?php echo $_SESSION['user']['name'] ?>  <?php echo $_SESSION['user']['sdt'] ?></Strong><?php echo $_SESSION['user']['dia_chi']?></p>
-                        <p style="border: 1px solid #5FBDFF; color: #5FBDFF;font-size: small;padding: 1px;">Mặc định</p>
-                        <a href="">Thay đổi</a>
+                        <?= $dc ?>
                     </div>
             </div>
 
@@ -69,7 +77,7 @@
                             </table>
                             <div class="box_1 pd15" style="width: 100%;height: auto;background-color: #ffffff;">
                                     <div class="bo1 hbo" style="display:block">
-                                    <p style=" font-size: large;color: #666;">Phương thức thanh toán</p>
+                                    <p style=" font-size: x-large;color: #666;">Phương thức thanh toán</p>
                                     <input type="radio" id="momo" name="payUrl" value="2">
                                     <label for="momo">Thanh Toán Momo</label>
                                     
@@ -89,7 +97,7 @@
                                     <div class="bo3 hbo">
                                       <p>Nhấn "Đặt hàng" đồng nghĩa với việc bạn đồng ý tuân theo <span><a href="#">Điều khoản dịch vụ</a></span></p>
                                       <input type="hidden" name="tongthanhtoan" value="<?=(int)$sum_total+(int)$pvc  ?>">
-                                      <input class="sub" type="submit" name="dongydathang" value="Đặt hàng">
+                                      <input class="sub" <?= $tb?> value="Đặt hàng">
                                     </div>
                                 </div>
                            
@@ -119,6 +127,9 @@
 <script src="https://www.paypal.com/sdk/js?client-id=AU7CJ3QdjwBj0jC_B-x6v7SuXbjwV1922MuYqlFPDvqLzfTqVFtjFX2M7PKeYqCmf6jra4SV82JGexh0&currency=USD"></script>
 
 <script>
+  function chuadc(){
+    alert("Hãy thêm địa chỉ trước khi đặt hàng!");
+  }
     
 
     function thePromiseCode() {

@@ -39,4 +39,9 @@
         `sdt` = '$sdt', `dia_chi` = '$address' WHERE `id` = ".$id;
         pdo_execute($sql);
     }
+
+    function update_mk($id,$password) {
+        $sql = "UPDATE `taikhoan` SET `password` = '$password' WHERE `id` = ".$id;
+        pdo_execute($sql);
+    }
 ?>

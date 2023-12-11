@@ -13,14 +13,6 @@
             </div>
        </div>
        <?php
-        $tb_edit = "";
-        $filteredArray = array_filter($_SESSION['user'], function ($value) {
-            return $value === '' || trim($value) === '';
-        });
-        
-        if (count($filteredArray) > 0) {
-            $tb_edit = '<h3 style="margin-bottom: 15px;">Cập nhật đầy đủ thông tin để mua hàng</h3>';
-        }
         
                                 if(isset($_SESSION['user']) && (is_array($_SESSION['user']))){
                                     extract($_SESSION['user']);
@@ -40,33 +32,24 @@
             <a class="menu-item" href="index.php?act=thoat">Thoát</a>
           </div>
           <div class="boxright" style="background-color: rgba(0, 0, 0, 0.01)">
-                                <?= $tb_edit ?>
                             <form action="index.php?act=edit_taikhoan" method="post">
                             <div class="bi">
-                                    Họ và tên
-                                    <input  type="text" name="name" value="<?=$name?>">
+                                    Mật khẩu hiện tại
+                                    <input  type="text" name="password" value="">
                                 </div>
                                 <div class="bi">
-                                    Email
-                                    <input  type="email" name="email" value="<?=$email?>">
+                                    Mật khẩu mới
+                                    <input  type="text" name="pw1" value="">
                                 </div>
                                 <div class="bi">
-                                    Tên đăng nhập
-                                    <input type="text" name="user" value="<?=$username?>" id="">
-                                </div>
-                                <div class="bi">
-                                    Địa chỉ
-                                    <input  type="text" value="<?=$dia_chi?>" name="address">
-                                </div>
-                                <div class="bi">
-                                    Điện thoại
-                                    <input  type="text" value="<?=$sdt?>" name="tel">
+                                    Nhập lại mật khẩu
+                                    <input type="text" name="pw2" value="" id="">
                                 </div>
                                 <div class="bi">
                                     <input type="hidden" name="id" value="<?=$id?>"  id="">
-                                    <input type="submit" name="capnhat" value="Cập nhật" id="">
+                                    <input type="hidden" name="user" value="<?=$username?>" id="">
+                                    <input type="submit" name="capnhatmk" value="Cập nhật" id="">
                                     <input type="reset" name="" value="Nhập lại" id="">
-                                    <a href="index.php?act=dmk"><input style="width: 120px;" type="button" value="Đổi mật khẩu"></a>
                                 </div>
                             </form>
                             <h2 class="thongbao">

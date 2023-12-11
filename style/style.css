@@ -1129,9 +1129,6 @@ del {
     margin-left: 7px;
 }
 
-.form-control {
-    padding-left: 38px;
-}
 
 
 .login-top {
@@ -1400,11 +1397,12 @@ hr {
 }
 
 .bi input[type="submit"],
-.bi input[type="reset"]{
+.bi input[type="reset"],
+.bi input[type="button"]{
     display: inline-block;
     width: 100px;
     float: left;
-    background-color: #5FBDFF;
+    background-color: rgb(199, 3, 3);
     color: #ffffff;
     border: none;
     margin-right: 10px;
@@ -1533,7 +1531,7 @@ hr {
     background-size: 25%;
     background-repeat: no-repeat;
     background-position: center center;
-    background-color: #666;
+    background-color: rgb(199, 3, 3);
     /* Ẩn chữ gửi */
     text-indent: -9999vh;
 }

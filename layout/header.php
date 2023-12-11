@@ -101,7 +101,7 @@ ob_start(); // Bắt đầu bộ đệm đầu ra
                 <p id="loginUsernameError" class="error"></p>
             </div>
             <div class="form-label">
-                <input type="text" name="password" id="loginPassword" class="form-input" placeholder="Password">
+                <input type="password" name="password" id="loginPassword" class="form-input" placeholder="Password">
                 <p id="loginPasswordError" class="error"></p>
             </div>
             <input type="submit" name="login" class="form-button" value="ĐĂNG NHẬP">

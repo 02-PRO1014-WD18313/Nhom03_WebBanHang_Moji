@@ -35,6 +35,19 @@
                 include 'view/account.php';
             break;
 
+            case "dmk":
+                if(isset($_GET['id'])){
+                    if($_GET['id'] == 0){
+                        $thongbao="Chưa nhập mật khẩu!!";
+                    }
+                if($_GET['id'] == 1){
+                    $thongbao="Mật khẩu hiện tại không đúng!!";
+                }
+                
+            }
+            include 'view/doimatkhau.php';
+        break;
+
 
             case 'edit_taikhoan':
                 if(isset($_POST['capnhat']) && ($_POST['capnhat'])){
@@ -46,10 +59,27 @@
                     $tel=$_POST['tel'];
                     $id=$_POST['id'];
                     
-                    update_tk_user($id,$username, $password,$name,$sdt, $email, $address);
+                    update_tk_user($id,$username, $password,$name,$tel, $email, $address);
                     $_SESSION['user']=check_user($username,$password);
                     $thongbao="Cập nhật tài khoản thành công";
                         header('location:index.php?act=edit_taikhoan');
+                }
+                if(isset($_POST['capnhatmk']) && ($_POST['capnhatmk'])){
+                    $id=$_POST['id'];
+                    $username=$_POST['user'];
+                    $password=$_POST['password'];
+                    $pw1=$_POST['pw1'];
+                    $pw2=$_POST['pw2'];
+                    if($password == ""){
+                        header('location:index.php?act=dmk&id=0');
+                    }else if($password != $_SESSION['user']['password'] ){
+                        
+                        header('location:index.php?act=dmk&id=1');
+                    }
+                    // update_mk($id,$password);
+                    // $_SESSION['user']=check_user($username,$password);
+                    // $thongbao="Cập nhật tài khoản thành công";
+                    //     header('location:index.php?act=edit_taikhoan');
                 }
                 include "view/edit_taikhoan.php";
                 break;  

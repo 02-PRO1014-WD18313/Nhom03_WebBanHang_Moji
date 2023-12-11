@@ -23,12 +23,12 @@ if (!empty($_SESSION['cart'])) {
     ?>
     <div  class="mt" style="height: auto;width: 100%;background-color: rgba(0, 0, 0, 0.07);">
        <div class="box" style="width: 100%;height:75px;padding: 20px 9%;display: block;border-bottom: 1px solid #66666637;background-color: #ffffff;padding-top: 10px;">
-            <div style="float: left;color: #666;font-size: x-large;padding-right: 30px;border-right: 1px solid #666;">
+            <div style="float: left;color: rgb(199, 3, 3);font-size: x-large;padding-right: 30px;border-right: 1px solid rgb(199, 3, 3);">
                 <p style="margin: 0px;">Giỏ Hàng</p>
             </div>
             <div style="float: right;width: 30%;">
-                <form action="" style="display:flex ;background-color: #666;border-radius: 5px;">
-                    <input style="display: inline-block;height: 5vh;width: 75%;border-radius: 5px 0 0 5px;border: 2px solid #666;font-size: 60%;" type="text" name="" id="" placeholder="    Tìm kiếm sản phẩm">
+                <form action="" style="display:flex ;background-color: rgb(199, 3, 3);border-radius: 5px;">
+                    <input style="display: inline-block;height: 5vh;width: 75%;border-radius: 5px 0 0 5px;border: 2px solid rgb(199, 3, 3);font-size: 60%;" type="text" name="" id="" placeholder="    Tìm kiếm sản phẩm">
                     <button class="sch" style="background-image: url('image/search.png');"></button>
                    
                 </form>
